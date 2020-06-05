@@ -1,0 +1,304 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>【独生子女父母的教育方式】 - 北京尚才家教</title>
+    <link href="./public/home/css/css.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<script language="JavaScript" type="text/javascript">
+    <!--
+    function AddFavorite(sURL, sTitle)
+    {
+        try
+        {
+            window.external.addFavorite(sURL, sTitle);
+        }
+        catch (e)
+        {
+            try
+            {
+                window.sidebar.addPanel(sTitle, sURL, "");
+            }
+            catch (e)
+            {
+                alert("加入收藏失败，请使用Ctrl+D进行添加");
+            }
+        }
+    }
+    function SetHome(obj,vrl){
+        try{
+            obj.style.behavior='url(#default#homepage)';obj.setHomePage(vrl);
+        }
+        catch(e){
+            if(window.netscape) {
+                try {
+                    netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+                }
+                catch (e) {
+                    alert("此操作被浏览器拒绝！\n请在浏览器地址栏输入“about:config”并回车\n然后将 [signed.applets.codebase_principal_support]的值设置为'true',双击即可。");
+                }
+                var prefs = Components.classes['@mozilla.org/preferences-service;1'].getService(Components.interfaces.nsIPrefBranch);
+                prefs.setCharPref('browser.startup.homepage',vrl);
+            }
+        }
+    }
+    //-->
+</script>
+<script type="text/javascript">
+    //js获取cookie
+    var acookie=document.cookie.split("; ");
+    function getck(sname)
+    {
+        //获取单个cookies
+        for(var i=0;i<acookie.length;i++)
+        {
+            var arr=acookie[i].split("=");
+            if(sname==arr[0])
+            {
+                if(arr.length>1)
+                    return unescape(arr[1]);
+                else
+                    return "";
+            }
+        }
+        return "";
+    }
+</script>
+
+<script language="javascript" type="text/javascript">
+    <!--
+    function checkf()
+    {
+        if (document.getElementById("username").value=="")
+        {
+            alert("请输入用户名");
+            document.getElementById("username").focus();
+            return false;
+        }
+        if (document.getElementById("password").value=="")
+        {
+            alert("请输入密码");
+            document.getElementById("password").focus();
+            return false;
+        }
+
+    }
+
+    //-->
+</script>
+
+<form name="form1" method="post" action="index.php?m=home&c=enter" id="form1">
+    <div>
+    </div>
+
+    <div id="topbar" class="color_999">
+        <div class="w950">
+            <div class="right">
+                <a href="#" onclick="SetHome(this,window.location)" class="color_999">设为首页</a>&nbsp;
+                <a href="#" onclick="AddFavorite(window.location,document.title)" class="color_999">
+                    加入收藏</a>&nbsp; <a href="#" class="color_999">帮助中心</a>
+            </div>
+
+            <div class="left" id="wdl">
+                <?php if(!isset($_COOKIE['user'])){ echo '
+                &nbsp;&nbsp; <a href="index.php?m=home&c=index&a=user" class="color_orage text_decoration">注册用户</a>&nbsp;
+                用户名:<input name="username" style="width: 100px;" id="username" type="text">
+                &nbsp;&nbsp;密码:<input name="password" style="width: 100px;" id="password" type="password">
+                &nbsp;<input name="Button1" value="登录" onclick="return CheckForm();" id="Button1" type="submit">
+                <?php ';  } ?>
+                <?php if(isset($_COOKIE['user'])) { echo 'Hello:'.$_COOKIE['user'] ; } ?>
+            </div>
+            &nbsp;&nbsp; <a href="index.php?m=home&c=index&a=teacher" class="color_orage text_decoration">注册教员</a>&nbsp;
+
+            <a href="index.php?m=home&c=index&a=modifier" class="color_orage text_decoration">取回密码</a>
+            <?php if(isset($_COOKIE['user'])){ echo '
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="index.php?m=home&c=index&a=out" class="color_orage text_decoration">退出账号</a>&nbsp;
+            <?php ';  ?>
+            <?php } ?>
+        </div>
+    </div>
+    </div>
+</form>
+<div id="top">
+    <div class="w950">
+
+        <div style="float: right; width:100px; padding-top:25px;">
+            <a target="blank" href=tencent://message/?uin=5886626&Site=尚才家教&Menu=yes><img border="0" SRC='./public/home/images/qq.jpg' alt="QQ咨询"></a>
+        </div>
+        <div style="float: right; padding: 15px 0 0 0;">
+            <img src="./public/home/images/top_bn.gif" alt="尚才家教" />
+        </div>
+        <div id="logo" style="float:left;">
+            <img src="./public/home/images/logo.jpg" alt="尚才家教" />
+        </div>
+    </div>
+</div>
+<div id="menu" class="w950">
+    <ul>
+        <li><a href="index.php?m=home&c=indexLibrary"><span>首页</span></a></li>
+        <li id="lan_1"><a href="index.php?m=home&c=teacher"><span>教员库</span></a></li>
+        <li id="lan_2"><a href="index.php?m=home&c=UserLibrary"><span>学员库</span></a></li>
+        <li id="lan_3"><a href="index.php?m=home&c=star"><span>星级教员</span></a></li>
+        <li id="lan_4"><a href="index.php?m=home&c=major"><span>专业老师</span></a></li>
+        <li id="lan_5"><a href="index.php?m=home&c=university"><span>大学生家教</span></a></li>
+        <li id="lan_6"><a href="index.php?m=home&c=math"><span>奥数家教</span></a></li>
+        <li id="lan_7"><a href="index.php?m=home&c=english"><span>英语家教</span></a></li>
+        <li id="lan_8"><a href="index.php?m=home&c=music"><span>音乐家教</span></a></li>
+        <li id="lan_9"><a href="index.php?m=home&c=index&a=winCase"><span>成功案例</span></a></li>
+        <li id="lan_10"><a href="index.php?m=home&c=index&a=chargeStandard"><span>收费标准</span></a></li>
+    </ul>
+</div>
+
+<div id="main" class="w950">
+    <div class="right" style="width: 640px;">
+        <div class="guide">
+            <img src="./public/home/images/d05.gif" hspace="2" vspace="2" align="absbottom">当前位置： <span
+                class="red1"><a href="/">首页</a></span> &gt; 家长课堂 &gt; <strong>独生子女父母的教育方式</strong>            </div>
+        <!--列表-->
+        <div class="box2">
+            <div class="title">
+            </div>
+            <div class="body" style="padding-top: 10px;">
+                <div id="cont">
+                    <h1>
+                        独生子女父母的教育方式</h1>
+                    <u>【教员编号：<a href="../thtml/www.html" target="_blank">www</a> 所在学校：海淀某重点小学 更新时间：<span class="yel">2013-1-7 16:50:22</span> 点击数：<span class="green"><script type="text/javascript" src="../other/click.aspx?id=5761"> </script></span>
+                        】</u>
+                    <p>
+                    </p>
+                    <div class="f14 lh20" style="padding-bottom: 10px; padding-top: 10px">
+                        &nbsp;第二代独生子女，简称&ldquo;独二代&rdquo;，如今幼儿园里的孩子基本属于这个群体，他们的喜怒哀乐牵动着一家人的心，也牵动着教育工作者的思考与关注。
+                        <div>　　独二代，由于生长环境和生活环境的特点，尤其是6+1结构的家庭环境特点，他们的身上不可避免地带有一些特殊性。然而，正如一个独生子女所说，按照一些有关&ldquo;独生子女特点&rdquo;文章的说法，仿佛他们一出生就成了&ldquo;罪人&rdquo;，所以，我们这里谈到的第二代独生子女的特点，是就这个群体而言的，而不是针对某个个体。</div>
+                        <div>&nbsp;</div>
+                        <div>　　根据教育工作者的研究发现，独二代儿童的心理特点及教育问题主要有：</div>
+                        <div>&nbsp;</div>
+                        <div>　　一、独立性差。由于家长[北京家教网]，尤其是隔代老人的过度保护，除学习活动之外，孩子在家中几乎没有什么动手机会。尤其对于3岁前的孩子，家长认为宝宝还小呢，理应过着&ldquo;衣来伸手，饭来张口&rdquo;的生活，孰不知这样一来，将严重打击孩子的自信心。</div>
+                        <div>&nbsp;</div>
+                        <div>　　事实上，家长的&ldquo;过度爱护&rdquo;，超出孩子的需要、超出孩子的承受能力，造成孩子事事总得依赖家长，对孩子的发展尤为不利！有个极端的例子：有个5 岁孩子，每天早晨吃的煮鸡蛋都是家长帮他剥了壳的；有一次孩子参加幼儿园春游活动，到了吃饭时间，老师发现他拿着食物在发呆，询问后才知道，孩子不知道怎么剥鸡蛋壳！</div>
+                        <div>&nbsp;</div>
+                        <div>　　这种情况对孩子自信心的损伤是显而易见的：孩子觉得自己离开了大人的照顾，就什么都不会做，无法生活，他们从心里觉得自己能力低下。</div>
+                        <div>&nbsp;</div>
+                        <div>　　心理学家的研究已经证实，自信心是获得工作和学习成功、获得生活幸福的关键因素，所以培养孩子的自信心是家长最该关注的事情，而孩子自信心就是在他完成一件又一件的事情、解决一个又一个的问题的过程中树立的。</div>
+                        <div>&nbsp;</div>
+                        <div>　　家长如果想把自己的孩子培养成有自信的人，就要注意让孩子从小自力更生、自己的事情自己做，让孩子自己穿衣、穿鞋、吃饭等等，而家长不妨做个 &ldquo;懒&rdquo;家长。例如，孩子2岁开始，就让他们自己用勺吃饭，家长不要再那么&ldquo;勤劳&ldquo;地给孩子喂饭了。到了4岁，就让孩子自己练习使用筷子，手巧而心则灵啊。虽然在我们成人看来，吃饭、穿衣都是微不足道的小事情，但对于3岁前的孩子来说，这些就是事关重大的任务。</div>
+                        <div>&nbsp;</div>
+                        <div>　　二、耐受挫折性差。耐受挫折性，就是对挫折的忍受能力。现在我们常常看到媒体报道，有些人因为对挫折的忍受能力差而灰心、抑郁甚至去自杀。这个特征在独一代孩子身上已经显现，现在在独二代身上更加明显。</div>
+                        <div>&nbsp;</div>
+                        <div>　　我在幼儿园遇到这样一件事情：幼儿园中班的一次教育活动，老师提出问题让小朋友讨论、发表自己的看法。很多孩子都举起小手要求回答问题，老师叫了其中一个孩子的名字，突然另一个男孩大叫起来，听课的老师们都很惊愕，而班级老师和其他小朋友似乎对他的表现没有感到意外。原来是因为男孩举了手，而老师没有请他发言，他就大喊大叫起来。课后老师告诉我们，这个孩子一贯如此，拿他已没有办法，因为家长对孩子一味溺爱和迁就。我发现，在教育活动随后的提问中，老师也给了这个孩子发表看法的机会，而他的回答简直文不对题；但是，就是在这种情况下，他也从来不认真听其他小朋友的发言，没有表现出一点儿谦虚好学的精神来。连举手而没被老师叫到名字这样的小小挫折(甚至我们都不能把这个叫挫折)，孩子都不能忍受，我们还能指望他将来能完成什么样的工作呢？</div>
+                        <div>&nbsp;</div>
+                        <div>　　独二代孩子，一般都是在家长的赞美声中成长的，很多家长接受了&ldquo;无批评教育&rdquo;的科学观念，把&ldquo;无批评&rdquo;简单理解为不批评而一味表扬，把&ldquo;宝宝你真棒！&rdquo;挂在口上，即使孩子做错了事情，也无原则地护着孩子，生怕孩子受一点儿委屈。例如，大人说话时，孩子任意打断大人的谈话、随便插嘴，此时有几个家长能认真地对孩子进行必要的礼仪教育？很多家长都是笑眯眯地等着宝宝发表&ldquo;高见&rdquo;，听完之后还不忘赞美几句&ldquo;宝宝说得真好！&rdquo;</div>
+                        <div>&nbsp;</div>
+                        <div>　　无批评教育，其实说的是尊重孩子的特点；因为孩子的经验少、能力有限，他们还处在发展过程中，对于他们所犯的错误，要在尊重他们的基础上给予帮助和纠正。例如在上例中，大人说话时孩子乱插嘴，无批评的做法就是，坚定地告诉孩子：请你等待2分钟，我们把事情说完，再认真听你说话；而不是简单粗暴地说：&ldquo;你这孩子，怎么这么讨厌！&rdquo;&ldquo;大人说话时不要随便打断！&rdquo;</div>
+                        <div>&nbsp;</div>
+                        <div>　　如果孩子做到了安静等待2分钟，之后大人也要履行自己的承诺，认真倾听孩子的谈话；如果孩子做不到，也要告诉他因为他不能安静等待，所以大人要花更多时间来处理自己的事情，也就没办法听他说话。这样做，既尊重了孩子又告诉他正确的做法，才是真正的无批评教育。</div>
+                        <div>&nbsp;</div>
+                        <div>　　三、精神孤独。我们都说，现在的孩子，物质上极为丰富，但精神上更加孤独。由于家庭结构简单，没有兄弟姐妹，缺少同龄伙伴，独二代孩子容易陷入孤独之中。他们从小就习惯与电视、电脑相伴，习惯了自己一个人玩，到了现实生活中，就缺乏与人进行社会交往的基本技能。</div>
+                        <div>&nbsp;</div>
+                        <div>　　现代社会，由于网络技术的发达，使得人们善于在网上沟通、聊天，反而不习惯进行面对面的谈话。例如同在一个宿舍的大学生，到了晚上都在电脑上聊天，哪怕是背靠背坐着，也更愿意选择网上对话，他们说：不习惯面对面的交流。网络拉近了世界，却疏远了同伴。</div>
+                        <div>&nbsp;</div>
+                        <div>　　对于孩子的精神孤独，一方面家长可以多了解孩子的年龄和心理特点，多陪孩子参加他们喜欢的活动，做孩子真正的朋友；另一方面，家长要努力为孩子创造同伴交往的环境，和同龄伙伴的交往会使孩子互相学习、受益良多，家长之间也能互相交流、互取育儿的经验。</div>
+                        <div>&nbsp;</div>
+                        <div>　　四、学习能力强，知识面广，而体育锻炼不足。现在的孩子，由于接触世界的方式更加多种多样，小小年纪就积累了很多自然知识，他们知道哪些是世界未解之迷，他们知道天上、海底的生物特性，然而，过多的知识学习，占用了孩子的户外活动时间；在进行幼儿发展测评时我发现，现在孩子的体能普遍比20年前孩子的体能差。这个问题应该引起家长的充分关注。</div>
+                        <div>&nbsp;</div>
+                        <div>　　我们国家教育的传统方式是，学校教育重智育，而家庭教育重德育；现代社会，由于竞争的激烈，学校和家庭都把重点放在了知识学习上，使得孩子小小年纪就背负了沉重的负担。如最近大家热议的小学生学习奥数的问题，这是此类问题的一个典型代表。先不说内容是否适合孩子学习，就单是知识学习过重、时间过多，就必然占用孩子其他活动的时间。所以有人预测未来人类的样子，是一颗硕大的脑袋加退化的四肢；如此看来，此言真是有道理。 U&quot;J&amp;C:V9{8n8\中国家庭教育网1kTz6czA4M 在孩子3岁以前，家长就应该帮助孩子养成喜欢户外活动、喜欢体育游戏的习惯，爬爬山、游游水，哪怕是在楼下你追我赶地疯跑几圈，都能锻炼孩子的体能。等孩子5、6岁以后，家长就可以帮助孩子选择一项易于坚持的体育活动，打球、游泳、跆拳道或者是舞蹈，让孩子锻炼出一个好身体，以便担当未来繁重的学习、工作任务。</div>
+                        <div>&nbsp;</div>
+                        <div>　　五、自我中心特点显著。独二代儿童，在爷爷奶奶、外公外婆和爸爸妈妈的呵护下，那是绝对的一个中心，众星捧月之势尤为显著。在这样的环境里成长起来的孩子，眼里只有自己没有他人，是再自然不过的。自我中心的特点，可以延伸出自私的特征，事事只考虑自己不考虑他人，不就是自私吗？家长们想想，一个自私的人，能在社会上获得大家的支持吗？</div>
+                        <div>&nbsp;</div>
+                        <div>　　若想培养出不自私的孩子，家长还要在观念上更新一翻，例如，家里买了好吃的东西，不要急急忙忙、首先就塞到2岁孩子的嘴里，而要体现出家中的长幼顺序：老人辛苦一辈子了，第一个给老人；爸爸辛苦承担着养家重担，第二个给爸爸&hellip;&hellip;如果孩子从小是在这种秩序环境中成长的，那么他们就不会事事先考虑自己，而是首先思考规则、遵守规则。</div>
+                        <div>&nbsp;</div>
+                        <div>　　以上说的都是独二代孩子的缺点，当然，这些孩子也有很多突出的优点，比如他们学习能力强，能很快接受新事物；勇于自我表现，不怯场。</div>
+                        <div>由于身处科技快速发展的网络时代，独二代孩子从小就接触各种媒介，计算机和互联网极大地开阔了孩子面的眼界，他们从小就学会从网络上获取丰富多彩的自然知识和社会知识，可以说是小小年纪就见多识广。独二代孩子在智力方面的表现也远好于上一代人，家长常常感慨：现在的孩子比我们小时候聪明多啦！良好的智力基础为他们将来接受高水准的学习奠定了扎实的基础。</div>
+                        <div>&nbsp;</div>
+                        <div>　　与他们的父母相比，独二代孩子在勇于自我表现方面显得非常突出，他们乐于在众人面前展示自己的歌唱、舞蹈、画画等特长，渴望得到大家的赞美和喜爱，可以说，独二代孩子的自我意识发展得更早更强烈。</div>
+                        <div>&nbsp;</div>
+                        <div>　　独二代儿童的心理特点说了这么多，似乎还是负面特点说的多而正面的少；仔细想来，原因在于我们对下一代寄予了很高期望，心里想着他们能把缺点都改正了，所以情不自禁地对负面特点格外关注。当然，独二代儿童的心理特点还有很多，例如他们的敏感、好学，他们的自尊心强等等。</div>
+                        <div>&nbsp;</div>
+                        <div>　　和独一代儿童比较起来，独二代孩子处于一个社会发展更加快速、职业竞争更加激烈的社会，他们身上的担子更加沉重，而独一代父母的养育职责也更加重大！</div>
+                    </div>
+                    <div class="hackbox">
+                    </div>
+                </div>
+                <div class="xg">
+                    <ul><li>下一篇文章： <a title='中学生家庭教育方法   更新：2012-12-21  点击：0' href='../jzkt/5757.html'>中学生家庭教育方法</a></li><li>上一篇文章： <a title='家长该如何预防孩子的网瘾？   更新：2013-04-02  点击：0' href='../jzkt/5777.html'>家长该如何预防孩子的网瘾？</a></li></ul>
+                </div>
+                <div class="box2 box4">
+                    <div class="title" style="">
+                        <h2>
+                            相关文章</h2>
+                    </div>
+                    <div class="body">
+                        <ul class="list">
+                            <li><a title='家长要与孩子共同学习   更新：2011-01-12  点击：0' href='../jzkt/2426.html'>家长要与孩子共同学习</a></li><li><a title='奥数：适量足矣   更新：2012-03-01  点击：0' href='../jzkt/5647.html'>奥数：适量足矣</a></li><li><a title='练习题   更新：2014-02-08  点击：0' href='../jzkt/5847.html'>练习题</a></li><li><a title='在关注孩子学习成绩的同时，一定要注意保护孩子的视力哦！   更新：2012-02-09  点击：0' href='../jzkt/5637.html'>在关注孩子学习成绩的同时，一定要注意保护孩子的视力哦！</a></li><li><a title='中国独轮车运动技术等级标准   更新：2011-01-12  点击：0' href='../jzkt/2424.html'>中国独轮车运动技术等级标准</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="left" style="width: 300px;">
+        <div class="box1">
+            <div class="title">
+                <h2>
+                    <span class="more"><a href="../xxff/xxff.html">» 更多</a></span>学习方法</h2>
+            </div>
+            <div class="body">
+                <ul class="list">
+                    <li><a href="../xxff/5909.html">如何学习数学</a></li> <li><a href="../xxff/5907.html">管乐器为什么必须练长音？</a></li> <li><a href="../xxff/5906.html">教育理解</a></li> <li><a href="../xxff/5904.html">吉他自学支招</a></li> <li><a href="../xxff/5903.html">北京高考成绩6月23日公布 首次采用大平行志愿</a></li> <li><a href="../xxff/5902.html">高中物理</a></li> <li><a href="../xxff/5901.html">数学学习认识</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="box1">
+            <div class="title">
+                <h2>
+                    <span class="more"><a href="../ksjy/ksjy.html">» 更多</a></span>考试经验</h2>
+            </div>
+            <div class="body">
+                <ul class="list">
+                    <li><a href="../ksjy/3156.html">怎样的阅读才是正确的阅读？</a></li> <li><a href="../ksjy/3155.html">有针对性的学习才能考好语文</a></li> <li><a href="../ksjy/3154.html">词语类题型的总结</a></li> <li><a href="../ksjy/3153.html">语文考试技巧</a></li> <li><a href="../ksjy/3149.html">面对考试要主动</a></li> <li><a href="../ksjy/3109.html">把考试的精力放在基础上</a></li> <li><a href="../ksjy/3107.html"> 养成好的解题习惯才能拿高分</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="box1">
+            <div class="title">
+                <h2>
+                    <span class="more"><a href="../jzkt/jzkt.html">» 更多</a></span>家长课堂</h2>
+            </div>
+            <div class="body">
+                <ul class="list">
+                    <li><a href="../jzkt/5900.html">孩子，快乐的高手</a></li> <li><a href="../jzkt/5891.html">《浅谈中考语文复习的有效性》</a></li> <li><a href="../jzkt/5848.html">五年级数学下册练习</a></li> <li><a href="../jzkt/5847.html">练习题</a></li> <li><a href="../jzkt/5808.html">家长和小朋友对学习架子鼓的一些疑惑</a></li> <li><a href="../jzkt/5777.html">家长该如何预防孩子的网瘾？</a></li> <li><a href="../jzkt/5761.html">独生子女父母的教育方式</a></li>
+                </ul>
+            </div>
+        </div>
+        <script type="text/javascript"><!--
+        google_ad_client = "ca-pub-5232248721907840";
+        /* caijj300 */
+        google_ad_slot = "6444256775";
+        google_ad_width = 300;
+        google_ad_height = 250;
+        //-->
+        </script>
+        <script type="text/javascript"
+                src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+        </script>
+    </div>
+</div>
+<div id="footbar" class="w950">
+    <div class="title">
+        <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tr>
+                <td  height="30" valign="middle">
+                    <a href="index.php?m=home&c=index&a=teacher" target="_blank">做家教</a> | <a href="index.php?m=home&c=index&a=order" target="_blank">请家教</a> | <a href="index.php?m=home&c=index&a=Jiaoyuansousuo">教员搜索</a> | <a href="index.php?m=home&c=index&a=Jiaoyuan">教员分类</a> | <a href="index.php?m=home&c=index&a=XuexiFangfa1">学习方法</a> | <a href="index.php?m=home&c=index&a=KaoshiJingyan1">考试经验</a> | <a href="index.php?m=home&c=index&a=JiaZhangketang1">家长课堂</a> | <a href="index.php?m=home&c=index&a=JiajiaoXiangguan1">家教相关</a> | <a href="index.php?m=home&c=index&a=JiaZhangjingyan1">家教经验</a> | <a href=index.php?m=home&c=index&a=GuanYuwomen1>关于我们</a> | <a href="index.php?m=home&c=index&a=Changjianwenti1">常见问题</a> | <a href="index.php?m=home&c=index&a=HuiKuaifangshi1">汇款方式</a> | <a href="index.php?m=home&c=index&a=Lianxiwomen1" target="_blank">联系我们</a> | <a href="index.php?m=home&c=index&a=Zhaopin1"><img src="./public/home/images/zhaopin.gif" align="absmiddle" border="0"></a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="body">
+        联系电话：010-62642730　62643630　客服邮箱：caijjkf@163.com　<br />
+        版权所有：北京尚才家教 【<a href="http://www.caijj.com/" target="_blank">北京家教</a>】　工信部备案号:<a href="http://www.miibeian.gov.cn/" target="_blank">京ICP备09031430号</a><br />
+        家教服务中心：北京市海淀区清华大学东路金码大厦B座18层1809室<br />
+        Powered by www.caijj.com copyright 2009-2015<script src="http://s13.cnzz.com/stat.php?id=2467102&web_id=2467102&show=pic1" language="JavaScript"></script>
+    </div>
+</div>
+</body>
+</html>

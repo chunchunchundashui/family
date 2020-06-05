@@ -1,0 +1,308 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>【家教经验 - 家教经验总结】 - 北京尚才家教</title>
+    <link href="./public/home/css/css.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<script language="JavaScript" type="text/javascript">
+    <!--
+    function AddFavorite(sURL, sTitle)
+    {
+        try
+        {
+            window.external.addFavorite(sURL, sTitle);
+        }
+        catch (e)
+        {
+            try
+            {
+                window.sidebar.addPanel(sTitle, sURL, "");
+            }
+            catch (e)
+            {
+                alert("加入收藏失败，请使用Ctrl+D进行添加");
+            }
+        }
+    }
+    function SetHome(obj,vrl){
+        try{
+            obj.style.behavior='url(#default#homepage)';obj.setHomePage(vrl);
+        }
+        catch(e){
+            if(window.netscape) {
+                try {
+                    netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+                }
+                catch (e) {
+                    alert("此操作被浏览器拒绝！\n请在浏览器地址栏输入“about:config”并回车\n然后将 [signed.applets.codebase_principal_support]的值设置为'true',双击即可。");
+                }
+                var prefs = Components.classes['@mozilla.org/preferences-service;1'].getService(Components.interfaces.nsIPrefBranch);
+                prefs.setCharPref('browser.startup.homepage',vrl);
+            }
+        }
+    }
+    //-->
+</script>
+<script type="text/javascript">
+    //js获取cookie 
+    var acookie=document.cookie.split("; ");
+    function getck(sname)
+    {
+        //获取单个cookies 
+        for(var i=0;i<acookie.length;i++)
+        {
+            var arr=acookie[i].split("=");
+            if(sname==arr[0])
+            {
+                if(arr.length>1)
+                    return unescape(arr[1]);
+                else
+                    return "";
+            }
+        }
+        return "";
+    }
+</script>
+
+<script language="javascript" type="text/javascript">
+    <!--
+    function checkf()
+    {
+        if (document.getElementById("username").value=="")
+        {
+            alert("请输入用户名");
+            document.getElementById("username").focus();
+            return false;
+        }
+        if (document.getElementById("password").value=="")
+        {
+            alert("请输入密码");
+            document.getElementById("password").focus();
+            return false;
+        }
+
+    }
+
+    //-->
+</script>
+
+<form name="form1" method="post" action="index.php?m=home&c=enter" id="form1">
+    <div>
+    </div>
+
+    <div id="topbar" class="color_999">
+        <div class="w950">
+            <div class="right">
+                <a href="#" onclick="SetHome(this,window.location)" class="color_999">设为首页</a>&nbsp;
+                <a href="#" onclick="AddFavorite(window.location,document.title)" class="color_999">
+                    加入收藏</a>&nbsp; <a href="#" class="color_999">帮助中心</a>
+            </div>
+
+            <div class="left" id="wdl">
+                <?php if(!isset($_COOKIE['user'])){ echo '
+                &nbsp;&nbsp; <a href="index.php?m=home&c=index&a=user" class="color_orage text_decoration">注册用户</a>&nbsp;
+                用户名:<input name="username" style="width: 100px;" id="username" type="text">
+                &nbsp;&nbsp;密码:<input name="password" style="width: 100px;" id="password" type="password">
+                &nbsp;<input name="Button1" value="登录" onclick="return CheckForm();" id="Button1" type="submit">
+                <?php ';  } ?>
+                <?php if(isset($_COOKIE['user'])) { echo 'Hello:'.$_COOKIE['user'] ; } ?>
+            </div>
+            &nbsp;&nbsp; <a href="index.php?m=home&c=index&a=teacher" class="color_orage text_decoration">注册教员</a>&nbsp;
+
+            <a href="index.php?m=home&c=index&a=modifier" class="color_orage text_decoration">取回密码</a>
+            <?php if(isset($_COOKIE['user'])){ echo '
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="index.php?m=home&c=index&a=out" class="color_orage text_decoration">退出账号</a>&nbsp;
+            <?php ';  ?>
+            <?php } ?>
+        </div>
+    </div>
+    </div>
+</form>
+<div id="top">
+    <div class="w950">
+
+        <div style="float: right; width:100px; padding-top:25px;">
+            <a target="blank" href=tencent://message/?uin=5886626&Site=尚才家教&Menu=yes><img border="0" SRC='./public/home/images/qq.jpg' alt="QQ咨询"></a>
+        </div>
+        <div style="float: right; padding: 15px 0 0 0;">
+            <img src="./public/home/images/top_bn.gif" alt="尚才家教" />
+        </div>
+        <div id="logo" style="float:left;">
+            <img src="./public/home/images/logo.jpg" alt="尚才家教" />
+        </div>
+    </div>
+</div>
+<div id="menu" class="w950">
+    <ul>
+        <li><a href="index.php?m=home&c=indexLibrary"><span>首页</span></a></li>
+        <li id="lan_1"><a href="index.php?m=home&c=teacher"><span>教员库</span></a></li>
+        <li id="lan_2"><a href="index.php?m=home&c=UserLibrary"><span>学员库</span></a></li>
+        <li id="lan_3"><a href="index.php?m=home&c=star"><span>星级教员</span></a></li>
+        <li id="lan_4"><a href="index.php?m=home&c=major"><span>专业老师</span></a></li>
+        <li id="lan_5"><a href="index.php?m=home&c=university"><span>大学生家教</span></a></li>
+        <li id="lan_6"><a href="index.php?m=home&c=math"><span>奥数家教</span></a></li>
+        <li id="lan_7"><a href="index.php?m=home&c=english"><span>英语家教</span></a></li>
+        <li id="lan_8"><a href="index.php?m=home&c=music"><span>音乐家教</span></a></li>
+        <li id="lan_9"><a href="index.php?m=home&c=index&a=winCase"><span>成功案例</span></a></li>
+        <li id="lan_10"><a href="index.php?m=home&c=index&a=chargeStandard"><span>收费标准</span></a></li>
+    </ul>
+</div>
+
+<div id="main" class="w950">
+    <div class="right" style="width: 640px;">
+        <div class="guide">
+            <img src="./public/home/images/d05.gif" hspace="2" vspace="2" align="absbottom">当前位置： <span
+                class="red1"><a href="/">首页</a></span> &gt; <strong>家教经验</strong>            </div>
+        <!--列表-->
+        <div class="box2">
+            <div class="title">
+                <h2>
+                    家教经验文章列表
+                </h2>
+            </div>
+            <div style="padding-top: 10px;">
+                <ol class="Pline02">
+                    <li><span class="green">2016-06-19</span><a href="../" title="艺术留学考前培训"   target="_blank">艺术留学考前培训</a></li>
+                </ol><ol class="Pline02">
+                <li><span class="green">2015-08-30</span><a href="../jjjy/5905.html" title="怎样成为一名家教高手"   target="_blank">怎样成为一名家教高手</a></li>
+            </ol><ol class="Pline02">
+                <li><span class="green">2015-05-04</span><a href="../jjjy/5898.html" title="三年家教的个人感悟"   target="_blank">三年家教的个人感悟</a></li>
+            </ol><ol class="Pline02">
+                <li><span class="green">2015-02-14</span><a href="../jjjy/5897.html" title="如何面对基础薄弱的学员"   target="_blank">如何面对基础薄弱的学员</a></li>
+            </ol><ol class="Pline02">
+                <li><span class="green">2015-01-15</span><a href="../jjjy/5893.html" title="学有价值的“奥数”"   target="_blank">学有价值的“奥数”</a></li>
+            </ol><ol class="Pline02">
+                <li><span class="green">2015-01-07</span><a href="../jjjy/5890.html" title="对评语评价的几点认识"   target="_blank">对评语评价的几点认识</a></li>
+            </ol><ol class="Pline02">
+                <li><span class="green">2014-12-30</span><a href="../jjjy/5886.html" title="家教在语文学习方面的重要性"   target="_blank">家教在语文学习方面的重要性</a></li>
+            </ol><ol class="Pline02">
+                <li><span class="green">2014-12-30</span><a href="../jjjy/5885.html" title="怎么提高学生对语文的兴趣"   target="_blank">怎么提高学生对语文的兴趣</a></li>
+            </ol><ol class="Pline02">
+                <li><span class="green">2014-12-22</span><a href="../jjjy/5879.html" title="请用红叉判错"   target="_blank">请用红叉判错</a></li>
+            </ol><ol class="Pline02">
+                <li><span class="green">2014-10-30</span><a href="../jjjy/5876.html" title="初中数学辅导方法"   target="_blank">初中数学辅导方法</a></li>
+            </ol><ol class="Pline02">
+                <li><span class="green">2014-09-19</span><a href="../jjjy/5873.html" title="  家教心得《一》"   target="_blank">  家教心得《一》</a></li>
+            </ol><ol class="Pline02">
+                <li><span class="green">2014-05-10</span><a href="../jjjy/5865.html" title="怎样提高学习吉他的演奏水平"   target="_blank">怎样提高学习吉他的演奏水平</a></li>
+            </ol><ol class="Pline02">
+                <li><span class="green">2014-03-11</span><a href="../jjjy/5860.html" title="如何hold住课堂"   target="_blank">如何hold住课堂</a></li>
+            </ol><ol class="Pline02">
+                <li><span class="green">2014-02-27</span><a href="../jjjy/5857.html" title="看图写话五部曲"   target="_blank">看图写话五部曲</a></li>
+            </ol><ol class="Pline02">
+                <li><span class="green">2014-02-21</span><a href="../jjjy/5853.html" title="CV-English Version"   target="_blank">CV-English Version</a></li>
+            </ol><ol class="Pline02">
+                <li><span class="green">2014-02-08</span><a href="../jjjy/5849.html" title="教学案例《让“爱”流进孩子心灵深处》"   target="_blank">教学案例《让“爱”流进孩子心灵深处》</a></li>
+            </ol><ol class="Pline02">
+                <li><span class="green">2014-01-14</span><a href="../jjjy/5846.html" title="讲道理的学问"   target="_blank">讲道理的学问</a></li>
+            </ol><ol class="Pline02">
+                <li><span class="green">2014-01-09</span><a href="../jjjy/5845.html" title="如何教好第一次课"   target="_blank">如何教好第一次课</a></li>
+            </ol><ol class="Pline02">
+                <li><span class="green">2013-10-12</span><a href="../jjjy/5834.html" title="高效数学学习"   target="_blank">高效数学学习</a></li>
+            </ol><ol class="Pline02">
+                <li><span class="green">2013-09-17</span><a href="../jjjy/5830.html" title="海淀杜老师（编号 38975）一对一辅导为您支招之 案  例  分  析"   target="_blank">海淀杜老师（编号 38975）一对一辅导为您支招之 案  例  分  析</a></li>
+            </ol><ol class="Pline02">
+                <li><span class="green">2013-09-17</span><a href="../jjjy/5829.html" title="海淀杜老师（编号 38975）一对一辅导为您支招之 提分才是硬道理"   target="_blank">海淀杜老师（编号 38975）一对一辅导为您支招之 提分才是硬道理</a></li>
+            </ol><ol class="Pline02">
+                <li><span class="green">2013-09-08</span><a href="../jjjy/5824.html" title="高考高分并不难"   target="_blank">高考高分并不难</a></li>
+            </ol><ol class="Pline02">
+                <li><span class="green">2013-08-20</span><a href="../jjjy/5822.html" title="三一口语PPT课件展示（教材：绿色通道三级unit2）"   target="_blank">三一口语PPT课件展示（教材：绿色通道三级unit2）</a></li>
+            </ol><ol class="Pline02">
+                <li><span class="green">2013-08-17</span><a href="../jjjy/5821.html" title="学习中，家长的作用不可小视"   target="_blank">学习中，家长的作用不可小视</a></li>
+            </ol><ol class="Pline02">
+                <li><span class="green">2013-08-17</span><a href="../jjjy/5820.html" title="老师需要学生的配合"   target="_blank">老师需要学生的配合</a></li>
+            </ol><ol class="Pline02">
+                <li><span class="green">2013-08-17</span><a href="../jjjy/5819.html" title="坚持很重要"   target="_blank">坚持很重要</a></li>
+            </ol><ol class="Pline02">
+                <li><span class="green">2013-08-13</span><a href="../jjjy/5814.html" title="高中英语一对一"   target="_blank">高中英语一对一</a></li>
+            </ol><ol class="Pline02">
+                <li><span class="green">2013-08-10</span><a href="../jjjy/5813.html" title="如何指导我们的学生"   target="_blank">如何指导我们的学生</a></li>
+            </ol><ol class="Pline02">
+                <li><span class="green">2013-08-03</span><a href="../jjjy/5811.html" title="如何让孩子第一次见面就喜欢你"   target="_blank">如何让孩子第一次见面就喜欢你</a></li>
+            </ol><ol class="Pline02">
+                <li><span class="green">2013-07-27</span><a href="../jjjy/5810.html" title="家教经历"   target="_blank">家教经历</a></li>
+            </ol>
+                <div class="num">
+                    <table height="25" border="0" align="right" cellpadding="0" cellspacing="0">
+                        <tbody>
+                        <tr>
+                            <td>
+                                <span class='overview'>共<b> <span class='yel'>7 </span></b>页</span><a href="../jjjy/jjjy.html" class="overview">首页</a><a href="../jjjy/jjjy.html" class="hotFont">1</a><a href="../jjjy/jjjy_2.html" class="hotFont_g">2</a><a href="../jjjy/jjjy_3.html" class="hotFont_g">3</a><a href="../jjjy/jjjy_4.html" class="hotFont_g">4</a><a href="../jjjy/jjjy_5.html" class="hotFont_g">5</a><a href="../jjjy/jjjy_6.html" class="hotFont_g">6</a><a href="../jjjy/jjjy_7.html" class="hotFont_g">7</a><a href="../jjjy/jjjy_7.html" class="d-ou">尾页</a>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="left" style="width: 300px;">
+        <div class="box1">
+            <div class="title">
+                <h2>
+                    <span class="more"><a href="../xxff/xxff.html">» 更多</a></span>学习方法</h2>
+            </div>
+            <div class="body">
+                <ul class="list">
+                    <li><a href="../xxff/5909.html">如何学习数学</a></li> <li><a href="../xxff/5907.html">管乐器为什么必须练长音？</a></li> <li><a href="../xxff/5906.html">教育理解</a></li> <li><a href="../xxff/5904.html">吉他自学支招</a></li> <li><a href="../xxff/5903.html">北京高考成绩6月23日公布 首次采用大平行志愿</a></li> <li><a href="../xxff/5902.html">高中物理</a></li> <li><a href="../xxff/5901.html">数学学习认识</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="box1">
+            <div class="title">
+                <h2>
+                    <span class="more"><a href="../ksjy/ksjy.html">» 更多</a></span>考试经验</h2>
+            </div>
+            <div class="body">
+                <ul class="list">
+                    <li><a href="../ksjy/3156.html">怎样的阅读才是正确的阅读？</a></li> <li><a href="../ksjy/3155.html">有针对性的学习才能考好语文</a></li> <li><a href="../ksjy/3154.html">词语类题型的总结</a></li> <li><a href="../ksjy/3153.html">语文考试技巧</a></li> <li><a href="../ksjy/3149.html">面对考试要主动</a></li> <li><a href="../ksjy/3109.html">把考试的精力放在基础上</a></li> <li><a href="../ksjy/3107.html"> 养成好的解题习惯才能拿高分</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="box1">
+            <div class="title">
+                <h2>
+                    <span class="more"><a href="../jzkt/jzkt.html">» 更多</a></span>家长课堂</h2>
+            </div>
+            <div class="body">
+                <ul class="list">
+                    <li><a href="../jzkt/5900.html">孩子，快乐的高手</a></li> <li><a href="../jzkt/5891.html">《浅谈中考语文复习的有效性》</a></li> <li><a href="../jzkt/5848.html">五年级数学下册练习</a></li> <li><a href="../jzkt/5847.html">练习题</a></li> <li><a href="../jzkt/5808.html">家长和小朋友对学习架子鼓的一些疑惑</a></li> <li><a href="../jzkt/5777.html">家长该如何预防孩子的网瘾？</a></li> <li><a href="../jzkt/5761.html">独生子女父母的教育方式</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="footbar" class="w950">
+    <div class="title">
+
+        <table align="center" border="0" cellpadding="0" cellspacing="0" height="30" width="100%">
+            <tbody><tr>
+                <td align="center">
+                    <a href="index.php?m=home&c=index&a=teacher" target="_blank">做家教</a> | <a href="index.php?m=home&c=index&a=order" target="_blank">请家教</a> | <a href="index.php?m=home&c=index&a=Jiaoyuansousuo">教员搜索</a> | <a href="index.php?m=home&c=index&a=Jiaoyuan">教员分类</a> | <a href="index.php?m=home&c=index&a=XuexiFangfa1">学习方法</a> | <a href="index.php?m=home&c=index&a=KaoshiJingyan1">考试经验</a> | <a href="index.php?m=home&c=index&a=JiaZhangketang1">家长课堂</a> | <a href="index.php?m=home&c=index&a=JiajiaoXiangguan1">家教相关</a> | <a href="index.php?m=home&c=index&a=JiaZhangjingyan1">家教经验</a> | <a href=index.php?m=home&c=index&a=GuanYuwomen1>关于我们</a> | <a href="index.php?m=home&c=index&a=Changjianwenti1">常见问题</a> | <a href="index.php?m=home&c=index&a=HuiKuaifangshi1">汇款方式</a> | <a href="index.php?m=home&c=index&a=Lianxiwomen1" target="_blank">联系我们</a> | <a href="index.php?m=home&c=index&a=Zhaopin1"><img src="./public/home/images/zhaopin.gif" align="absmiddle" border="0"></a>
+                </td>
+            </tr>
+            </tbody></table>
+
+    </div>
+    <div class="body">
+        <table align="center">
+            <tbody><tr>
+                <td rowspan="3"><div align="right"><img src="./public/home/images/gs.gif" height="57" width="44"></div></td>
+                <td width="">联系电话：010-62642730 62643630 客服邮箱：caijjkf@163.com </td>
+            </tr>
+            <tr>
+                <td>公安备案：京公网安备110108008199号  工信部备案:<a href="#" target="_blank">京ICP备09031430号</a></td>
+            </tr>
+            <tr>
+                <td>家教服务中心：北京市海淀区清华大学南门华清嘉园8号楼304室</td>
+            </tr>
+            </tbody></table>
+        版权：北京尚才家教 【<a href="#" target="_blank">北京家教</a>】2009-2012
+
+        <a href="#" target="_blank" title="站长统计"><img src="./public/home/images/pic1.gif" border="0" hspace="0" vspace="0"></a><img src="./public/home/images/stat.gif" border="0" height="0" width="0">
+    </div>
+</div>
+</body>
+</html>

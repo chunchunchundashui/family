@@ -1,0 +1,268 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>【中学生家庭教育方法】 - 北京尚才家教</title>
+    <link href="./public/home/css/css.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<script language="JavaScript" type="text/javascript">
+    <!--
+    function AddFavorite(sURL, sTitle)
+    {
+        try
+        {
+            window.external.addFavorite(sURL, sTitle);
+        }
+        catch (e)
+        {
+            try
+            {
+                window.sidebar.addPanel(sTitle, sURL, "");
+            }
+            catch (e)
+            {
+                alert("加入收藏失败，请使用Ctrl+D进行添加");
+            }
+        }
+    }
+    function SetHome(obj,vrl){
+        try{
+            obj.style.behavior='url(#default#homepage)';obj.setHomePage(vrl);
+        }
+        catch(e){
+            if(window.netscape) {
+                try {
+                    netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+                }
+                catch (e) {
+                    alert("此操作被浏览器拒绝！\n请在浏览器地址栏输入“about:config”并回车\n然后将 [signed.applets.codebase_principal_support]的值设置为'true',双击即可。");
+                }
+                var prefs = Components.classes['@mozilla.org/preferences-service;1'].getService(Components.interfaces.nsIPrefBranch);
+                prefs.setCharPref('browser.startup.homepage',vrl);
+            }
+        }
+    }
+    //-->
+</script>
+<script type="text/javascript">
+    //js获取cookie 
+    var acookie=document.cookie.split("; ");
+    function getck(sname)
+    {
+        //获取单个cookies 
+        for(var i=0;i<acookie.length;i++)
+        {
+            var arr=acookie[i].split("=");
+            if(sname==arr[0])
+            {
+                if(arr.length>1)
+                    return unescape(arr[1]);
+                else
+                    return "";
+            }
+        }
+        return "";
+    }
+</script>
+
+<script language="javascript" type="text/javascript">
+    <!--
+    function checkf()
+    {
+        if (document.getElementById("username").value=="")
+        {
+            alert("请输入用户名");
+            document.getElementById("username").focus();
+            return false;
+        }
+        if (document.getElementById("password").value=="")
+        {
+            alert("请输入密码");
+            document.getElementById("password").focus();
+            return false;
+        }
+
+    }
+
+    //-->
+</script>
+
+<form name="form1" method="post" action="index.php?m=home&c=enter" id="form1">
+    <div>
+    </div>
+
+    <div id="topbar" class="color_999">
+        <div class="w950">
+            <div class="right">
+                <a href="#" onclick="SetHome(this,window.location)" class="color_999">设为首页</a>&nbsp;
+                <a href="#" onclick="AddFavorite(window.location,document.title)" class="color_999">
+                    加入收藏</a>&nbsp; <a href="#" class="color_999">帮助中心</a>
+            </div>
+
+            <div class="left" id="wdl">
+                <?php if(!isset($_COOKIE['user'])){ echo '
+                &nbsp;&nbsp; <a href="index.php?m=home&c=index&a=user" class="color_orage text_decoration">注册用户</a>&nbsp;
+                用户名:<input name="username" style="width: 100px;" id="username" type="text">
+                &nbsp;&nbsp;密码:<input name="password" style="width: 100px;" id="password" type="password">
+                &nbsp;<input name="Button1" value="登录" onclick="return CheckForm();" id="Button1" type="submit">
+                <?php ';  } ?>
+                <?php if(isset($_COOKIE['user'])) { echo 'Hello:'.$_COOKIE['user'] ; } ?>
+            </div>
+            &nbsp;&nbsp; <a href="index.php?m=home&c=index&a=teacher" class="color_orage text_decoration">注册教员</a>&nbsp;
+
+            <a href="index.php?m=home&c=index&a=modifier" class="color_orage text_decoration">取回密码</a>
+            <?php if(isset($_COOKIE['user'])){ echo '
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="index.php?m=home&c=index&a=out" class="color_orage text_decoration">退出账号</a>&nbsp;
+            <?php ';  ?>
+            <?php } ?>
+        </div>
+    </div>
+    </div>
+</form>
+<div id="top">
+    <div class="w950">
+
+        <div style="float: right; width:100px; padding-top:25px;">
+            <a target="blank" href=tencent://message/?uin=5886626&Site=尚才家教&Menu=yes><img border="0" SRC='./public/home/images/qq.jpg' alt="QQ咨询"></a>
+        </div>
+        <div style="float: right; padding: 15px 0 0 0;">
+            <img src="./public/home/images/top_bn.gif" alt="尚才家教" />
+        </div>
+        <div id="logo" style="float:left;">
+            <img src="./public/home/images/logo.jpg" alt="尚才家教" />
+        </div>
+    </div>
+</div>
+<div id="menu" class="w950">
+    <ul>
+        <li><a href="index.php?m=home&c=indexLibrary"><span>首页</span></a></li>
+        <li id="lan_1"><a href="index.php?m=home&c=teacher"><span>教员库</span></a></li>
+        <li id="lan_2"><a href="index.php?m=home&c=UserLibrary"><span>学员库</span></a></li>
+        <li id="lan_3"><a href="index.php?m=home&c=star"><span>星级教员</span></a></li>
+        <li id="lan_4"><a href="index.php?m=home&c=major"><span>专业老师</span></a></li>
+        <li id="lan_5"><a href="index.php?m=home&c=university"><span>大学生家教</span></a></li>
+        <li id="lan_6"><a href="index.php?m=home&c=math"><span>奥数家教</span></a></li>
+        <li id="lan_7"><a href="index.php?m=home&c=english"><span>英语家教</span></a></li>
+        <li id="lan_8"><a href="index.php?m=home&c=music"><span>音乐家教</span></a></li>
+        <li id="lan_9"><a href="index.php?m=home&c=index&a=winCase"><span>成功案例</span></a></li>
+        <li id="lan_10"><a href="index.php?m=home&c=index&a=chargeStandard"><span>收费标准</span></a></li>
+    </ul>
+</div>
+
+<div id="main" class="w950">
+    <div class="right" style="width: 640px;">
+        <div class="guide">
+            <img src="./public/home/images/d05.gif" hspace="2" vspace="2" align="absbottom">当前位置： <span
+                class="red1"><a href="/">首页</a></span> &gt; 家长课堂 &gt; <strong>中学生家庭教育方法</strong>            </div>
+        <!--列表-->
+        <div class="box2">
+            <div class="title">
+            </div>
+            <div class="body" style="padding-top: 10px;">
+                <div id="cont">
+                    <h1>
+                        中学生家庭教育方法</h1>
+                    <u>【教员编号：<a href="../thtml/www.html" target="_blank">www</a> 所在学校：北京理工大学 更新时间：<span class="yel">2012-12-21 18:51:14</span> 点击数：<span class="green"><script type="text/javascript" src="../other/click.aspx?id=5757"> </script></span>
+                        】</u>
+                    <p>
+                    </p>
+                    <div class="f14 lh20" style="padding-bottom: 10px; padding-top: 10px">
+                        <p>一、思想引导法。中学生已经基本脱掉小学生的稚气，但又不像成年人那样思想成熟，他们精力充沛、求知欲强、上进心强;同时，由于思想发展未定型，有很大的可塑性。因此，家庭在对孩子进行教育时，要紧密联系孩子的思想，从意志品德、遵纪守法等方面进行引导式教育。坚持不懈地向孩子灌输知识就是力量的观点，叫响&ldquo;学生不学习不算尽责任，学习学不好，不算好学生&rdquo;的口号。引导教育不可一味关在家中讲道理。要善于搞好&ldquo;结合&rdquo;、&ldquo;渗透&rdquo;，把家庭引导结合渗透到学校开展的各项活动中去，针对孩子的学习任务、现实思想、生理健康等特点，见缝插针地进行引导，有的放矢做工作。<br />
+                            &nbsp;</p>
+                        <p>二、目标鼓励法。学习中目标鼓励，就是根据&ldquo;水涨船高&rdquo;的道理，帮助孩子设计学习目标，来激发积极性，使孩子不断向更高的知识高峰攀登。大量事实证明，印实可行的学习计划目标可以催人向上。因此，家长要根据孩子思想素质、文化基础、承受能力，制定切合实际的学习目标。为孩子制定的目标，既要坚持高标准严要求，又要通过努力可以达到;既要有年度目标，又有月、周短期目标。在明确整体目标同时，还要分科目制定逐日完成的小目标，依次实现和突破，不断&ldquo;添油&rdquo;、鼓励，使孩子像上楼梯一样，一步高一步。为使孩子目标装在胸中.家长可制作成绩―览表，利用《学校和家长联系本》，将孩子每次考试、测验成绩，直观地用曲线反映在坐标上，使孩子、家长一目了然。对完不成指标的科目，家长（清华家教中心）要及时进行补课，或找人帮助。<br />
+                            &nbsp;</p>
+                        <p>三、形象感召法。教育实践证明：&ldquo;喊破嗓子，不如做好样子制定切合实际的学习目标。为孩子制定的目标，既要坚持高标准严要求，又要通过努力可以达到;既要有年度目标，又有月、周短期目标。在明确整体目标同时，还要分科目制定逐日完成的小目标，依次实现和突破，不断&ldquo;添油&rdquo;、鼓励，使孩子像上楼梯一样，一步高一步。为使孩子目标装在胸中.家长可制作成绩―览表，利用《学校和家长联系本》，将孩子每次考试、测验成绩，直观地用曲线反映在坐标上，使孩子、家长一目了然。对完不成指标的科目，家长要及时进行补课，或找人帮助。教育实践&rdquo;。很多孩子品学兼优、诚实勤劳、文明礼貌，固然是学校、社会教育的结果，但更重要的是良好的家庭教育，家长的表率作用，对孩子健康成长有着强烈的感召力。因此.只要家长强化&ldquo;为国教子&rdquo;的意识.努力工作学习，不断提高自身素质，为孩子做出样子，就一定能够带出你所理想的孩子来。<br />
+                            &nbsp;</p>
+                        <p>四、谈心疏导法。熟话说&ldquo;知子莫如父&rdquo;。家长要针对孩子在不同时机、不同原因中暴露出的心理、思想问题，及时进行谈心疏导。在日常生活中家长要做到&ldquo;三勤&rdquo;，即勤了解孩子在学习中的思想反映;勤观察孩子在学习中的精神状态;勤谈心及时疏导孩子的思想疙瘩。对因阶段性身体素质差，学习跟不上的，要多鼓励少指责，帮助其&ldquo;赶队&rdquo;;对因对学习科目不感兴趣产生厌烦情绪的，要勤敲打多引导，帮助增强兴趣;对因考试成绩不理想而泄气的，要心平气和地帮助其分析原因，找准症结，鼓励士气;对因在校和同学老师发生口角，影响学习劲头的，要耐心开导，热情帮助化解。另外，家长在与孩子谈心时，不但要告诉孩子&ldquo;怎样做&rdquo;，而且要让孩子明白为什么&ldquo;这样做&rdquo;，从道理上说服孩子，在谈心的方式上也应该选择合适场合，这样才能起到更好效果。<br />
+                            &nbsp;</p>
+                        <p>五、奖惩激励法。在思想教育的前提下，运用奖励、批评手段，也是调动学生积极性的一种有效方法。奖励要以精神奖励为主，物质为辅。如孩：广考试成绩突出，在学校奖励的基础上，家长可口头表扬，还可以向亲友通报，扩大赞扬范围，也可以优先购买学习用品、日用品，还可以逛公园、打游戏机(家用)、看电影等。对学习不认真，考试成绩较差时，要严厉批评，该处罚的一定处罚。使孩子始终都有一种学习压力，切实改变&ldquo;学好学坏一个样，学与不学一个样，学多学少一个样&rdquo;的现象，创造好学上进的光荣风尚。<br />
+                            &nbsp;</p>
+                        <p>六、生活调节法。身强力壮，精神饱满是搞好学习的基础条件。家长要讲究科学方法，调节好孩子生活，让孩子在有限的条件下吃好玩好，创造有利发挥智力效益的环境。家长要利用节假日、工作学习间隙，多组、织开展家庭文体比赛、故事会、知识竞赛、远足郊游活动，调节孩子生活。同时还要根据孩子生理承受能力，科学安排学习，做到有张有弛，劳逸结合，保证孩子以饱满的热情、旺盛的精力投入到学习中去。</p>
+                    </div>
+                    <div class="hackbox">
+                    </div>
+                </div>
+                <div class="xg">
+                    <ul><li>下一篇文章： <a title='让中学生成才的45条建议   更新：2012-12-21  点击：0' href='../jzkt/5756.html'>让中学生成才的45条建议</a></li><li>上一篇文章： <a title='独生子女父母的教育方式   更新：2013-01-07  点击：0' href='../jzkt/5761.html'>独生子女父母的教育方式</a></li></ul>
+                </div>
+                <div class="box2 box4">
+                    <div class="title" style="">
+                        <h2>
+                            相关文章</h2>
+                    </div>
+                    <div class="body">
+                        <ul class="list">
+                            <li><a title='让孩子懂得学习的重要性   更新：2011-07-01  点击：8' href='../jzkt/2896.html'>让孩子懂得学习的重要性</a></li><li><a title='用心教育   更新：2012-07-03  点击：0' href='../jzkt/5716.html'>用心教育</a></li><li><a title='独生子女父母的教育方式   更新：2013-01-07  点击：0' href='../jzkt/5761.html'>独生子女父母的教育方式</a></li><li><a title='罗森塔尔效应的启示---要对孩子进行鼓励和赞美   更新：2011-12-16  点击：0' href='../jzkt/5615.html'>罗森塔尔效应的启示---要对孩子进行鼓励和赞美</a></li><li><a title='中学生家庭教育方法   更新：2012-12-21  点击：0' href='../jzkt/5757.html'>中学生家庭教育方法</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="left" style="width: 300px;">
+        <div class="box1">
+            <div class="title">
+                <h2>
+                    <span class="more"><a href="../xxff/xxff.html">» 更多</a></span>学习方法</h2>
+            </div>
+            <div class="body">
+                <ul class="list">
+                    <li><a href="../xxff/5909.html">如何学习数学</a></li> <li><a href="../xxff/5907.html">管乐器为什么必须练长音？</a></li> <li><a href="../xxff/5906.html">教育理解</a></li> <li><a href="../xxff/5904.html">吉他自学支招</a></li> <li><a href="../xxff/5903.html">北京高考成绩6月23日公布 首次采用大平行志愿</a></li> <li><a href="../xxff/5902.html">高中物理</a></li> <li><a href="../xxff/5901.html">数学学习认识</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="box1">
+            <div class="title">
+                <h2>
+                    <span class="more"><a href="../ksjy/ksjy.html">» 更多</a></span>考试经验</h2>
+            </div>
+            <div class="body">
+                <ul class="list">
+                    <li><a href="../ksjy/3156.html">怎样的阅读才是正确的阅读？</a></li> <li><a href="../ksjy/3155.html">有针对性的学习才能考好语文</a></li> <li><a href="../ksjy/3154.html">词语类题型的总结</a></li> <li><a href="../ksjy/3153.html">语文考试技巧</a></li> <li><a href="../ksjy/3149.html">面对考试要主动</a></li> <li><a href="../ksjy/3109.html">把考试的精力放在基础上</a></li> <li><a href="../ksjy/3107.html"> 养成好的解题习惯才能拿高分</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="box1">
+            <div class="title">
+                <h2>
+                    <span class="more"><a href="../jzkt/jzkt.html">» 更多</a></span>家长课堂</h2>
+            </div>
+            <div class="body">
+                <ul class="list">
+                    <li><a href="../jzkt/5900.html">孩子，快乐的高手</a></li> <li><a href="../jzkt/5891.html">《浅谈中考语文复习的有效性》</a></li> <li><a href="../jzkt/5848.html">五年级数学下册练习</a></li> <li><a href="../jzkt/5847.html">练习题</a></li> <li><a href="../jzkt/5808.html">家长和小朋友对学习架子鼓的一些疑惑</a></li> <li><a href="../jzkt/5777.html">家长该如何预防孩子的网瘾？</a></li> <li><a href="../jzkt/5761.html">独生子女父母的教育方式</a></li>
+                </ul>
+            </div>
+        </div>
+        <script type="text/javascript"><!--
+        google_ad_client = "ca-pub-5232248721907840";
+        /* caijj300 */
+        google_ad_slot = "6444256775";
+        google_ad_width = 300;
+        google_ad_height = 250;
+        //-->
+        </script>
+        <script type="text/javascript"
+                src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+        </script>
+    </div>
+</div>
+<div id="footbar" class="w950">
+    <div class="title">
+        <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tr>
+                <td  height="30" valign="middle">
+                    <a href="index.php?m=home&c=index&a=teacher" target="_blank">做家教</a> | <a href="index.php?m=home&c=index&a=order" target="_blank">请家教</a> | <a href="index.php?m=home&c=index&a=Jiaoyuansousuo">教员搜索</a> | <a href="index.php?m=home&c=index&a=Jiaoyuan">教员分类</a> | <a href="index.php?m=home&c=index&a=XuexiFangfa1">学习方法</a> | <a href="index.php?m=home&c=index&a=KaoshiJingyan1">考试经验</a> | <a href="index.php?m=home&c=index&a=JiaZhangketang1">家长课堂</a> | <a href="index.php?m=home&c=index&a=JiajiaoXiangguan1">家教相关</a> | <a href="index.php?m=home&c=index&a=JiaZhangjingyan1">家教经验</a> | <a href=index.php?m=home&c=index&a=GuanYuwomen1>关于我们</a> | <a href="index.php?m=home&c=index&a=Changjianwenti1">常见问题</a> | <a href="index.php?m=home&c=index&a=HuiKuaifangshi1">汇款方式</a> | <a href="index.php?m=home&c=index&a=Lianxiwomen1" target="_blank">联系我们</a> | <a href="index.php?m=home&c=index&a=Zhaopin1"><img src="./public/home/images/zhaopin.gif" align="absmiddle" border="0"></a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="body">
+        联系电话：010-62642730　62643630　客服邮箱：caijjkf@163.com　<br />
+        版权所有：北京尚才家教 【<a href="http://www.caijj.com/" target="_blank">北京家教</a>】　工信部备案号:<a href="http://www.miibeian.gov.cn/" target="_blank">京ICP备09031430号</a><br />
+        家教服务中心：北京市海淀区清华大学东路金码大厦B座18层1809室<br />
+        Powered by www.caijj.com copyright 2009-2015<script src="http://s13.cnzz.com/stat.php?id=2467102&web_id=2467102&show=pic1" language="JavaScript"></script>
+    </div>
+</div>
+</body>
+</html>

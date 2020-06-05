@@ -1,0 +1,136 @@
+/*公共*/
+*{
+	margin: 0px;
+	padding: 0px;
+}
+a{
+	text-decoration: none;
+}
+ul li{
+	list-style: none;
+}
+.cle{
+	clear: both;
+}
+/*页眉部分*/
+#header{
+	width: 100%;
+	min-width: 1180px;
+	height: 248px;
+	background: #E4F5FF;
+}
+.header_box{
+	width: 100%;
+	height: 120px;
+}
+.scxh_logo{
+	margin-left: 30px;
+	width: 343px;
+	height: 120px;
+	background: url(../img/logob.png);
+	display: inline-block;
+	float: left;
+}
+.msg{
+	line-height: 30px;
+	margin-top: 60px;
+	width: 300px;
+	height: 30px;
+	display: inline-block;
+	float: left;
+	font-family: 宋体;
+	font-weight: bold;
+}
+#time_dsq{
+	color: #FF4500;
+	display: inline-block;
+}
+.header_title{
+	width: 100%;
+}
+.big_title{
+	width: 344px;
+	height: 40px;
+	margin: 10px auto 0px auto;
+	font-family:宋体;
+	font-size: 28px;
+	font-weight: bold;
+}
+.subject_title{
+	width: 288px;
+	height: 20px;
+	margin: 0px auto;
+	font-family:宋体;
+	font-size: 16px;
+	font-weight: bold;
+}
+.subject{
+	display: inline-block;
+}
+.feihua{
+	width: 200px;
+	margin: 0px auto;
+}
+/*页面主体*/
+body{
+		background: url(../img/IMG_4710.JPG) no-repeat;
+}
+
+.main{
+	width: 700px;
+	height: 500px;
+	border: 1px solid cornflowerblue;
+	background: lightblue;
+	margin: 0px auto;
+	left: 600px;
+	top: 15px;
+}
+.main_top{
+	width: 700px;
+	height: 100px;
+	background: rgba(67,126,182,0.5);
+}
+.main_top h1{
+	line-height: 100px;
+	float: left;
+	color: white;
+	margin-left: 10px;
+}
+.main_logo{
+	width: 39px;
+	height: 39px;
+	background: url(../img/2019-04-10_105127.png) no-repeat;
+	float: left;
+	margin-top: 30px;
+	margin-left: 35px;
+}
+.main_zhong{
+	font-size: 50px;
+	color: #938E94;
+	text-align: center;
+}
+.main_bottom{
+	width: 250px;
+	height: 250px;
+	background: url(../img/微信图片_20190410205322.jpg) no-repeat;
+	margin: 30px 230px 0px;
+}
+/*页尾部分*/
+#footer{
+	margin-top: 22px;
+	width: 100%;
+	height: 150px;
+	background: #014A88;
+}
+.Copyright_box{
+	padding-top:60px ;
+	margin: 0px auto;
+	width: 400px;
+}
+#footer p{
+	text-align: center;
+	color: #ffffff;
+	padding-top: 10px;
+	font-family: 微软雅黑;
+	font-size: 13px;
+}

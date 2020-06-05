@@ -1,0 +1,623 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>【教育理解】 - 北京尚才家教</title>
+    <link href="./public/home/css/css.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<script language="JavaScript" type="text/javascript">
+    <!--
+    function AddFavorite(sURL, sTitle)
+    {
+        try
+        {
+            window.external.addFavorite(sURL, sTitle);
+        }
+        catch (e)
+        {
+            try
+            {
+                window.sidebar.addPanel(sTitle, sURL, "");
+            }
+            catch (e)
+            {
+                alert("加入收藏失败，请使用Ctrl+D进行添加");
+            }
+        }
+    }
+    function SetHome(obj,vrl){
+        try{
+            obj.style.behavior='url(#default#homepage)';obj.setHomePage(vrl);
+        }
+        catch(e){
+            if(window.netscape) {
+                try {
+                    netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+                }
+                catch (e) {
+                    alert("此操作被浏览器拒绝！\n请在浏览器地址栏输入“about:config”并回车\n然后将 [signed.applets.codebase_principal_support]的值设置为'true',双击即可。");
+                }
+                var prefs = Components.classes['@mozilla.org/preferences-service;1'].getService(Components.interfaces.nsIPrefBranch);
+                prefs.setCharPref('browser.startup.homepage',vrl);
+            }
+        }
+    }
+    //-->
+</script>
+<script type="text/javascript">
+    //js获取cookie 
+    var acookie=document.cookie.split("; ");
+    function getck(sname)
+    {
+        //获取单个cookies 
+        for(var i=0;i<acookie.length;i++)
+        {
+            var arr=acookie[i].split("=");
+            if(sname==arr[0])
+            {
+                if(arr.length>1)
+                    return unescape(arr[1]);
+                else
+                    return "";
+            }
+        }
+        return "";
+    }
+</script>
+
+<script language="javascript" type="text/javascript">
+    <!--
+    function checkf()
+    {
+        if (document.getElementById("username").value=="")
+        {
+            alert("请输入用户名");
+            document.getElementById("username").focus();
+            return false;
+        }
+        if (document.getElementById("password").value=="")
+        {
+            alert("请输入密码");
+            document.getElementById("password").focus();
+            return false;
+        }
+
+    }
+
+    //-->
+</script>
+
+<form name="form1" method="post" action="index.php?m=home&c=enter" id="form1">
+    <div>
+    </div>
+
+    <div id="topbar" class="color_999">
+        <div class="w950">
+            <div class="right">
+                <a href="#" onclick="SetHome(this,window.location)" class="color_999">设为首页</a>&nbsp;
+                <a href="#" onclick="AddFavorite(window.location,document.title)" class="color_999">
+                    加入收藏</a>&nbsp; <a href="#" class="color_999">帮助中心</a>
+            </div>
+
+            <div class="left" id="wdl">
+                <?php if(!isset($_COOKIE['user'])){ echo '
+                &nbsp;&nbsp; <a href="index.php?m=home&c=index&a=user" class="color_orage text_decoration">注册用户</a>&nbsp;
+                用户名:<input name="username" style="width: 100px;" id="username" type="text">
+                &nbsp;&nbsp;密码:<input name="password" style="width: 100px;" id="password" type="password">
+                &nbsp;<input name="Button1" value="登录" onclick="return CheckForm();" id="Button1" type="submit">
+                <?php ';  } ?>
+                <?php if(isset($_COOKIE['user'])) { echo 'Hello:'.$_COOKIE['user'] ; } ?>
+            </div>
+            &nbsp;&nbsp; <a href="index.php?m=home&c=index&a=teacher" class="color_orage text_decoration">注册教员</a>&nbsp;
+
+            <a href="index.php?m=home&c=index&a=modifier" class="color_orage text_decoration">取回密码</a>
+            <?php if(isset($_COOKIE['user'])){ echo '
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="index.php?m=home&c=index&a=out" class="color_orage text_decoration">退出账号</a>&nbsp;
+            <?php ';  ?>
+            <?php } ?>
+        </div>
+    </div>
+    </div>
+</form>
+<div id="top">
+    <div class="w950">
+
+        <div style="float: right; width:100px; padding-top:25px;">
+            <a target="blank" href=tencent://message/?uin=5886626&Site=尚才家教&Menu=yes><img border="0" SRC='./public/home/images/qq.jpg' alt="QQ咨询"></a>
+        </div>
+        <div style="float: right; padding: 15px 0 0 0;">
+            <img src="./public/home/images/top_bn.gif" alt="尚才家教" />
+        </div>
+        <div id="logo" style="float:left;">
+            <img src="./public/home/images/logo.jpg" alt="尚才家教" />
+        </div>
+    </div>
+</div>
+<div id="menu" class="w950">
+    <ul>
+        <li><a href="index.php?m=home&c=indexLibrary"><span>首页</span></a></li>
+        <li id="lan_1"><a href="index.php?m=home&c=teacher"><span>教员库</span></a></li>
+        <li id="lan_2"><a href="index.php?m=home&c=UserLibrary"><span>学员库</span></a></li>
+        <li id="lan_3"><a href="index.php?m=home&c=star"><span>星级教员</span></a></li>
+        <li id="lan_4"><a href="index.php?m=home&c=major"><span>专业老师</span></a></li>
+        <li id="lan_5"><a href="index.php?m=home&c=university"><span>大学生家教</span></a></li>
+        <li id="lan_6"><a href="index.php?m=home&c=math"><span>奥数家教</span></a></li>
+        <li id="lan_7"><a href="index.php?m=home&c=english"><span>英语家教</span></a></li>
+        <li id="lan_8"><a href="index.php?m=home&c=music"><span>音乐家教</span></a></li>
+        <li id="lan_9"><a href="index.php?m=home&c=index&a=winCase"><span>成功案例</span></a></li>
+        <li id="lan_10"><a href="index.php?m=home&c=index&a=chargeStandard"><span>收费标准</span></a></li>
+    </ul>
+</div>
+
+<div id="main" class="w950">
+    <div class="right" style="width: 640px;">
+        <div class="guide">
+            <img src="./public/home/images/d05.gif" hspace="2" vspace="2" align="absbottom">当前位置： <span
+                class="red1"><a href="/">首页</a></span> &gt; 学习方法 &gt; <strong>教育理解</strong>            </div>
+        <!--列表-->
+        <div class="box2">
+            <div class="title">
+            </div>
+            <div class="body" style="padding-top: 10px;">
+                <div id="cont">
+                    <h1>
+                        教育理解</h1>
+                    <u>【教员编号：<a href="../thtml/49335.html" target="_blank">49335</a> 所在学校：首都经济贸易大学 更新时间：<span class="yel">2015-8-30 16:04:23</span> 点击数：<span class="green"><script type="text/javascript" src="../other/click.aspx?id=5906"> </script></span>
+                        】</u>
+                    <p>
+                    </p>
+                    <div class="f14 lh20" style="padding-bottom: 10px; padding-top: 10px">
+                        <!--[if gte mso 9]><xml>
+                        <o:OfficeDocumentSettings>
+                            <o:AllowPNG/>
+                        </o:OfficeDocumentSettings>
+                    </xml><![endif]-->  <!--[if gte mso 9]><xml>
+                        <w:WordDocument>
+                            <w:View>Normal</w:View>
+                            <w:Zoom>0</w:Zoom>
+                            <w:TrackMoves/>
+                            <w:TrackFormatting/>
+                            <w:PunctuationKerning/>
+                            <w:DrawingGridVerticalSpacing>10 pt</w:DrawingGridVerticalSpacing>
+                            <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+                            <w:DisplayVerticalDrawingGridEvery>2</w:DisplayVerticalDrawingGridEvery>
+                            <w:ValidateAgainstSchemas/>
+                            <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+                            <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+                            <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+                            <w:DoNotPromoteQF/>
+                            <w:LidThemeOther>EN-US</w:LidThemeOther>
+                            <w:LidThemeAsian>ZH-CN</w:LidThemeAsian>
+                            <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+                            <w:Compatibility>
+                                <w:SpaceForUL/>
+                                <w:BalanceSingleByteDoubleByteWidth/>
+                                <w:DoNotLeaveBackslashAlone/>
+                                <w:ULTrailSpace/>
+                                <w:DoNotExpandShiftReturn/>
+                                <w:AdjustLineHeightInTable/>
+                                <w:BreakWrappedTables/>
+                                <w:SnapToGridInCell/>
+                                <w:WrapTextWithPunct/>
+                                <w:UseAsianBreakRules/>
+                                <w:DontGrowAutofit/>
+                                <w:SplitPgBreakAndParaMark/>
+                                <w:EnableOpenTypeKerning/>
+                                <w:DontFlipMirrorIndents/>
+                                <w:OverrideTableStyleHps/>
+                                <w:UseFELayout/>
+                            </w:Compatibility>
+                            <w:NoLineBreaksAfter Lang="JA">$([{￡￥·‘“〈《「『【〔〖〝﹙﹛﹝＄（．［｛￡￥</w:NoLineBreaksAfter>
+                            <w:NoLineBreaksBefore Lang="JA">!%),.:;&gt;?]}￠¨°·ˇˉ―‖’”…‰′″?℃∶、。〃〉》」』】〕〗〞︶︺︾﹀﹄﹚﹜﹞！＂％＇），．：；？］｀｜｝～￠</w:NoLineBreaksBefore>
+                            <m:mathPr>
+                                <m:mathFont m:val="Cambria Math"/>
+                                <m:brkBin m:val="before"/>
+                                <m:brkBinSub m:val="&#45;-"/>
+                                <m:smallFrac m:val="off"/>
+                                <m:dispDef/>
+                                <m:lMargin m:val="0"/>
+                                <m:rMargin m:val="0"/>
+                                <m:defJc m:val="centerGroup"/>
+                                <m:wrapIndent m:val="1440"/>
+                                <m:intLim m:val="subSup"/>
+                                <m:naryLim m:val="undOvr"/>
+                            </m:mathPr></w:WordDocument>
+                    </xml><![endif]--><!--[if gte mso 9]><xml>
+                        <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="true"
+                                        DefSemiHidden="true" DefQFormat="false" DefPriority="99"
+                                        LatentStyleCount="276">
+                            <w:LsdException Locked="false" Priority="0" SemiHidden="false"
+                                            UnhideWhenUsed="false" QFormat="true" Name="Normal"/>
+                            <w:LsdException Locked="false" Priority="9" SemiHidden="false"
+                                            UnhideWhenUsed="false" QFormat="true" Name="heading 1"/>
+                            <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 2"/>
+                            <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 3"/>
+                            <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 4"/>
+                            <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 5"/>
+                            <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 6"/>
+                            <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 7"/>
+                            <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 8"/>
+                            <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 9"/>
+                            <w:LsdException Locked="false" Priority="39" Name="toc 1"/>
+                            <w:LsdException Locked="false" Priority="39" Name="toc 2"/>
+                            <w:LsdException Locked="false" Priority="39" Name="toc 3"/>
+                            <w:LsdException Locked="false" Priority="39" Name="toc 4"/>
+                            <w:LsdException Locked="false" Priority="39" Name="toc 5"/>
+                            <w:LsdException Locked="false" Priority="39" Name="toc 6"/>
+                            <w:LsdException Locked="false" Priority="39" Name="toc 7"/>
+                            <w:LsdException Locked="false" Priority="39" Name="toc 8"/>
+                            <w:LsdException Locked="false" Priority="39" Name="toc 9"/>
+                            <w:LsdException Locked="false" Priority="35" QFormat="true" Name="caption"/>
+                            <w:LsdException Locked="false" Priority="10" SemiHidden="false"
+                                            UnhideWhenUsed="false" QFormat="true" Name="Title"/>
+                            <w:LsdException Locked="false" Priority="1" Name="Default Paragraph Font"/>
+                            <w:LsdException Locked="false" Priority="11" SemiHidden="false"
+                                            UnhideWhenUsed="false" QFormat="true" Name="Subtitle"/>
+                            <w:LsdException Locked="false" Priority="22" SemiHidden="false"
+                                            UnhideWhenUsed="false" QFormat="true" Name="Strong"/>
+                            <w:LsdException Locked="false" Priority="20" SemiHidden="false"
+                                            UnhideWhenUsed="false" QFormat="true" Name="Emphasis"/>
+                            <w:LsdException Locked="false" Priority="59" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Table Grid"/>
+                            <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Placeholder Text"/>
+                            <w:LsdException Locked="false" Priority="1" SemiHidden="false"
+                                            UnhideWhenUsed="false" QFormat="true" Name="No Spacing"/>
+                            <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Light Shading"/>
+                            <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Light List"/>
+                            <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Light Grid"/>
+                            <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Medium Shading 1"/>
+                            <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Medium Shading 2"/>
+                            <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Medium List 1"/>
+                            <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Medium List 2"/>
+                            <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Medium Grid 1"/>
+                            <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Medium Grid 2"/>
+                            <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Medium Grid 3"/>
+                            <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Dark List"/>
+                            <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Colorful Shading"/>
+                            <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Colorful List"/>
+                            <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Colorful Grid"/>
+                            <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Light Shading Accent 1"/>
+                            <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Light List Accent 1"/>
+                            <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Light Grid Accent 1"/>
+                            <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Medium Shading 1 Accent 1"/>
+                            <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Medium Shading 2 Accent 1"/>
+                            <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Medium List 1 Accent 1"/>
+                            <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Revision"/>
+                            <w:LsdException Locked="false" Priority="34" SemiHidden="false"
+                                            UnhideWhenUsed="false" QFormat="true" Name="List Paragraph"/>
+                            <w:LsdException Locked="false" Priority="29" SemiHidden="false"
+                                            UnhideWhenUsed="false" QFormat="true" Name="Quote"/>
+                            <w:LsdException Locked="false" Priority="30" SemiHidden="false"
+                                            UnhideWhenUsed="false" QFormat="true" Name="Intense Quote"/>
+                            <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Medium List 2 Accent 1"/>
+                            <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Medium Grid 1 Accent 1"/>
+                            <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Medium Grid 2 Accent 1"/>
+                            <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Medium Grid 3 Accent 1"/>
+                            <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Dark List Accent 1"/>
+                            <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Colorful Shading Accent 1"/>
+                            <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Colorful List Accent 1"/>
+                            <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Colorful Grid Accent 1"/>
+                            <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Light Shading Accent 2"/>
+                            <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Light List Accent 2"/>
+                            <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Light Grid Accent 2"/>
+                            <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Medium Shading 1 Accent 2"/>
+                            <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Medium Shading 2 Accent 2"/>
+                            <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Medium List 1 Accent 2"/>
+                            <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Medium List 2 Accent 2"/>
+                            <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Medium Grid 1 Accent 2"/>
+                            <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Medium Grid 2 Accent 2"/>
+                            <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Medium Grid 3 Accent 2"/>
+                            <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Dark List Accent 2"/>
+                            <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Colorful Shading Accent 2"/>
+                            <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Colorful List Accent 2"/>
+                            <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Colorful Grid Accent 2"/>
+                            <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Light Shading Accent 3"/>
+                            <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Light List Accent 3"/>
+                            <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Light Grid Accent 3"/>
+                            <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Medium Shading 1 Accent 3"/>
+                            <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Medium Shading 2 Accent 3"/>
+                            <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Medium List 1 Accent 3"/>
+                            <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Medium List 2 Accent 3"/>
+                            <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Medium Grid 1 Accent 3"/>
+                            <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Medium Grid 2 Accent 3"/>
+                            <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Medium Grid 3 Accent 3"/>
+                            <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Dark List Accent 3"/>
+                            <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Colorful Shading Accent 3"/>
+                            <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Colorful List Accent 3"/>
+                            <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Colorful Grid Accent 3"/>
+                            <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Light Shading Accent 4"/>
+                            <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Light List Accent 4"/>
+                            <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Light Grid Accent 4"/>
+                            <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Medium Shading 1 Accent 4"/>
+                            <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Medium Shading 2 Accent 4"/>
+                            <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Medium List 1 Accent 4"/>
+                            <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Medium List 2 Accent 4"/>
+                            <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Medium Grid 1 Accent 4"/>
+                            <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Medium Grid 2 Accent 4"/>
+                            <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Medium Grid 3 Accent 4"/>
+                            <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Dark List Accent 4"/>
+                            <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Colorful Shading Accent 4"/>
+                            <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Colorful List Accent 4"/>
+                            <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Colorful Grid Accent 4"/>
+                            <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Light Shading Accent 5"/>
+                            <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Light List Accent 5"/>
+                            <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Light Grid Accent 5"/>
+                            <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Medium Shading 1 Accent 5"/>
+                            <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Medium Shading 2 Accent 5"/>
+                            <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Medium List 1 Accent 5"/>
+                            <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Medium List 2 Accent 5"/>
+                            <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Medium Grid 1 Accent 5"/>
+                            <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Medium Grid 2 Accent 5"/>
+                            <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Medium Grid 3 Accent 5"/>
+                            <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Dark List Accent 5"/>
+                            <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Colorful Shading Accent 5"/>
+                            <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Colorful List Accent 5"/>
+                            <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Colorful Grid Accent 5"/>
+                            <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Light Shading Accent 6"/>
+                            <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Light List Accent 6"/>
+                            <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Light Grid Accent 6"/>
+                            <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Medium Shading 1 Accent 6"/>
+                            <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Medium Shading 2 Accent 6"/>
+                            <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Medium List 1 Accent 6"/>
+                            <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Medium List 2 Accent 6"/>
+                            <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Medium Grid 1 Accent 6"/>
+                            <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Medium Grid 2 Accent 6"/>
+                            <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Medium Grid 3 Accent 6"/>
+                            <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Dark List Accent 6"/>
+                            <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Colorful Shading Accent 6"/>
+                            <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Colorful List Accent 6"/>
+                            <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+                                            UnhideWhenUsed="false" Name="Colorful Grid Accent 6"/>
+                            <w:LsdException Locked="false" Priority="19" SemiHidden="false"
+                                            UnhideWhenUsed="false" QFormat="true" Name="Subtle Emphasis"/>
+                            <w:LsdException Locked="false" Priority="21" SemiHidden="false"
+                                            UnhideWhenUsed="false" QFormat="true" Name="Intense Emphasis"/>
+                            <w:LsdException Locked="false" Priority="31" SemiHidden="false"
+                                            UnhideWhenUsed="false" QFormat="true" Name="Subtle Reference"/>
+                            <w:LsdException Locked="false" Priority="32" SemiHidden="false"
+                                            UnhideWhenUsed="false" QFormat="true" Name="Intense Reference"/>
+                            <w:LsdException Locked="false" Priority="33" SemiHidden="false"
+                                            UnhideWhenUsed="false" QFormat="true" Name="Book Title"/>
+                            <w:LsdException Locked="false" Priority="37" Name="Bibliography"/>
+                            <w:LsdException Locked="false" Priority="39" QFormat="true" Name="TOC Heading"/>
+                        </w:LatentStyles>
+                    </xml><![endif]-->  <!--[if gte mso 10]>
+                        <style>
+                            /* Style Definitions */
+                            table.MsoNormalTable
+                            {mso-style-name:普通表格;
+                                mso-tstyle-rowband-size:0;
+                                mso-tstyle-colband-size:0;
+                                mso-style-noshow:yes;
+                                mso-style-priority:99;
+                                mso-style-parent:"";
+                                mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+                                mso-para-margin:0cm;
+                                mso-para-margin-bottom:.0001pt;
+                                mso-pagination:widow-orphan;
+                                font-size:12.0pt;
+                                font-family:Cambria;
+                                mso-ascii-font-family:Cambria;
+                                mso-ascii-theme-font:minor-latin;
+                                mso-hansi-font-family:Cambria;
+                                mso-hansi-theme-font:minor-latin;
+                                mso-font-kerning:1.0pt;}
+                        </style>
+                        <![endif]-->    <!--StartFragment-->
+                        <p class="MsoNormal"><span style="font-family:宋体;mso-ascii-font-family:Cambria;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Cambria;mso-hansi-theme-font:minor-latin">俗话说得好&ldquo;物以稀为贵&rdquo;，现在小孩都是独生子女，家里人人都宠得爱不释手，同时都体会到现在孩子越来越难管，很多家长同一体会，用软的不行，用硬的也不行，但是现在的家庭教育非常重要，谁都不可忽视，现谈谈本人的心得体会：</span><span lang="EN-US">&nbsp;&nbsp;<o:p></o:p></span></p>
+                        <p class="MsoNormal"><span style="font-family:宋体;mso-ascii-font-family:Cambria;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Cambria;mso-hansi-theme-font:minor-latin">一、家长是孩子的&ldquo;克隆&rdquo;对象，家长是子女所有行为的被模仿者与榜样。例如：我在一本杂志上看到：周末，一位年轻的母亲从幼儿园接回孩子，发现孩子脸上有一个伤疤：&ldquo;是不是学校小朋友抓的？&rdquo;孩子点点头。妈妈发火了：&ldquo;你为什么不抓他？这个星期天妈妈不给你剪指甲，星期一你狠狠抓他！&rdquo;真是可悲而又可怜，在这种近乎病态的教育环境中长大的孩子，能养成良好的品德吗？今后又怎样呢？</span><span lang="EN-US">&nbsp;&nbsp;<o:p></o:p></span></p>
+                        <p class="MsoNormal"><span style="font-family:宋体;mso-ascii-font-family:Cambria;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Cambria;mso-hansi-theme-font:minor-latin">二、别老是&ldquo;人家孩子怎么怎么的&rdquo;。有时走亲访友，老是听到朋友说自己的孩子：&ldquo;你看，你这次其中考试，考了</span><span lang="EN-US">85</span><span style="font-family:宋体;mso-ascii-font-family:Cambria;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Cambria;mso-hansi-theme-font:minor-latin">分，人家隔壁邻居家小孩怎么考试</span><span lang="EN-US">100</span><span style="font-family:宋体;mso-ascii-font-family:Cambria;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Cambria;mso-hansi-theme-font:minor-latin">分，你真没用，木头脑袋。&rdquo;你知道家长讲这些话适得其反，孩子听了肯定不舒服，考试成绩不能完全衡量一个人学习的好与坪，我小孩子考试成绩有时是一般的一般，但我从不批评他，分析考试题为什么会做错，鼓励他下一次要仔细、努力，比这次考得好一些，小孩听了总是满意、微笑的点点头。</span><span lang="EN-US">&nbsp;&nbsp;<o:p></o:p></span></p>
+                        <p class="MsoNormal"><span style="font-family:宋体;mso-ascii-font-family:Cambria;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Cambria;mso-hansi-theme-font:minor-latin">三、孩子一样有自尊的。有的父母总是喜欢在别人面前说自家孩子不好，例如当着孩子的面，刚刚自家小孩很听话，学习成绩也不错，偏偏在人家面前说自家孩子不如别家孩子听话，学习不好，这恰恰相反，孩子的心里产生逆反心灵，孩子应会想，我做得那么好，父母说做得不好，反正好也是不好，不好也就这么不好，干脆就不做好。</span><span lang="EN-US">&nbsp;&nbsp;</span><span style="font-family:宋体;mso-ascii-font-family:
+Cambria;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Cambria;mso-hansi-theme-font:minor-latin">四、从小教起、从小改正。本人对这方面深有体会，我小的时候看到一本电影《少年犯》，可能大家都看过剧中那个小孩就是从小父母离异，缺少父母的从小教育，更谈不上改正，导致那么悲惨怜怜的下场。因此，本人对小孩&ldquo;从小教起，从小改正&rdquo;比较重视，不管点点滴滴都不放过。例如，我们吃饭时候，必须叫一声&ldquo;爸爸、妈妈吃饭&rdquo;。</span><span lang="EN-US">&nbsp;&nbsp;</span><span style="font-family:宋体;mso-ascii-font-family:
+Cambria;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Cambria;mso-hansi-theme-font:minor-latin">五、别总盯着孩子的缺点。我小孩唯一最大缺点是任性，自己想干什么就干什么，有时放学回家，大概半小时做作业认真，比较投入，过了半小时后就开始东摸摸，西看看，开始跟我讨价还价，例如老师布置回家抄写今天课堂上学的生词，他就跟我说，妈妈我这会写完，其余两个等玩一下或吃好晚饭再做，这时我就根据今天回家作业的量给他&ldquo;定刑&rdquo;，如果回家作业不多，我肯定会放他让他去玩，因为你不放他小孩子写字也不用心，还会哭哭啼啼，甚至他还跟我顶嘴，有的家长就会认为孩子这么任性，肯定不会出人头地，也就一棒子打死，平时也不去管他，觉得自家小孩&ldquo;结果&rdquo;。</span><span lang="EN-US">&nbsp;&nbsp;<o:p></o:p></span></p>
+                        <p class="MsoNormal"><span style="font-family:宋体;mso-ascii-font-family:Cambria;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Cambria;mso-hansi-theme-font:minor-latin">六、决不为孩子护短。老师的包庇，家长的护短，会导致孩子从走向歪路，甚至会导致他走向犯罪，因此，我觉得做为每一个家长不要不看这一点。</span><span lang="EN-US">&nbsp;<o:p></o:p></span></p>
+                        <p class="MsoNormal"><span style="font-family:宋体;mso-ascii-font-family:Cambria;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Cambria;mso-hansi-theme-font:minor-latin">七、不用暴力&ldquo;征服&rdquo;孩子，前面第五条我谈到小孩比较任性，以前小孩一发任性脾气，他老爸就动手打或吓唬他，小孩不听反而还说：&ldquo;爸爸你现在打我，等我长大我就打</span><span lang="EN-US">110</span><span style="font-family:宋体;mso-ascii-font-family:Cambria;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Cambria;mso-hansi-theme-font:minor-latin">叫警察叔叔把你抓走&rdquo;。现在通过我采取第五条，不要老是盯着孩子缺点，不采取暴力行为，跟他讲道理，有时也采取他的主张、意识，反而现在比以前要好多了。语文老师也表扬说李阳现在写字，其它方面比以前要进步。</span><span lang="EN-US">&nbsp;&nbsp;<o:p></o:p></span></p>
+                        <p class="MsoNormal"><span style="font-family:宋体;mso-ascii-font-family:Cambria;
+mso-ascii-theme-font:minor-latin;mso-fareast-font-family:宋体;mso-fareast-theme-font:
+minor-fareast;mso-hansi-font-family:Cambria;mso-hansi-theme-font:minor-latin">八、不要把电视当&ldquo;保姆&rdquo;。有些家长工作比较忙，现在每星期学校又放假二天。这两天家长怕孩子出去一则闯祸，另一则不安全，干脆就把小孩门反锁关在家里看电视，把电视当作保姆，实际从本上角度来看，这样做很不科学。我与他爸爸平时也很忙，我是做生意，有时经常要出差，他爸爸是军人，在部队要值班，有时也要到外地开会、培训，小孩也经常在碰到双休日没人带，但我就不把小孩关在家，不把电视当保姆，我觉得看电视第一会影响孩子的视力，第二现在电视里有些生活片电视剧情节太暴露会引起孩子的误导。因此碰到这种情况，我都会把自己的车当家，把小孩带在身边，他可以在车上看书，累了睡觉，同时还会在外面看到很多稀奇的东西，有一次我出差在绍兴，我也带李阳去了，刚巧碰到农民农忙时，看到牛在耕地，小孩就觉得很奇怪，一则看到牛，二则牛在那个犁，拼起来就可以耕地，因此我觉得虽然大人懂，千万也别忽视小孩，更不应该把电视当孩子的&ldquo;保姆&rdquo;。</span><span lang="EN-US"><o:p></o:p></span></p>
+                        <!--EndFragment-->
+                    </div>
+                    <div class="hackbox">
+                    </div>
+                </div>
+                <div class="xg">
+                    <ul><li>下一篇文章： <a title='吉他自学支招   更新：2015-07-05  点击：0' href='../xxff/5904.html'>吉他自学支招</a></li><li>上一篇文章： <a title='管乐器为什么必须练长音？   更新：2015-12-14  点击：0' href='../xxff/5907.html'>管乐器为什么必须练长音？</a></li></ul>
+                </div>
+                <div class="box2 box4">
+                    <div class="title" style="">
+                        <h2>
+                            <!--<span class="more"><a href="#">» 更多</a></span>-->相关文章</h2>
+                    </div>
+                    <div class="body">
+                        <ul class="list">
+                            <li><a title='谈中学生英语学习   更新：2012-05-12  点击：0' href='../xxff/5695.html'>谈中学生英语学习</a></li><li><a title='用超右脑学习法突破英语语音和听力   更新：2011-08-08  点击：0' href='../xxff/4680.html'>用超右脑学习法突破英语语音和听力</a></li><li><a title='学好玩好   更新：2012-03-12  点击：0' href='../xxff/5661.html'>学好玩好</a></li><li><a title='语文学习：课前预习的重要性   更新：2012-02-01  点击：0' href='../xxff/5631.html'>语文学习：课前预习的重要性</a></li><li><a title='应试技巧——阅读理解及七条秘诀   更新：2010-12-08  点击：0' href='../xxff/2411.html'>应试技巧——阅读理解及七条秘诀</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="left" style="width: 300px;">
+        <div class="box1">
+            <div class="title">
+                <h2>
+                    <span class="more"><a href="../xxff/xxff.html">» 更多</a></span>学习方法</h2>
+            </div>
+            <div class="body">
+                <ul class="list">
+                    <li><a href="../">如何学习数学</a></li> <li><a href="../xxff/5907.html">管乐器为什么必须练长音？</a></li> <li><a href="../xxff/5906.html">教育理解</a></li> <li><a href="../xxff/5904.html">吉他自学支招</a></li> <li><a href="../xxff/5903.html">北京高考成绩6月23日公布 首次采用大平行志愿</a></li> <li><a href="../xxff/5902.html">高中物理</a></li> <li><a href="../xxff/5901.html">数学学习认识</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="box1">
+            <div class="title">
+                <h2>
+                    <span class="more"><a href="../ksjy/ksjy.html">» 更多</a></span>考试经验</h2>
+            </div>
+            <div class="body">
+                <ul class="list">
+                    <li><a href="../ksjy/3156.html">怎样的阅读才是正确的阅读？</a></li> <li><a href="../ksjy/3155.html">有针对性的学习才能考好语文</a></li> <li><a href="../ksjy/3154.html">词语类题型的总结</a></li> <li><a href="../ksjy/3153.html">语文考试技巧</a></li> <li><a href="../ksjy/3149.html">面对考试要主动</a></li> <li><a href="../ksjy/3109.html">把考试的精力放在基础上</a></li> <li><a href="../ksjy/3107.html"> 养成好的解题习惯才能拿高分</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="box1">
+            <div class="title">
+                <h2>
+                    <span class="more"><a href="../jzkt/jzkt.html">» 更多</a></span>家长课堂</h2>
+            </div>
+            <div class="body">
+                <ul class="list">
+                    <li><a href="../jzkt/5900.html">孩子，快乐的高手</a></li> <li><a href="../jzkt/5891.html">《浅谈中考语文复习的有效性》</a></li> <li><a href="../jzkt/5848.html">五年级数学下册练习</a></li> <li><a href="../jzkt/5847.html">练习题</a></li> <li><a href="../jzkt/5808.html">家长和小朋友对学习架子鼓的一些疑惑</a></li> <li><a href="../jzkt/5777.html">家长该如何预防孩子的网瘾？</a></li> <li><a href="../jzkt/5761.html">独生子女父母的教育方式</a></li>
+                </ul>
+            </div>
+        </div>
+        <script type="text/javascript"><!--
+        google_ad_client = "ca-pub-5232248721907840";
+        /* caijj300 */
+        google_ad_slot = "6444256775";
+        google_ad_width = 300;
+        google_ad_height = 250;
+        //-->
+        </script>
+        <script type="text/javascript"
+                src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+        </script>
+    </div>
+</div>
+<div id="footbar" class="w950">
+    <div class="title">
+        <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tr>
+                <td  height="30" valign="middle">
+                    <a href="index.php?m=home&c=index&a=teacher" target="_blank">做家教</a> | <a href="index.php?m=home&c=index&a=order" target="_blank">请家教</a> | <a href="index.php?m=home&c=index&a=Jiaoyuansousuo">教员搜索</a> | <a href="index.php?m=home&c=index&a=Jiaoyuan">教员分类</a> | <a href="index.php?m=home&c=index&a=XuexiFangfa1">学习方法</a> | <a href="index.php?m=home&c=index&a=KaoshiJingyan1">考试经验</a> | <a href="index.php?m=home&c=index&a=JiaZhangketang1">家长课堂</a> | <a href="index.php?m=home&c=index&a=JiajiaoXiangguan1">家教相关</a> | <a href="index.php?m=home&c=index&a=JiaZhangjingyan1">家教经验</a> | <a href=index.php?m=home&c=index&a=GuanYuwomen1>关于我们</a> | <a href="index.php?m=home&c=index&a=Changjianwenti1">常见问题</a> | <a href="index.php?m=home&c=index&a=HuiKuaifangshi1">汇款方式</a> | <a href="index.php?m=home&c=index&a=Lianxiwomen1" target="_blank">联系我们</a> | <a href="index.php?m=home&c=index&a=Zhaopin1"><img src="./public/home/images/zhaopin.gif" align="absmiddle" border="0"></a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="body">
+        联系电话：010-62642730　62643630　客服邮箱：caijjkf@163.com　<br />
+        版权所有：北京尚才家教 【<a href="http://www.caijj.com/" target="_blank">北京家教</a>】　工信部备案号:<a href="http://www.miibeian.gov.cn/" target="_blank">京ICP备09031430号</a><br />
+        家教服务中心：北京市海淀区清华大学东路金码大厦B座18层1809室<br />
+        Powered by www.caijj.com copyright 2009-2015<script src="http://s13.cnzz.com/stat.php?id=2467102&web_id=2467102&show=pic1" language="JavaScript"></script>
+    </div>
+</div>
+</body>
+</html>

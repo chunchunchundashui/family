@@ -1,0 +1,227 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>【家教成功案例】 - 北京尚才家教</title>
+    <link href="./public/home/css/css.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+     <script language="JavaScript" type="text/javascript">
+<!--
+function AddFavorite(sURL, sTitle)
+{
+    try
+    {
+        window.external.addFavorite(sURL, sTitle);
+    }
+    catch (e)
+    {
+        try
+        {
+            window.sidebar.addPanel(sTitle, sURL, "");
+        }
+        catch (e)
+        {
+            alert("加入收藏失败，请使用Ctrl+D进行添加");
+        }
+    }
+}
+function SetHome(obj,vrl){
+        try{
+                obj.style.behavior='url(#default#homepage)';obj.setHomePage(vrl);
+        }
+        catch(e){
+                if(window.netscape) {
+                        try {
+                                netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+                        }
+                        catch (e) {
+                                alert("此操作被浏览器拒绝！\n请在浏览器地址栏输入“about:config”并回车\n然后将 [signed.applets.codebase_principal_support]的值设置为'true',双击即可。");
+                        }
+                        var prefs = Components.classes['@mozilla.org/preferences-service;1'].getService(Components.interfaces.nsIPrefBranch);
+                        prefs.setCharPref('browser.startup.homepage',vrl);
+                 }
+        }
+}
+//-->
+</script>
+<script type="text/javascript">
+    //js获取cookie
+    var acookie=document.cookie.split("; ");
+    function getck(sname)
+    {
+        //获取单个cookies
+        for(var i=0;i<acookie.length;i++)
+        {
+            var arr=acookie[i].split("=");
+            if(sname==arr[0])
+            {
+                if(arr.length>1)
+                return unescape(arr[1]);
+                else
+                return "";
+            }
+        }
+        return "";
+    }
+</script>
+
+<script language="javascript" type="text/javascript">
+		<!--
+		    function checkf()
+		    {
+		        if (document.getElementById("username").value=="")
+		        {
+			        alert("请输入用户名");
+			        document.getElementById("username").focus();
+			        return false;
+		        }
+		        if (document.getElementById("password").value=="")
+		        {
+			        alert("请输入密码");
+			        document.getElementById("password").focus();
+			        return false;
+		        }
+
+		    }
+
+		//-->
+</script>
+
+     <form name="form1" method="post" action="index.php?m=home&c=enter" id="form1">
+         <div>
+         </div>
+
+         <div id="topbar" class="color_999">
+             <div class="w950">
+                 <div class="right">
+                     <a href="#" onclick="SetHome(this,window.location)" class="color_999">设为首页</a>&nbsp;
+                     <a href="#" onclick="AddFavorite(window.location,document.title)" class="color_999">
+                         加入收藏</a>&nbsp; <a href="#" class="color_999">帮助中心</a>
+                 </div>
+
+                 <div class="left" id="wdl">
+                     <?php if(!isset($_COOKIE['user'])){ echo '
+                &nbsp;&nbsp; <a href="index.php?m=home&c=index&a=user" class="color_orage text_decoration">注册用户</a>&nbsp;
+                     用户名:<input name="username" style="width: 100px;" id="username" type="text">
+                     &nbsp;&nbsp;密码:<input name="password" style="width: 100px;" id="password" type="password">
+                     &nbsp;<input name="Button1" value="登录" onclick="return CheckForm();" id="Button1" type="submit">
+                     <?php ';  } ?>
+                     <?php if(isset($_COOKIE['user'])) { echo 'Hello:'.$_COOKIE['user'] ; } ?>
+                 </div>
+                 &nbsp;&nbsp; <a href="index.php?m=home&c=index&a=teacher" class="color_orage text_decoration">注册教员</a>&nbsp;
+
+                 <a href="index.php?m=home&c=index&a=modifier" class="color_orage text_decoration">取回密码</a>
+                 <?php if(isset($_COOKIE['user'])){ echo '
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="index.php?m=home&c=index&a=out" class="color_orage text_decoration">退出账号</a>&nbsp;
+                 <?php ';  ?>
+                 <?php } ?>
+             </div>
+         </div>
+         </div>
+     </form>
+    <div id="top">
+        <div class="w950">
+
+            <div style="float: right; width:100px; padding-top:25px;">
+                <a href="#" ;="" target="_blank;" onclick="var tempSrc='http://sighttp.qq.com/wpa.js?rantime='+Math.random()+'&amp;sigkey=0067baf0789caa207d7cceb9518600646f7ad8feccc1221601cc5e11865c8a1a';var oldscript=document.getElementById('testJs');var newscript=document.createElement('script');newscript.setAttribute('type','text/javascript'); newscript.setAttribute('id', 'testJs');newscript.setAttribute('src',tempSrc);oldscript.parentNode.replaceChild(newscript, oldscript);return false;"><img src="./public/home/images/qq.jpg" alt="QQ咨询" border="0"></a>
+            </div>
+			<div style="float: right; padding: 25px 0 0 0;">
+                <img src="./public/home/images/top_bn.gif" alt="尚才家教">
+            </div>
+            <div id="logo" style="float:left;">
+                <img src="./public/home/images/logo.jpg" alt="尚才家教">
+  </div>
+  </div>
+</div>
+    <div id="menu" class="w950">
+        <ul>
+            <li><a href="index.php?m=home&c=indexLibrary"><span>首页</span></a></li>
+            <li id="lan_1"><a href="index.php?m=home&c=teacher"><span>教员库</span></a></li>
+            <li id="lan_2"><a href="index.php?m=home&c=UserLibrary"><span>学员库</span></a></li>
+            <li id="lan_3"><a href="index.php?m=home&c=star"><span>星级教员</span></a></li>
+            <li id="lan_4"><a href="index.php?m=home&c=major"><span>专业老师</span></a></li>
+            <li id="lan_5"><a href="index.php?m=home&c=university"><span>大学生家教</span></a></li>
+            <li id="lan_6"><a href="index.php?m=home&c=math"><span>奥数家教</span></a></li>
+            <li id="lan_7"><a href="index.php?m=home&c=english"><span>英语家教</span></a></li>
+            <li id="lan_8"><a href="index.php?m=home&c=music"><span>音乐家教</span></a></li>
+            <li id="lan_9" class="active"><a href="index.php?m=home&c=index&a=winCase"><span>成功案例</span></a></li>
+            <li id="lan_10"><a href="index.php?m=home&c=index&a=chargeStandard"><span>收费标准</span></a></li>
+        </ul>
+    </div>
+
+    <div id="main" class="w950">
+        <div>
+            <div class="guide">
+                <img src="./public/home/images/d05.gif" align="absbottom" hspace="2" vspace="2">当前位置： <span class="red1"><a href="#">首页</a></span> &gt; <strong>成功案例</strong>            </div>
+            <!--列表-->
+            <div class="box2" style="margin-bottom: 5px;">
+                <div class="title">
+                    <h2>
+                        成功案例</h2>
+                </div>
+                <div class="jyborder">
+                    <ol class="line03">
+                        <li class="lin02bg"><u>学员编号</u><em>学习科目</em><em style="width: 19%">辅导前情况</em><em style="width: 19%">辅导后情况</em><em>配备教员编号</em><em>教员类型</em><em style="width: 23%">教员介绍</em></li>
+                             <li class=""><u>6678</u><em>初三全科--英语</em><em style="width: 18%; padding: 0 12px;">初二初三因病休学，基础比较薄弱，语法知识点需要重新梳理。最后冲刺阶段，2月份家长开始找在职老师</em><em style="width: 18%">中考英语成绩106分，当时学员觉得最多能考试400分，学员进步很快，在写作阅读理解和完形填空方面基本没有什么大的问题。</em><em>在职老师</em><em>10100</em><em style="width: 23%">本
+人性格开朗，注重效率，能因材施教，善于与各层次学生沟通，有耐心，喜欢和孩子交流。教学经验丰富，了解学生心理，快速找到切入点，做到有针对的教学，快
+速提高学习兴趣，进而提高成绩。
+讲课生动、风趣，考点突出明确，注重学习方法和解题技巧，快乐教学，激发学习兴趣，开发学生潜能。深受学生好评爱戴。辅导过的学生成绩均有明显提高，家长
+评价较高。针对提分有独到教法，效果显著。
+教学严谨，认真负责，能与孩子进行良好的沟通，提高学生在此学科的兴趣，进而一步步的提高学习成绩。海淀区一名初三男生刘可同学，经过本人4个月的英语辅
+导，在中考英语中单科提高了55分，顺利考取101中学。朝阳区初二李同学，在本人的耐心辅导和正确教授下，经过一学期的努力，该生英语从52分提高到了
+80分，从班里中下游提升到中等水平</em>
+                        </li>    <li class=""><u>6747</u><em>高三语文</em><em style="width: 18%; padding: 0 12px;">2011年4月份平时成绩80多分，数理化成绩非常优秀，唯独语文拉分</em><em style="width: 18%">2011年考上清华大学，语文单科分数124分，辅导了8次课</em><em>8105</em><em>资深在职语文老师</em><em style="width: 23%">在现代文阅读教学方面有自己独到的之处，善于分析题型，引导学生分析解题思路，教给学生解题的方法。作文教学经验丰富，能教会学生写出新颖有个性的作文。同时老师亲和力很强，善于和学生沟通。有较强的责任心。 </em>
+                        </li>    <li class=""><u>3455</u><em>二年级英语</em><em style="width: 18%; padding: 0 12px;">孩子顽皮，可爱，学习注意力不集中，需要提高英语口语表达能力。</em><em style="width: 18%">教员跟学生成了很好的朋友，把孩子的积极性调动了起来。觉得学习有趣味性</em><em>4945</em><em>在校大学生</em><em style="width: 23%">北京农业大学研究生，  高考英语141分（全国卷一），精通3L英语全册。 家教经验丰富，对学生有耐心。</em>
+                        </li>    <li class=""><u>3429</u><em>形体训练</em><em style="width: 18%; padding: 0 12px;">女孩爱美，身材超重，学习形体塑身训练，培养女孩气质</em><em style="width: 18%">瘦下十斤，形体有美感</em><em>6873</em><em>培训学校舞蹈老师</em><em style="width: 23%">毕业于北京舞蹈学院，擅长跳民族舞，现代舞和塑身形体训练。气质出众，性格开朗，有良好的专业修养。 </em>
+                        </li>    <li class=""><u>3537</u><em>奥数 新初一数学</em><em style="width: 18%; padding: 0 12px;">比较有礼貌，作业写不完，边玩边写，不能很好的规划自己的时间，学习成绩良好</em><em style="width: 18%">改掉了边玩边写的毛病，知道自己想要什么，想干什么，有计划性、比较合理的安排时间</em><em>5729</em><em>硕士</em><em style="width: 23%">北
+京林业大学生物科学专业硕士，自己有两年的高中及小学家教经验，自己性格很稳重，负责任。数学、化学及生物知识尤其熟悉，能很快引导孩子自我学习，建立良
+好的学习方式及解题思路。目前在教即将高考学生理综复习，有自己独特的教学方式，学生能很快掌握。大二教授小学二年级女孩数学、语文，孩子的自我学习能力
+大幅度提高。大四教授参加"种子计划"教授5岁小孩理科知识，包括生物以及化学，能与孩子之间很好的交流与学习，家长反映很好。大四教授高考学生生物，为
+学生梳理高中生物内容，学生及家长反映很好，孩子做题技巧明显提高，成绩也提高。  </em>
+                        </li>    <li class=""><u>3497</u><em>高一化学</em><em style="width: 18%; padding: 0 12px;">化学知识点掌握不牢固，不爱学化学。</em><em style="width: 18%">学生进步很大，老师跟学生辅导过程中穿插化学其他知识，有趣味性，家长评价：教师知识渊博，能给学生带来学习化学的乐趣。</em><em>5621</em><em>美国化学博士</em><em style="width: 23%">在中科院工作，重点大学本科，中科院硕士、美国化学博士，为人亲和、讨孩子喜欢；知识面宽。 </em>
+                        </li>    <li class=""><u>3441</u><em>高二生物</em><em style="width: 18%; padding: 0 12px;">略懂一点，做题困难，拿不准答案。</em><em style="width: 18%">从最基础的书本知识教授起，学生愿意接受，而且接受很快，会考成绩不错。</em><em>5804</em><em>在校大学生</em><em style="width: 23%">中
+国人民大学本科毕业，目前已有三年经验，带过高中所有级别的学生，对高考理科及理综颇有心得。例如：
+2006年带过一名高一学生，连续带三年辅导数理化生，直到高考，成绩从班级中游到前5名。
+2006年带过两名高三学生辅导数学、理综，一名考入北京工商大学，一名考入中央财经大学。</em>
+                        </li>    <li class=""><u>3428</u><em>初一数学英语</em><em style="width: 18%; padding: 0 12px;">实验中学上学，学习中等，自控能力较差</em><em style="width: 18%">对学习有了新的认识，比以前珍惜时间了，学习劲头足。思想开阔，健谈了。</em><em>4919</em><em>在校大学生</em><em style="width: 23%">清华大学生命科学学院在校大学生，天津生源，高考物理满分；高中英语竞赛天津市二等奖；高中生物竞赛天津市二等奖；高中化学竞赛天津市三等奖； </em>
+                        </li>    <li class=""><u>3598</u><em>初三数学物理化学</em><em style="width: 18%; padding: 0 12px;">学生以前不在北京上学，基础薄弱，平时就是六七十分的成绩，家长很着急。</em><em style="width: 18%">中考成绩进步一百多分，考出来的成绩出乎家长的意料，进步飞快。</em><em>5919</em><em>在校大学生</em><em style="width: 23%">北京交通大学数学系大二学生，本着对学生负责态度做家教，是一名理科生。家教经验丰富，有教学方法。高中带过家教，大一新街口义务家教一年。 </em>
+                        </li>    <li class=""><u>3625</u><em>初三化学</em><em style="width: 18%; padding: 0 12px;">化学成绩在中等，一直徘徊不前，疑难题不能独立完成</em><em style="width: 18%">辅导两个月的时间，学生化学一点一点进步，2010年中考，化学成绩进步了14分，学生和家长很满意，分数下来后马上给教员报喜。</em><em>6011</em><em>在校大学生</em><em style="width: 23%">北京化工大学在校大二学生 ，在高中阶段获得过化学和物理省二等奖，在物理和化学方面有一点独到的学习方法和经验。 在大二上学期做过初高中物化家教，学员进步显著。 </em>
+                        </li>    <li class=""><u>135</u><em>小学四年级数学 </em><em style="width: 18%; padding: 0 12px;">基础知识掌握不牢固，计算题容易出错，马虎大意</em><em style="width: 18%">分数提高了10分左右，家长比较满意</em><em>248</em><em>北京航空航天大学</em><em style="width: 23%">阳光，健康，喜欢数理化，数理化知识掌握牢固。小学获得省数学比赛三等奖，思维快，灵活，有自己的学习方法。</em>
+                        </li>    <li class=""><u>3375</u><em>小学全科</em><em style="width: 18%; padding: 0 12px;">基础薄弱，偏科，数学成绩65分</em><em style="width: 18%">对数学产生浓厚兴趣，期中考试成绩数学91分</em><em>3522</em><em>专业教师</em><em style="width: 23%">我本人比较有耐心，对什么事都要求尽量做到最好。我从小就比较喜欢数学，而且我的数学... 2005.10山东莘县高二数学，期终学员数学成绩从第30名上升至第5名；2007.10月在山东聊城初二数学，期终学员数学成绩从班上50名上... </em>
+                        </li>
+                    </ol>
+                    <div class="num">
+                        <table align="right" border="0" cellpadding="0" cellspacing="0" height="25">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                       <span class="overview">共<b> <span class="yel">1 </span></b>页</span><a href="#" class="overview">首页</a><a href="#" class="hotFont">1</a><a href="#" class="d-ou">尾页</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footbar" class="w950">
+        <div class="title">
+          <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tbody><tr>
+                  <td  height="30" valign="middle">
+                      <a href="index.php?m=home&c=index&a=teacher" target="_blank">做家教</a> | <a href="index.php?m=home&c=index&a=order" target="_blank">请家教</a> | <a href="index.php?m=home&c=index&a=Jiaoyuansousuo">教员搜索</a> | <a href="index.php?m=home&c=index&a=Jiaoyuan">教员分类</a> | <a href="index.php?m=home&c=index&a=XuexiFangfa1">学习方法</a> | <a href="index.php?m=home&c=index&a=KaoshiJingyan1">考试经验</a> | <a href="index.php?m=home&c=index&a=JiaZhangketang1">家长课堂</a> | <a href="index.php?m=home&c=index&a=JiajiaoXiangguan1">家教相关</a> | <a href="index.php?m=home&c=index&a=JiaZhangjingyan1">家教经验</a> | <a href=index.php?m=home&c=index&a=GuanYuwomen1>关于我们</a> | <a href="index.php?m=home&c=index&a=Changjianwenti1">常见问题</a> | <a href="index.php?m=home&c=index&a=HuiKuaifangshi1">汇款方式</a> | <a href="index.php?m=home&c=index&a=Lianxiwomen1" target="_blank">联系我们</a> | <a href="index.php?m=home&c=index&a=Zhaopin1"><img src="./public/home/images/zhaopin.gif" align="absmiddle" border="0"></a>
+                  </td>
+              </tr>
+            </tbody></table>
+        </div>
+        <div class="body">
+            联系电话：010-62642730　62643630　客服邮箱：caijjkf@163.com　<br>
+            版权所有：北京尚才家教 【<a href="#" target="_blank">北京家教</a>】　工信部备案号:<a href="#" target="_blank">京ICP备09031430号</a><br>
+            家教服务中心：北京市海淀区清华大学南门华清嘉园8号楼304室<br>
+            Powered by www.caijj.com copyright 2009-2011<a href="#" target="_blank" title="站长统计"><img src="./public/home/images/pic1.gif" border="0" hspace="0" vspace="0"></a><img src="./public/home/images/stat.gif" border="0" height="0" width="0">
+        </div>
+    </div>
+
+
+</body></html>

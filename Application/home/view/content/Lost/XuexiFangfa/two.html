@@ -1,0 +1,414 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>【管乐器为什么必须练长音？】 - 北京尚才家教</title>
+    <link href="./public/home/css/css.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<script language="JavaScript" type="text/javascript">
+    <!--
+    function AddFavorite(sURL, sTitle)
+    {
+        try
+        {
+            window.external.addFavorite(sURL, sTitle);
+        }
+        catch (e)
+        {
+            try
+            {
+                window.sidebar.addPanel(sTitle, sURL, "");
+            }
+            catch (e)
+            {
+                alert("加入收藏失败，请使用Ctrl+D进行添加");
+            }
+        }
+    }
+    function SetHome(obj,vrl){
+        try{
+            obj.style.behavior='url(#default#homepage)';obj.setHomePage(vrl);
+        }
+        catch(e){
+            if(window.netscape) {
+                try {
+                    netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+                }
+                catch (e) {
+                    alert("此操作被浏览器拒绝！\n请在浏览器地址栏输入“about:config”并回车\n然后将 [signed.applets.codebase_principal_support]的值设置为'true',双击即可。");
+                }
+                var prefs = Components.classes['@mozilla.org/preferences-service;1'].getService(Components.interfaces.nsIPrefBranch);
+                prefs.setCharPref('browser.startup.homepage',vrl);
+            }
+        }
+    }
+    //-->
+</script>
+<script type="text/javascript">
+    //js获取cookie 
+    var acookie=document.cookie.split("; ");
+    function getck(sname)
+    {
+        //获取单个cookies 
+        for(var i=0;i<acookie.length;i++)
+        {
+            var arr=acookie[i].split("=");
+            if(sname==arr[0])
+            {
+                if(arr.length>1)
+                    return unescape(arr[1]);
+                else
+                    return "";
+            }
+        }
+        return "";
+    }
+</script>
+
+<script language="javascript" type="text/javascript">
+    <!--
+    function checkf()
+    {
+        if (document.getElementById("username").value=="")
+        {
+            alert("请输入用户名");
+            document.getElementById("username").focus();
+            return false;
+        }
+        if (document.getElementById("password").value=="")
+        {
+            alert("请输入密码");
+            document.getElementById("password").focus();
+            return false;
+        }
+
+    }
+
+    //-->
+</script>
+
+<form name="form1" method="post" action="index.php?m=home&c=enter" id="form1">
+    <div>
+    </div>
+
+    <div id="topbar" class="color_999">
+        <div class="w950">
+            <div class="right">
+                <a href="#" onclick="SetHome(this,window.location)" class="color_999">设为首页</a>&nbsp;
+                <a href="#" onclick="AddFavorite(window.location,document.title)" class="color_999">
+                    加入收藏</a>&nbsp; <a href="#" class="color_999">帮助中心</a>
+            </div>
+
+            <div class="left" id="wdl">
+                <?php if(!isset($_COOKIE['user'])){ echo '
+                &nbsp;&nbsp; <a href="index.php?m=home&c=index&a=user" class="color_orage text_decoration">注册用户</a>&nbsp;
+                用户名:<input name="username" style="width: 100px;" id="username" type="text">
+                &nbsp;&nbsp;密码:<input name="password" style="width: 100px;" id="password" type="password">
+                &nbsp;<input name="Button1" value="登录" onclick="return CheckForm();" id="Button1" type="submit">
+                <?php ';  } ?>
+                <?php if(isset($_COOKIE['user'])) { echo 'Hello:'.$_COOKIE['user'] ; } ?>
+            </div>
+            &nbsp;&nbsp; <a href="index.php?m=home&c=index&a=teacher" class="color_orage text_decoration">注册教员</a>&nbsp;
+
+            <a href="index.php?m=home&c=index&a=modifier" class="color_orage text_decoration">取回密码</a>
+            <?php if(isset($_COOKIE['user'])){ echo '
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="index.php?m=home&c=index&a=out" class="color_orage text_decoration">退出账号</a>&nbsp;
+            <?php ';  ?>
+            <?php } ?>
+        </div>
+    </div>
+    </div>
+</form>
+<div id="top">
+    <div class="w950">
+
+        <div style="float: right; width:100px; padding-top:25px;">
+            <a target="blank" href=tencent://message/?uin=5886626&Site=尚才家教&Menu=yes><img border="0" SRC='./public/home/images/qq.jpg' alt="QQ咨询"></a>
+        </div>
+        <div style="float: right; padding: 15px 0 0 0;">
+            <img src="./public/home/images/top_bn.gif" alt="尚才家教" />
+        </div>
+        <div id="logo" style="float:left;">
+            <img src="./public/home/images/logo.jpg" alt="尚才家教" />
+        </div>
+    </div>
+</div>
+<div id="menu" class="w950">
+    <ul>
+        <li><a href="index.php?m=home&c=indexLibrary"><span>首页</span></a></li>
+        <li id="lan_1"><a href="index.php?m=home&c=teacher"><span>教员库</span></a></li>
+        <li id="lan_2"><a href="index.php?m=home&c=UserLibrary"><span>学员库</span></a></li>
+        <li id="lan_3"><a href="index.php?m=home&c=star"><span>星级教员</span></a></li>
+        <li id="lan_4"><a href="index.php?m=home&c=major"><span>专业老师</span></a></li>
+        <li id="lan_5"><a href="index.php?m=home&c=university"><span>大学生家教</span></a></li>
+        <li id="lan_6"><a href="index.php?m=home&c=math"><span>奥数家教</span></a></li>
+        <li id="lan_7"><a href="index.php?m=home&c=english"><span>英语家教</span></a></li>
+        <li id="lan_8"><a href="index.php?m=home&c=music"><span>音乐家教</span></a></li>
+        <li id="lan_9"><a href="index.php?m=home&c=index&a=winCase"><span>成功案例</span></a></li>
+        <li id="lan_10"><a href="index.php?m=home&c=index&a=chargeStandard"><span>收费标准</span></a></li>
+    </ul>
+</div>
+
+<div id="main" class="w950">
+    <div class="right" style="width: 640px;">
+        <div class="guide">
+            <img src="./public/home/images/d05.gif" hspace="2" vspace="2" align="absbottom">当前位置： <span
+                class="red1"><a href="/">首页</a></span> &gt; 学习方法 &gt; <strong>管乐器为什么必须练长音？</strong>            </div>
+        <!--列表-->
+        <div class="box2">
+            <div class="title">
+            </div>
+            <div class="body" style="padding-top: 10px;">
+                <div id="cont">
+                    <h1>
+                        管乐器为什么必须练长音？</h1>
+                    <u>【教员编号：<a href="../thtml/46016.html" target="_blank">46016</a> 所在学校：史家小学 更新时间：<span class="yel">2015-12-14 16:46:13</span> 点击数：<span class="green"><script type="text/javascript" src="../other/click.aspx?id=5907"> </script></span>
+                        】</u>
+                    <p>
+                    </p>
+                    <div class="f14 lh20" style="padding-bottom: 10px; padding-top: 10px">
+                        职业演奏者每天开始练习时的热身运动<br />
+                        　一定是从长音开始<br />
+                        　　　　　　　　　　　　<br />
+                        　请让我在这里对所有的管乐器共通的基础练习&mdash;&mdash;&ldquo;长音&rdquo;进行说明。<br />
+                        <br />
+                        <br />
+                        　长音是什么？<br />
+                        <br />
+                        <br />
+                        　如果单纯的解释，就是尽可能长的吹奏一个音，但是，<br />
+                        　这里面为什么那么深奥???<br />
+                        　所有的管乐器演奏者在练习时一定都先从长音开始。<br />
+                        　省略练习长音的人从今天起开始也不迟，请一定从长音开始。<br />
+                        　绝对会和竞争对手拉开差距。<br />
+                        <br />
+                        <br />
+                        　不练长音当然也是能演奏的，但是5年后、10年后就会有压倒性的差距。<br />
+                        　我的学生当中也有高音域总是发不出来的、咬着吹的、发出声儿了但声音很刺耳的，结果很多人就来询问<br />
+                        　&ldquo;有没有什么方法能够轻松的发出好的声音？&rdquo;之类的问题，但是学习无坦途。<br />
+                        　只有通过日常练习时发声错误的试验和努力的积累，才会慢慢向着令人赞叹的音色变化。<br />
+                        <br />
+                        <br />
+                        　各阶段长音?训练法<br />
+                        　　（因为我是萨克斯管演奏者，也许有些点并不适用于其他管乐器，敬请谅解）<br />
+                        <br />
+                        <br />
+                        　　初学者&amp;新手指南<br />
+                        <br />
+                        <br />
+                        　初学是最最需要练习长音的阶段。练习请一定要从长音开始。<br />
+                        　时间的话最少10～20分钟是必须的。（练习方法请参照各乐器的教学材料或听老师的安排）<br />
+                        　虽然可能会有&ldquo;额～ 要练20分钟这么长！&rdquo;这样的声音，管乐器的练习开始阶段请把它当做体育运动一样吧。<br />
+                        　体育运动一定是先做好热身才进入比赛的。<br />
+                        　总之，不吹长音就直接开始音阶和乐曲的人，就相当于体育运动一上来不做热身就进入正式比赛一样。<br />
+                        　相信大家都有过这样的经验&mdash;&mdash;突然就开始网球、足球或棒球之类的剧烈运动 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;　使得肌肉酸胀，迟发性肌肉痛持续很长时间，有时甚至还会受伤???。<br />
+                        　体育选手会用一整年的功夫来锻炼出能够比赛的体能以及为了防止不必要的麻烦而<br />
+                        　每天都不可或缺地进行充分的热身运动。<br />
+                        　越是老将就越会为了延长比赛生涯而仔细的做着热身运动。<br />
+                        　管乐器的话并不会受伤，也不会使肌肉酸痛，<br />
+                        　但就像前面说的5年后、10年后就会拉开差距。<br />
+                        <br />
+                        <br />
+                        　现在，让我来对练习长音时需要意识到的事情进行说明。因为如果完全没有目的意识<br />
+                        　只光练习那就没有意义了，请边注意着下面5项边练习。<br />
+                        <br />
+                        <br />
+                        　１　注意音从开始吹到结束时音量不要改变<br />
+                        　２　注意音从开始吹到结束时音色不变<br />
+                        　３　注意在自己能够意识到的时机发声<br />
+                        　４　注意呼吸法（腹式呼吸）<br />
+                        　５　尽可能放松着的去吹<br />
+                        <br />
+                        <br />
+                        　关于１、２两条，因为要锻炼出演奏管乐器的肌肉组织，声音变得安定以前是<br />
+                        　需要花费时日的。请不要焦躁耐心的练习吧。<br />
+                        　３也是很难的。管乐器每个音每个音的用气感觉都有不同。容易吹的音可以很顺利的就在自己所想的<br />
+                        　时机发声，但是低音的话反应就会变得迟钝。高音的话光气息还不行，<br />
+                        　还得记住身体整体的使用方法。<br />
+                        　４、５也是很深奥的，初学者要尽可能多的吸气，身体请时常保持放松的状态<br />
+                        　尝试着去吹。（关于呼吸法的问题会在别的机会时写）<br />
+                        <br />
+                        <br />
+                        　　中级篇<br />
+                        <br />
+                        <br />
+                        　感觉自己&ldquo;已经掌握了初级篇&rdquo;的人，让我们怀着更加高的要求来练习吧。<br />
+                        　首先，练习的时候一定要边时刻想象自己最喜欢的演奏家的声音边练习。<br />
+                        　没有憧憬的演奏家的人请大量的听一些各个职业演奏家们的CD唱片吧。<br />
+                        　一定能遇到自己喜欢的的。<br />
+                        　像这样，在自己的脑中边想象着声音边练习的方法是非常重要的。<br />
+                        　这虽然需要很多年月但会很切实的发生改变。<br />
+                        <br />
+                        <br />
+                        　１　意识着音的开头（发音）来练习。<br />
+                        　２　用不同的音量来做长音的练习。（弱、中弱、中强、强等等）<br />
+                        　３　用渐强&amp;渐弱来练习。<br />
+                        <br />
+                        <br />
+                        　１是相当难的。吐音的好坏左右着声音出来的方式。<br />
+                        　详细的请询问自己的老师。（好声音的80%都取决于这个部分）<br />
+                        　２的要求是，从开始吹到吹奏结束时注意音量都不要变化。特别是小声吹的时候很难。低音和高音的控制也是需要不断在发声失误中试验尝试的。<br />
+                        　以完全不晃动（不抖动）的声音为目标来练习吧。<br />
+                        　然后，如果能做出各种各样类型的渐强&amp;渐弱的话效果会更好。<br />
+                        <br />
+                        <br />
+                        　　上级篇<br />
+                        <br />
+                        <br />
+                        　完成初级、中级后声音应该好许多了，但是现在开始会更加困难。<br />
+                        <br />
+                        <br />
+                        　１　边意识着音程边练习。<br />
+                        　２　加上颤音的长音。<br />
+                        　３　改变长音的混响、音色（明亮的声音、暗淡的声音、轻薄的声音、厚重的声音）<br />
+                        　<br />
+                        　１的话一定要使用校音器。各个乐器的音程调和方法都非常的不同。<br />
+                        　唯一的共通点是会随着气温的变化音程发生变化，请问问自己的老师吧。<br />
+                        　（寒冷时音准会降低，炎热时音准会升高）<br />
+                        　２的话，因为这个也是会根据乐器不同而方法不同，请询问自己的老师。<br />
+                        　３呢，虽然音色是会受乐器、笛头，木管的话还会受哨片等等的因素影响决定了大体的范围，<br />
+                        　但是最后通过人类的身体控制来改变音色这样的事情也是可能的。<br />
+                        　许多教材只针对&ldquo;管乐演奏器官（Embouchure）&rdquo;、喉咙的使用法、呼吸法或者腹部横膈膜的支撑方法进行了叙述，<br />
+                        　但只是这些还是不够的。最终我们如果不变得与乐器一心同体来发声的话，<br />
+                        　就无法发出令人感动的声音。<br />
+                        　虽然渐渐的不小心说了些傲慢的东西，但简单来说，就是从头顶到脚底的组织全部用起来<br />
+                        　来&ldquo;制作声音&rdquo;。还有就是，自己身体周围的空间也是很重要的。<br />
+                        　把这些全部牢记意识着，然后改变音色（身体的使用法）来练习长音。<br />
+                        <br />
+                        <br />
+                        　　职业级篇<br />
+                        <br />
+                        <br />
+                        　1 　带有泛音控制的长音<br />
+                        　2　用最小限度的肌肉控制来实现控制最大限度的音量的长音<br />
+                        　3　为了一天吹8个小时以上也不会筋疲力尽（一天3次正式演出的工作持续一个月也能游刃有余）的长音练习<br />
+                        　4　为了发出能令人感动的声音的长音练习<br />
+                        　5　运用循环呼吸法来练习长音以及音阶的练习<br />
+                        <br />
+                        <br />
+                        　关于1 需要说明许多声学和人体构造方面的内容这次就省略了吧。<br />
+                        　简单来说的话就是做使声音细或粗一些，使混响增加或减少一些，<br />
+                        　使声音厚重或轻薄一些这样的控制。<br />
+                        　2和3　就像上级篇里说明了的那样，意识着从头顶到脚底来练习。<br />
+                        　4　这就是商业机～密了。<br />
+                        　5　虽然我手边没有关于循环呼吸的教材，简单的说明的话，就是边从鼻子吸气<br />
+                        　边持续吹奏。虽说越大的乐器越不利于做循环呼吸，但是我的友人现在在美国的<br />
+                        　伯克利音乐学院留学，他从长号的朋友那里听说，他的老师可以用长号非常轻松的<br />
+                        　使用循环呼吸。可怕的美国????&nbsp;<br />
+                        　长音到达这个境界之后到底还会如何发展我也不知道，我只能把自己从初学到现在为止的经验<br />
+                        　简单的试着总结了一下。<br />
+                        　为了制作出能够一直吹奏的身体今后我到死去为止每天都还是会进行长音的研究。<br />
+                        　这是如此的重要，所以请别觉得&ldquo;好无聊呀～&rdquo;让我们怀着趣味来练习长音吧。<br />
+                        <br />
+                        <br />
+                        　不练习长音的管乐器演奏者会变成怎样？<br />
+                        <br />
+                        <br />
+                        　会产生对身体施加着不必要的力气来演奏的毛病，长时间的演奏会很困难。<br />
+                        　也就是说身体养成了坏的演奏法的话要纠正是非常困难的（肌肉组织已经定型了）<br />
+                        　随着年龄的增长无法吹奏的可能性也会越高（虽然是50岁以后的事情）<br />
+                        　根据情况还出现过导致腰痛、颞下颌关节紊乱综合征之类的疾病的案例。（这个年轻人也有可能患上）<br />
+                        　还有就是高音域总是无法得到好的声音，铜管乐器的话称为泛音，<br />
+                        　木管的话称为超高音这些技巧无法顺利控制，无法加上规整的颤音，手指无法快速运作，<br />
+                        　无法做出音量的差异之类的这些问题点会不断出现。当然，因为循环呼吸是要使用各种身体组织的演奏法，<br />
+                        　就更加无从谈起了。<br />
+                        　值得注意的是就算做了长音练习，但没有做到正确科学的身体使用方法的话还是没有效果的，<br />
+                        　这只能拜托老师来帮助进行客观的检查。<br />
+                        <br />
+                        <br />
+                        　总结&nbsp;<br />
+                        <br />
+                        <br />
+                        　长音的练习只有根据演奏者的程度慢慢的改变着练习思路每天<br />
+                        　一点一点坚持着锻炼前进。（让我们不要焦急耐心练习吧）<br />
+                        　练了一星期了好了可以结束了什么的这可不行，和吃饭一样只要还在学习管乐器<br />
+                        　就得保证每次的练习都从长音开始。<br />
+                        　就当是被我骗了，请尝试着这样做吧。三个月后、半年后、一年后肯定会在某一时刻表现出效果
+                    </div>
+                    <div class="hackbox">
+                    </div>
+                </div>
+                <div class="xg">
+                    <ul><li>下一篇文章： <a title='教育理解   更新：2015-08-30  点击：0' href='../xxff/5906.html'>教育理解</a></li><li>上一篇文章： <a title='如何学习数学   更新：2016-09-13  点击：0' href='../xxff/5909.html'>如何学习数学</a></li></ul>
+                </div>
+                <div class="box2 box4">
+                    <div class="title" style="">
+                        <h2>
+                            <!--<span class="more"><a href="#">» 更多</a></span>-->相关文章</h2>
+                    </div>
+                    <div class="body">
+                        <ul class="list">
+                            <li><a title='英语学习心得体会！   更新：2010-04-15  点击：8' href='../xxff/773.html'>英语学习心得体会！</a></li><li><a title='高中生理科学习方法1   更新：2010-11-10  点击：0' href='../xxff/2399.html'>高中生理科学习方法1</a></li><li><a title='如何打开右脑记忆回路   更新：2011-08-08  点击：0' href='../xxff/4683.html'>如何打开右脑记忆回路</a></li><li><a title='及时复习的好处   更新：2011-07-12  点击：8' href='../xxff/3147.html'>及时复习的好处</a></li><li><a title='小号的口型   更新：2011-09-19  点击：0' href='../xxff/5557.html'>小号的口型</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="left" style="width: 300px;">
+        <div class="box1">
+            <div class="title">
+                <h2>
+                    <span class="more"><a href="../xxff/xxff.html">» 更多</a></span>学习方法</h2>
+            </div>
+            <div class="body">
+                <ul class="list">
+                    <li><a href="../">如何学习数学</a></li> <li><a href="../xxff/5907.html">管乐器为什么必须练长音？</a></li> <li><a href="../xxff/5906.html">教育理解</a></li> <li><a href="../xxff/5904.html">吉他自学支招</a></li> <li><a href="../xxff/5903.html">北京高考成绩6月23日公布 首次采用大平行志愿</a></li> <li><a href="../xxff/5902.html">高中物理</a></li> <li><a href="../xxff/5901.html">数学学习认识</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="box1">
+            <div class="title">
+                <h2>
+                    <span class="more"><a href="../ksjy/ksjy.html">» 更多</a></span>考试经验</h2>
+            </div>
+            <div class="body">
+                <ul class="list">
+                    <li><a href="../ksjy/3156.html">怎样的阅读才是正确的阅读？</a></li> <li><a href="../ksjy/3155.html">有针对性的学习才能考好语文</a></li> <li><a href="../ksjy/3154.html">词语类题型的总结</a></li> <li><a href="../ksjy/3153.html">语文考试技巧</a></li> <li><a href="../ksjy/3149.html">面对考试要主动</a></li> <li><a href="../ksjy/3109.html">把考试的精力放在基础上</a></li> <li><a href="../ksjy/3107.html"> 养成好的解题习惯才能拿高分</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="box1">
+            <div class="title">
+                <h2>
+                    <span class="more"><a href="../jzkt/jzkt.html">» 更多</a></span>家长课堂</h2>
+            </div>
+            <div class="body">
+                <ul class="list">
+                    <li><a href="../jzkt/5900.html">孩子，快乐的高手</a></li> <li><a href="../jzkt/5891.html">《浅谈中考语文复习的有效性》</a></li> <li><a href="../jzkt/5848.html">五年级数学下册练习</a></li> <li><a href="../jzkt/5847.html">练习题</a></li> <li><a href="../jzkt/5808.html">家长和小朋友对学习架子鼓的一些疑惑</a></li> <li><a href="../jzkt/5777.html">家长该如何预防孩子的网瘾？</a></li> <li><a href="../jzkt/5761.html">独生子女父母的教育方式</a></li>
+                </ul>
+            </div>
+        </div>
+        <script type="text/javascript"><!--
+        google_ad_client = "ca-pub-5232248721907840";
+        /* caijj300 */
+        google_ad_slot = "6444256775";
+        google_ad_width = 300;
+        google_ad_height = 250;
+        //-->
+        </script>
+        <script type="text/javascript"
+                src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+        </script>
+    </div>
+</div>
+<div id="footbar" class="w950">
+    <div class="title">
+        <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tr>
+                <td  height="30" valign="middle">
+                    <a href="index.php?m=home&c=index&a=teacher" target="_blank">做家教</a> | <a href="index.php?m=home&c=index&a=order" target="_blank">请家教</a> | <a href="index.php?m=home&c=index&a=Jiaoyuansousuo">教员搜索</a> | <a href="index.php?m=home&c=index&a=Jiaoyuan">教员分类</a> | <a href="index.php?m=home&c=index&a=XuexiFangfa1">学习方法</a> | <a href="index.php?m=home&c=index&a=KaoshiJingyan1">考试经验</a> | <a href="index.php?m=home&c=index&a=JiaZhangketang1">家长课堂</a> | <a href="index.php?m=home&c=index&a=JiajiaoXiangguan1">家教相关</a> | <a href="index.php?m=home&c=index&a=JiaZhangjingyan1">家教经验</a> | <a href=index.php?m=home&c=index&a=GuanYuwomen1>关于我们</a> | <a href="index.php?m=home&c=index&a=Changjianwenti1">常见问题</a> | <a href="index.php?m=home&c=index&a=HuiKuaifangshi1">汇款方式</a> | <a href="index.php?m=home&c=index&a=Lianxiwomen1" target="_blank">联系我们</a> | <a href="index.php?m=home&c=index&a=Zhaopin1"><img src="./public/home/images/zhaopin.gif" align="absmiddle" border="0"></a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="body">
+        联系电话：010-62642730　62643630　客服邮箱：caijjkf@163.com　<br />
+        版权所有：北京尚才家教 【<a href="http://www.caijj.com/" target="_blank">北京家教</a>】　工信部备案号:<a href="http://www.miibeian.gov.cn/" target="_blank">京ICP备09031430号</a><br />
+        家教服务中心：北京市海淀区清华大学东路金码大厦B座18层1809室<br />
+        Powered by www.caijj.com copyright 2009-2015<script src="http://s13.cnzz.com/stat.php?id=2467102&web_id=2467102&show=pic1" language="JavaScript"></script>
+    </div>
+</div>
+</body>
+</html>

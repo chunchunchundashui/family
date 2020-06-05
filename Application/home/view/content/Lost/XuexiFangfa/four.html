@@ -1,0 +1,300 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>【吉他自学支招】 - 北京尚才家教</title>
+    <link href="./public/home/css/css.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<script language="JavaScript" type="text/javascript">
+    <!--
+    function AddFavorite(sURL, sTitle)
+    {
+        try
+        {
+            window.external.addFavorite(sURL, sTitle);
+        }
+        catch (e)
+        {
+            try
+            {
+                window.sidebar.addPanel(sTitle, sURL, "");
+            }
+            catch (e)
+            {
+                alert("加入收藏失败，请使用Ctrl+D进行添加");
+            }
+        }
+    }
+    function SetHome(obj,vrl){
+        try{
+            obj.style.behavior='url(#default#homepage)';obj.setHomePage(vrl);
+        }
+        catch(e){
+            if(window.netscape) {
+                try {
+                    netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+                }
+                catch (e) {
+                    alert("此操作被浏览器拒绝！\n请在浏览器地址栏输入“about:config”并回车\n然后将 [signed.applets.codebase_principal_support]的值设置为'true',双击即可。");
+                }
+                var prefs = Components.classes['@mozilla.org/preferences-service;1'].getService(Components.interfaces.nsIPrefBranch);
+                prefs.setCharPref('browser.startup.homepage',vrl);
+            }
+        }
+    }
+    //-->
+</script>
+<script type="text/javascript">
+    //js获取cookie 
+    var acookie=document.cookie.split("; ");
+    function getck(sname)
+    {
+        //获取单个cookies 
+        for(var i=0;i<acookie.length;i++)
+        {
+            var arr=acookie[i].split("=");
+            if(sname==arr[0])
+            {
+                if(arr.length>1)
+                    return unescape(arr[1]);
+                else
+                    return "";
+            }
+        }
+        return "";
+    }
+</script>
+
+<script language="javascript" type="text/javascript">
+    <!--
+    function checkf()
+    {
+        if (document.getElementById("username").value=="")
+        {
+            alert("请输入用户名");
+            document.getElementById("username").focus();
+            return false;
+        }
+        if (document.getElementById("password").value=="")
+        {
+            alert("请输入密码");
+            document.getElementById("password").focus();
+            return false;
+        }
+
+    }
+
+    //-->
+</script>
+
+<form name="form1" method="post" action="index.php?m=home&c=enter" id="form1">
+    <div>
+    </div>
+
+    <div id="topbar" class="color_999">
+        <div class="w950">
+            <div class="right">
+                <a href="#" onclick="SetHome(this,window.location)" class="color_999">设为首页</a>&nbsp;
+                <a href="#" onclick="AddFavorite(window.location,document.title)" class="color_999">
+                    加入收藏</a>&nbsp; <a href="#" class="color_999">帮助中心</a>
+            </div>
+
+            <div class="left" id="wdl">
+                <?php if(!isset($_COOKIE['user'])){ echo '
+                &nbsp;&nbsp; <a href="index.php?m=home&c=index&a=user" class="color_orage text_decoration">注册用户</a>&nbsp;
+                用户名:<input name="username" style="width: 100px;" id="username" type="text">
+                &nbsp;&nbsp;密码:<input name="password" style="width: 100px;" id="password" type="password">
+                &nbsp;<input name="Button1" value="登录" onclick="return CheckForm();" id="Button1" type="submit">
+                <?php ';  } ?>
+                <?php if(isset($_COOKIE['user'])) { echo 'Hello:'.$_COOKIE['user'] ; } ?>
+            </div>
+            &nbsp;&nbsp; <a href="index.php?m=home&c=index&a=teacher" class="color_orage text_decoration">注册教员</a>&nbsp;
+
+            <a href="index.php?m=home&c=index&a=modifier" class="color_orage text_decoration">取回密码</a>
+            <?php if(isset($_COOKIE['user'])){ echo '
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="index.php?m=home&c=index&a=out" class="color_orage text_decoration">退出账号</a>&nbsp;
+            <?php ';  ?>
+            <?php } ?>
+        </div>
+    </div>
+    </div>
+</form>
+<div id="top">
+    <div class="w950">
+
+        <div style="float: right; width:100px; padding-top:25px;">
+            <a target="blank" href=tencent://message/?uin=5886626&Site=尚才家教&Menu=yes><img border="0" SRC='./public/home/images/qq.jpg' alt="QQ咨询"></a>
+        </div>
+        <div style="float: right; padding: 15px 0 0 0;">
+            <img src="./public/home/images/top_bn.gif" alt="尚才家教" />
+        </div>
+        <div id="logo" style="float:left;">
+            <img src="./public/home/images/logo.jpg" alt="尚才家教" />
+        </div>
+    </div>
+</div>
+<div id="menu" class="w950">
+    <ul>
+        <li><a href="index.php?m=home&c=indexLibrary"><span>首页</span></a></li>
+        <li id="lan_1"><a href="index.php?m=home&c=teacher"><span>教员库</span></a></li>
+        <li id="lan_2"><a href="index.php?m=home&c=UserLibrary"><span>学员库</span></a></li>
+        <li id="lan_3"><a href="index.php?m=home&c=star"><span>星级教员</span></a></li>
+        <li id="lan_4"><a href="index.php?m=home&c=major"><span>专业老师</span></a></li>
+        <li id="lan_5"><a href="index.php?m=home&c=university"><span>大学生家教</span></a></li>
+        <li id="lan_6"><a href="index.php?m=home&c=math"><span>奥数家教</span></a></li>
+        <li id="lan_7"><a href="index.php?m=home&c=english"><span>英语家教</span></a></li>
+        <li id="lan_8"><a href="index.php?m=home&c=music"><span>音乐家教</span></a></li>
+        <li id="lan_9"><a href="index.php?m=home&c=index&a=winCase"><span>成功案例</span></a></li>
+        <li id="lan_10"><a href="index.php?m=home&c=index&a=chargeStandard"><span>收费标准</span></a></li>
+    </ul>
+</div>
+
+<div id="main" class="w950">
+    <div class="right" style="width: 640px;">
+        <div class="guide">
+            <img src="./public/home/images/d05.gif" hspace="2" vspace="2" align="absbottom">当前位置： <span
+                class="red1"><a href="/">首页</a></span> &gt; 学习方法 &gt; <strong>吉他自学支招</strong>            </div>
+        <!--列表-->
+        <div class="box2">
+            <div class="title">
+            </div>
+            <div class="body" style="padding-top: 10px;">
+                <div id="cont">
+                    <h1>
+                        吉他自学支招</h1>
+                    <u>【教员编号：<a href="../thtml/49037.html" target="_blank">49037</a> 所在学校：首都师范大学 更新时间：<span class="yel">2015-7-5 12:24:21</span> 点击数：<span class="green"><script type="text/javascript" src="../other/click.aspx?id=5904"> </script></span>
+                        】</u>
+                    <p>
+                    </p>
+                    <div class="f14 lh20" style="padding-bottom: 10px; padding-top: 10px">
+                        &nbsp;<span style="font-family: 宋体; font-size: 10.5pt;">不管你是纯粹的想自学，还是没有找老师学习吉他的时间或精力，</span>
+                        <p class="p0" style="margin-top:0pt; margin-bottom:0pt; "><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; ">希望我写这一篇文章，对你们能有所帮助！</span><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; "><o:p></o:p></span></p>
+                        <p class="p0" style="margin-top:0pt; margin-bottom:0pt; "><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'Calibri'; ">&nbsp;</span></p>
+                        <p class="p0" style="margin-top:0pt; margin-bottom:0pt; "><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; ">1<font face="宋体">、前提准备</font></span><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; "><o:p></o:p></span></p>
+                        <p class="p0" style="margin-top:0pt; margin-bottom:0pt; "><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; ">要学习吉他，那你肯定必须有一把吉他，对于初学者来说，买一把一般的就可以，但我建议</span><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; "><o:p></o:p></span></p>
+                        <p class="p0" style="margin-top:0pt; margin-bottom:0pt; "><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; ">你别买太次的，因为等你弹时间长了，你会发现次的琴不仅音色次，手感次，更重要的是</span><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; "><o:p></o:p></span></p>
+                        <p class="p0" style="margin-top:0pt; margin-bottom:0pt; "><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; ">影响弹奏！！</span><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; "><o:p></o:p></span></p>
+                        <p class="p0" style="margin-top:0pt; margin-bottom:0pt; "><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; ">吉他准备好了之后，就要去你所在地的书店转一本关于吉他自学的书了，因为有书就有学习的主题，</span><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; "><o:p></o:p></span></p>
+                        <p class="p0" style="margin-top:0pt; margin-bottom:0pt; "><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; ">书上会给你分几个章节，循序渐进，只要自己慢慢按部就班的来，就不会有太大的问题，</span><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; "><o:p></o:p></span></p>
+                        <p class="p0" style="margin-top:0pt; margin-bottom:0pt; "><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'Calibri'; ">&nbsp;</span></p>
+                        <p class="p0" style="margin-top:0pt; margin-bottom:0pt; "><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'Calibri'; ">&nbsp;</span></p>
+                        <p class="p0" style="margin-top:0pt; margin-bottom:0pt; "><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; ">2<font face="宋体">、开始学习</font></span><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; "><o:p></o:p></span></p>
+                        <p class="p0" style="margin-top:0pt; margin-bottom:0pt; "><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; ">首先，你要先弄清楚吉他的构造（有几根弦、怎么排序）、六线谱的识别方法、和弦图的识别方法等等</span><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; "><o:p></o:p></span></p>
+                        <p class="p0" style="margin-top:0pt; margin-bottom:0pt; "><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; ">之后你就要按照书上说的持琴姿势，各个动作要领，左右手指法，不断熟练巩固，</span><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; "><o:p></o:p></span></p>
+                        <p class="p0" style="margin-top:0pt; margin-bottom:0pt; "><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; ">一般最初你要学一下简单的音阶，比如<font face="Calibri">C</font><font face="宋体">大调音阶，弹得同时，一定要注意自己的左右手配合默契，</font></span><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; "><o:p></o:p></span></p>
+                        <p class="p0" style="margin-top:0pt; margin-bottom:0pt; "><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; ">更要注意左右手的指法，&nbsp;音阶弹熟之后，可以利用这个音阶弹一下简单的单旋律曲子，比如：小星星、</span><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; "><o:p></o:p></span></p>
+                        <p class="p0" style="margin-top:0pt; margin-bottom:0pt; "><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; ">多年以前、莫斯科郊外的晚上等等</span><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; "><o:p></o:p></span></p>
+                        <p class="p0" style="margin-top:0pt; margin-bottom:0pt; "><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; ">接下来，就要学习一下吉他弹唱中最为重要的东西了<font face="Calibri">---</font><font face="宋体">左手和弦、右手节奏型</font></span><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; "><o:p></o:p></span></p>
+                        <p class="p0" style="margin-top:0pt; margin-bottom:0pt; "><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; ">最初学习和弦，你要先学习<font face="Calibri">C</font><font face="宋体">、</font><font face="Calibri">G</font><font face="宋体">两个调的和弦，（你买的书上都有），先按照书上的和弦图把和弦按好，</font></span><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; "><o:p></o:p></span></p>
+                        <p class="p0" style="margin-top:0pt; margin-bottom:0pt; "><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; ">然后右手拨<font face="Calibri">53231323</font><font face="宋体">（四四拍）、</font><font face="Calibri">532123</font><font face="宋体">（四三拍）等简单的节奏型，可能你左手会有这种感觉：</font></span><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; "><o:p></o:p></span></p>
+                        <p class="p0" style="margin-top:0pt; margin-bottom:0pt; "><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; ">手指不方便、指型难受、手指尖会疼、整个手都很僵很疲等等，但这只是最初你要克服的小问题，</span><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; "><o:p></o:p></span></p>
+                        <p class="p0" style="margin-top:0pt; margin-bottom:0pt; "><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; ">你只需要不断的反复，不断的熟练，把不习惯变成习惯就好了。</span><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; "><o:p></o:p></span></p>
+                        <p class="p0" style="margin-top:0pt; margin-bottom:0pt; "><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; ">当你把某几个和弦按熟之后，接下来需要你完成一个艰巨的任务，那就是：把你所学的这几个和弦连接，</span><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; "><o:p></o:p></span></p>
+                        <p class="p0" style="margin-top:0pt; margin-bottom:0pt; "><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; ">用左手按和弦右手拨弦的方式连续不断的弹奏出来（这里说的连续不断的意思是：把每两个和弦转换的</span><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; "><o:p></o:p></span></p>
+                        <p class="p0" style="margin-top:0pt; margin-bottom:0pt; "><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; ">时间缩短到最少，甚至是一步到位，不会影响到整个节奏的连贯性），练习和弦的连接的时候，</span><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; "><o:p></o:p></span></p>
+                        <p class="p0" style="margin-top:0pt; margin-bottom:0pt; "><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; ">你当然也可以弹奏几首简单的曲子，这样不仅学会了曲子也锻炼了左右手</span><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; "><o:p></o:p></span></p>
+                        <p class="p0" style="margin-top:0pt; margin-bottom:0pt; "><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; ">最后的任务就要不断反复的练习了，要想把<font face="Calibri">C</font><font face="宋体">、</font><font face="Calibri">G</font><font face="宋体">两个调的和弦按得熟练，一般至少需要半年左右的时间吧</font></span><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; "><o:p></o:p></span></p>
+                        <p class="p0" style="margin-top:0pt; margin-bottom:0pt; "><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; ">（当然不排除你很勤奋，可能两三个月甚至是一两个月就搞定的情况），把<font face="Calibri">C</font><font face="宋体">、</font><font face="Calibri">G</font><font face="宋体">两个调的和弦以及右手</font></span><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; "><o:p></o:p></span></p>
+                        <p class="p0" style="margin-top:0pt; margin-bottom:0pt; "><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; ">简单的节奏型都练习熟练后弹奏这两个调的歌曲应该都不是问题了</span><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; "><o:p></o:p></span></p>
+                        <p class="p0" style="margin-top:0pt; margin-bottom:0pt; "><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; ">3<font face="宋体">、进阶学习</font></span><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; "><o:p></o:p></span></p>
+                        <p class="p0" style="margin-top:0pt; margin-bottom:0pt; "><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; ">进阶学习中大体上分两个部分：一是歌曲弹唱中的各类和弦、右手各类分解、扫弦节奏型</span><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; "><o:p></o:p></span></p>
+                        <p class="p0" style="margin-top:0pt; margin-bottom:0pt; "><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; ">二是各类指型的音阶（<font face="Calibri">la</font><font face="宋体">指型、</font><font face="Calibri">sol</font><font face="宋体">指型、</font><font face="Calibri">si</font><font face="宋体">指型、</font><font face="Calibri">mi</font><font face="宋体">指型等等吧）、各种独奏乐曲</font></span><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; "><o:p></o:p></span></p>
+                        <p class="p0" style="margin-top:0pt; margin-bottom:0pt; "><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; ">明白大体要学习的内容之后，你不仅要多接触各类左手和弦，你更要多关注一些歌曲的前奏、</span><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; "><o:p></o:p></span></p>
+                        <p class="p0" style="margin-top:0pt; margin-bottom:0pt; "><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; ">间奏、尾奏的<font face="Calibri">solo</font><font face="宋体">。单独的古典曲子的弹奏，各种轻音乐或指弹音乐的作品。&nbsp;</font></span><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; "><o:p></o:p></span></p>
+                        <p class="p0" style="margin-top:0pt; margin-bottom:0pt; "><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; ">对于进阶学习来说，学习一些乐理知识会对你帮助很大</span><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; "><o:p></o:p></span></p>
+                        <p class="p0" style="margin-top:0pt; margin-bottom:0pt; "><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; ">4<font face="宋体">、借鉴学习</font></span><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; "><o:p></o:p></span></p>
+                        <p class="p0" style="margin-top:0pt; margin-bottom:0pt; "><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; ">对于这一阶段的学习，光靠自学已经不能满足自身的需要了，可以这样说：你必须要多找出色的老师学习了</span><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; "><o:p></o:p></span></p>
+                        <p class="p0" style="margin-top:0pt; margin-bottom:0pt; "><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; ">学习一些特殊的技巧，细节的把握，对作品的整体处理，记住：吉他的学习也是学无止境的</span><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; "><o:p></o:p></span></p>
+                        <p class="p0" style="margin-top:0pt; margin-bottom:0pt; "><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'Calibri'; ">&nbsp;</span></p>
+                        <p class="p0" style="margin-top:0pt; margin-bottom:0pt; "><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; ">5<font face="宋体">、总结</font></span><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; "><o:p></o:p></span></p>
+                        <p class="p0" style="margin-top:0pt; margin-bottom:0pt; "><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; ">吉他学习不像是学习数学公式一样，记住了、知道思维步骤过程了就会了、多做几遍就能熟能生巧的</span><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; "><o:p></o:p></span></p>
+                        <p class="p0" style="margin-top:0pt; margin-bottom:0pt; "><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; ">东西，这是一个不断反复不断巩固的长期学习的过程，应有坚定的信心和锲而不舍的精神，明白这一点，</span><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; "><o:p></o:p></span></p>
+                        <p class="p0" style="margin-top:0pt; margin-bottom:0pt; "><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'宋体'; ">加上自己的不断努力想弹好吉他，不是问题！！</span><span style="mso-spacerun:'yes'; font-size:10.5000pt; font-family:'Calibri'; "><o:p></o:p></span></p>
+                    </div>
+                    <div class="hackbox">
+                    </div>
+                </div>
+                <div class="xg">
+                    <ul><li>下一篇文章： <a title='北京高考成绩6月23日公布 首次采用大平行志愿   更新：2015-06-11  点击：0' href='../xxff/5903.html'>北京高考成绩6月23日公布 首次采用大平行志愿</a></li><li>上一篇文章： <a title='教育理解   更新：2015-08-30  点击：0' href='../xxff/5906.html'>教育理解</a></li></ul>
+                </div>
+                <div class="box2 box4">
+                    <div class="title" style="">
+                        <h2>
+                            <!--<span class="more"><a href="#">» 更多</a></span>-->相关文章</h2>
+                    </div>
+                    <div class="body">
+                        <ul class="list">
+                            <li><a title='带大家认识架子鼓   更新：2010-08-18  点击：0' href='../xxff/2360.html'>带大家认识架子鼓</a></li><li><a title='初步开启“超右脑记忆回路”   更新：2011-08-08  点击：0' href='../xxff/4684.html'>初步开启“超右脑记忆回路”</a></li><li><a title='怎样快速的记忆英语单词   更新：2012-12-14  点击：0' href='../xxff/5754.html'>怎样快速的记忆英语单词</a></li><li><a title='Where引导定语从句限定抽象名词先行词   更新：2012-03-03  点击：0' href='../xxff/5650.html'>Where引导定语从句限定抽象名词先行词</a></li><li><a title=' 培养学习习惯的策略和方法   更新：2012-03-26  点击：0' href='../xxff/5679.html'> 培养学习习惯的策略和方法</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="left" style="width: 300px;">
+        <div class="box1">
+            <div class="title">
+                <h2>
+                    <span class="more"><a href="../xxff/xxff.html">» 更多</a></span>学习方法</h2>
+            </div>
+            <div class="body">
+                <ul class="list">
+                    <li><a href="../">如何学习数学</a></li> <li><a href="../xxff/5907.html">管乐器为什么必须练长音？</a></li> <li><a href="../xxff/5906.html">教育理解</a></li> <li><a href="../xxff/5904.html">吉他自学支招</a></li> <li><a href="../xxff/5903.html">北京高考成绩6月23日公布 首次采用大平行志愿</a></li> <li><a href="../xxff/5902.html">高中物理</a></li> <li><a href="../xxff/5901.html">数学学习认识</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="box1">
+            <div class="title">
+                <h2>
+                    <span class="more"><a href="../ksjy/ksjy.html">» 更多</a></span>考试经验</h2>
+            </div>
+            <div class="body">
+                <ul class="list">
+                    <li><a href="../ksjy/3156.html">怎样的阅读才是正确的阅读？</a></li> <li><a href="../ksjy/3155.html">有针对性的学习才能考好语文</a></li> <li><a href="../ksjy/3154.html">词语类题型的总结</a></li> <li><a href="../ksjy/3153.html">语文考试技巧</a></li> <li><a href="../ksjy/3149.html">面对考试要主动</a></li> <li><a href="../ksjy/3109.html">把考试的精力放在基础上</a></li> <li><a href="../ksjy/3107.html"> 养成好的解题习惯才能拿高分</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="box1">
+            <div class="title">
+                <h2>
+                    <span class="more"><a href="../jzkt/jzkt.html">» 更多</a></span>家长课堂</h2>
+            </div>
+            <div class="body">
+                <ul class="list">
+                    <li><a href="../jzkt/5900.html">孩子，快乐的高手</a></li> <li><a href="../jzkt/5891.html">《浅谈中考语文复习的有效性》</a></li> <li><a href="../jzkt/5848.html">五年级数学下册练习</a></li> <li><a href="../jzkt/5847.html">练习题</a></li> <li><a href="../jzkt/5808.html">家长和小朋友对学习架子鼓的一些疑惑</a></li> <li><a href="../jzkt/5777.html">家长该如何预防孩子的网瘾？</a></li> <li><a href="../jzkt/5761.html">独生子女父母的教育方式</a></li>
+                </ul>
+            </div>
+        </div>
+        <script type="text/javascript"><!--
+        google_ad_client = "ca-pub-5232248721907840";
+        /* caijj300 */
+        google_ad_slot = "6444256775";
+        google_ad_width = 300;
+        google_ad_height = 250;
+        //-->
+        </script>
+        <script type="text/javascript"
+                src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+        </script>
+    </div>
+</div>
+<div id="footbar" class="w950">
+    <div class="title">
+        <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tr>
+                <td  height="30" valign="middle">
+                    <a href="index.php?m=home&c=index&a=teacher" target="_blank">做家教</a> | <a href="index.php?m=home&c=index&a=order" target="_blank">请家教</a> | <a href="index.php?m=home&c=index&a=Jiaoyuansousuo">教员搜索</a> | <a href="index.php?m=home&c=index&a=Jiaoyuan">教员分类</a> | <a href="index.php?m=home&c=index&a=XuexiFangfa1">学习方法</a> | <a href="index.php?m=home&c=index&a=KaoshiJingyan1">考试经验</a> | <a href="index.php?m=home&c=index&a=JiaZhangketang1">家长课堂</a> | <a href="index.php?m=home&c=index&a=JiajiaoXiangguan1">家教相关</a> | <a href="index.php?m=home&c=index&a=JiaZhangjingyan1">家教经验</a> | <a href=index.php?m=home&c=index&a=GuanYuwomen1>关于我们</a> | <a href="index.php?m=home&c=index&a=Changjianwenti1">常见问题</a> | <a href="index.php?m=home&c=index&a=HuiKuaifangshi1">汇款方式</a> | <a href="index.php?m=home&c=index&a=Lianxiwomen1" target="_blank">联系我们</a> | <a href="index.php?m=home&c=index&a=Zhaopin1"><img src="./public/home/images/zhaopin.gif" align="absmiddle" border="0"></a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="body">
+        联系电话：010-62642730　62643630　客服邮箱：caijjkf@163.com　<br />
+        版权所有：北京尚才家教 【<a href="http://www.caijj.com/" target="_blank">北京家教</a>】　工信部备案号:<a href="http://www.miibeian.gov.cn/" target="_blank">京ICP备09031430号</a><br />
+        家教服务中心：北京市海淀区清华大学东路金码大厦B座18层1809室<br />
+        Powered by www.caijj.com copyright 2009-2015<script src="http://s13.cnzz.com/stat.php?id=2467102&web_id=2467102&show=pic1" language="JavaScript"></script>
+    </div>
+</div>
+</body>
+</html>

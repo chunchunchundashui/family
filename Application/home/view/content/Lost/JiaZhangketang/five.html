@@ -1,0 +1,400 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>【家长和小朋友对学习架子鼓的一些疑惑】 - 北京尚才家教</title>
+    <link href="./public/home/css/css.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<script language="JavaScript" type="text/javascript">
+    <!--
+    function AddFavorite(sURL, sTitle)
+    {
+        try
+        {
+            window.external.addFavorite(sURL, sTitle);
+        }
+        catch (e)
+        {
+            try
+            {
+                window.sidebar.addPanel(sTitle, sURL, "");
+            }
+            catch (e)
+            {
+                alert("加入收藏失败，请使用Ctrl+D进行添加");
+            }
+        }
+    }
+    function SetHome(obj,vrl){
+        try{
+            obj.style.behavior='url(#default#homepage)';obj.setHomePage(vrl);
+        }
+        catch(e){
+            if(window.netscape) {
+                try {
+                    netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+                }
+                catch (e) {
+                    alert("此操作被浏览器拒绝！\n请在浏览器地址栏输入“about:config”并回车\n然后将 [signed.applets.codebase_principal_support]的值设置为'true',双击即可。");
+                }
+                var prefs = Components.classes['@mozilla.org/preferences-service;1'].getService(Components.interfaces.nsIPrefBranch);
+                prefs.setCharPref('browser.startup.homepage',vrl);
+            }
+        }
+    }
+    //-->
+</script>
+<script type="text/javascript">
+    //js获取cookie 
+    var acookie=document.cookie.split("; ");
+    function getck(sname)
+    {
+        //获取单个cookies 
+        for(var i=0;i<acookie.length;i++)
+        {
+            var arr=acookie[i].split("=");
+            if(sname==arr[0])
+            {
+                if(arr.length>1)
+                    return unescape(arr[1]);
+                else
+                    return "";
+            }
+        }
+        return "";
+    }
+</script>
+
+<script language="javascript" type="text/javascript">
+    <!--
+    function checkf()
+    {
+        if (document.getElementById("username").value=="")
+        {
+            alert("请输入用户名");
+            document.getElementById("username").focus();
+            return false;
+        }
+        if (document.getElementById("password").value=="")
+        {
+            alert("请输入密码");
+            document.getElementById("password").focus();
+            return false;
+        }
+
+    }
+
+    //-->
+</script>
+
+<form name="form1" method="post" action="index.php?m=home&c=enter" id="form1">
+    <div>
+    </div>
+
+    <div id="topbar" class="color_999">
+        <div class="w950">
+            <div class="right">
+                <a href="#" onclick="SetHome(this,window.location)" class="color_999">设为首页</a>&nbsp;
+                <a href="#" onclick="AddFavorite(window.location,document.title)" class="color_999">
+                    加入收藏</a>&nbsp; <a href="#" class="color_999">帮助中心</a>
+            </div>
+
+            <div class="left" id="wdl">
+                <?php if(!isset($_COOKIE['user'])){ echo '
+                &nbsp;&nbsp; <a href="index.php?m=home&c=index&a=user" class="color_orage text_decoration">注册用户</a>&nbsp;
+                用户名:<input name="username" style="width: 100px;" id="username" type="text">
+                &nbsp;&nbsp;密码:<input name="password" style="width: 100px;" id="password" type="password">
+                &nbsp;<input name="Button1" value="登录" onclick="return CheckForm();" id="Button1" type="submit">
+                <?php ';  } ?>
+                <?php if(isset($_COOKIE['user'])) { echo 'Hello:'.$_COOKIE['user'] ; } ?>
+            </div>
+            &nbsp;&nbsp; <a href="index.php?m=home&c=index&a=teacher" class="color_orage text_decoration">注册教员</a>&nbsp;
+
+            <a href="index.php?m=home&c=index&a=modifier" class="color_orage text_decoration">取回密码</a>
+            <?php if(isset($_COOKIE['user'])){ echo '
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="index.php?m=home&c=index&a=out" class="color_orage text_decoration">退出账号</a>&nbsp;
+            <?php ';  ?>
+            <?php } ?>
+        </div>
+    </div>
+    </div>
+</form>
+<div id="top">
+    <div class="w950">
+
+        <div style="float: right; width:100px; padding-top:25px;">
+            <a target="blank" href=tencent://message/?uin=5886626&Site=尚才家教&Menu=yes><img border="0" SRC='./public/home/images/qq.jpg' alt="QQ咨询"></a>
+        </div>
+        <div style="float: right; padding: 15px 0 0 0;">
+            <img src="./public/home/images/top_bn.gif" alt="尚才家教" />
+        </div>
+        <div id="logo" style="float:left;">
+            <img src="./public/home/images/logo.jpg" alt="尚才家教" />
+        </div>
+    </div>
+</div>
+<div id="menu" class="w950">
+    <ul>
+        <li><a href="index.php?m=home&c=indexLibrary"><span>首页</span></a></li>
+        <li id="lan_1"><a href="index.php?m=home&c=teacher"><span>教员库</span></a></li>
+        <li id="lan_2"><a href="index.php?m=home&c=UserLibrary"><span>学员库</span></a></li>
+        <li id="lan_3"><a href="index.php?m=home&c=star"><span>星级教员</span></a></li>
+        <li id="lan_4"><a href="index.php?m=home&c=major"><span>专业老师</span></a></li>
+        <li id="lan_5"><a href="index.php?m=home&c=university"><span>大学生家教</span></a></li>
+        <li id="lan_6"><a href="index.php?m=home&c=math"><span>奥数家教</span></a></li>
+        <li id="lan_7"><a href="index.php?m=home&c=english"><span>英语家教</span></a></li>
+        <li id="lan_8"><a href="index.php?m=home&c=music"><span>音乐家教</span></a></li>
+        <li id="lan_9"><a href="index.php?m=home&c=index&a=winCase"><span>成功案例</span></a></li>
+        <li id="lan_10"><a href="index.php?m=home&c=index&a=chargeStandard"><span>收费标准</span></a></li>
+    </ul>
+</div>
+
+<div id="main" class="w950">
+    <div class="right" style="width: 640px;">
+        <div class="guide">
+            <img src="./public/home/images/d05.gif" hspace="2" vspace="2" align="absbottom">当前位置： <span
+                class="red1"><a href="/">首页</a></span> &gt; 家长课堂 &gt; <strong>家长和小朋友对学习架子鼓的一些疑惑</strong>            </div>
+        <!--列表-->
+        <div class="box2">
+            <div class="title">
+            </div>
+            <div class="body" style="padding-top: 10px;">
+                <div id="cont">
+                    <h1>
+                        家长和小朋友对学习架子鼓的一些疑惑</h1>
+                    <u>【教员编号：<a href="../thtml/41215.html" target="_blank">41215</a> 所在学校：北京现代音乐学院 更新时间：<span class="yel">2013-7-25 12:15:31</span> 点击数：<span class="green"><script type="text/javascript" src="../other/click.aspx?id=5808"> </script></span>
+                        】</u>
+                    <p>
+                    </p>
+                    <div class="f14 lh20" style="padding-bottom: 10px; padding-top: 10px">
+                        &nbsp;本人根据多年的演奏和教学经验，在此列出一些涉及鼓方面的问题。
+                        <div>&nbsp;</div>
+                        <div>1.多大年龄可以学鼓？</div>
+                        <div>答：理论上，能听懂别人说话和身高够得着鼓（套鼓）即可。这里涉</div>
+                        <div>&nbsp;</div>
+                        <div>及一个骨骼生长发育的问题，如果教学方法不正确，在长期的演奏中</div>
+                        <div>&nbsp;</div>
+                        <div>会对孩子的骨骼生长发育有影响。</div>
+                        <div>&nbsp;</div>
+                        <div>2.我（或者我孩子）适合学鼓吗？</div>
+                        <div>答：只要你（或者你的孩子）喜欢就可以学，&ldquo;喜欢&rdquo;是个很重要的</div>
+                        <div>&nbsp;</div>
+                        <div>前提条件。在以往的教学过程中碰到过孩子并不是很喜欢的情况，但</div>
+                        <div>&nbsp;</div>
+                        <div>是家长由于种种原因（没时间管孩子，找个地方让他玩去；隔壁谁谁</div>
+                        <div>&nbsp;</div>
+                        <div>谁家的孩子也在学，咱也学去；胆小的孩子听从家长安排，不敢说出</div>
+                        <div>&nbsp;</div>
+                        <div>来；等等）还是把孩子送去学鼓了，结果导致孩子的学习进度慢，学</div>
+                        <div>&nbsp;</div>
+                        <div>习成绩不明显。这当然很好理解，因为他（她）压根儿就不喜欢。</div>
+                        <div>&nbsp;</div>
+                        <div>3.学鼓需要花多少钱？</div>
+                        <div>答：具体费用无法确定。学鼓的费用因学习目的（业余爱好和专业学</div>
+                        <div>&nbsp;</div>
+                        <div>习）不同而有所区别。业余爱好的话，对师资和设备要求相对要低一</div>
+                        <div>&nbsp;</div>
+                        <div>点，所以费用也少一些。比如你可以请一个普通的鼓演奏员（而不是</div>
+                        <div>&nbsp;</div>
+                        <div>教授、大师级别或者某知名乐队的鼓手），学费就相对较低；专业学</div>
+                        <div>&nbsp;</div>
+                        <div>习一般都是涉及职业定位的，所以对师资和设备要求也会高很多。各</div>
+                        <div>&nbsp;</div>
+                        <div>方面的费用还受到各地消费水平的影响。</div>
+                        <div>&nbsp;</div>
+                        <div>4.要是买鼓的话，我该买电子鼓还是原声鼓呢？</div>
+                        <div>答：这里需要了解什么是电子鼓。电子鼓是通过对原声鼓进行&ldquo;音色</div>
+                        <div>&nbsp;</div>
+                        <div>采样&rdquo;，对击打的物理特性进行模仿的仿真鼓。1：如果你是业余爱好</div>
+                        <div>&nbsp;</div>
+                        <div>，那就买电鼓就可以了；如果你住楼房（没有条件做专业鼓房），那</div>
+                        <div>&nbsp;</div>
+                        <div>也不得不买电鼓，不然你家的门会被邻居和警察叔叔敲破。2：专业学</div>
+                        <div>&nbsp;</div>
+                        <div>鼓的，本人不建议长时间演奏电鼓。（音色采样：可以把采样简单理</div>
+                        <div>&nbsp;</div>
+                        <div>解为录制;低档的电鼓非采样音色，而是MIDI音色，MIDI音色可以简单</div>
+                        <div>&nbsp;</div>
+                        <div>理解为&ldquo;比较假的声音&rdquo;）</div>
+                        <div>&nbsp;</div>
+                        <div>5.我（或者我的孩子）怎么越学越感觉没兴趣呢？</div>
+                        <div>答：学鼓的目的分为业余爱好和专业两种。我的做法是针对不同的学</div>
+                        <div>&nbsp;</div>
+                        <div>习目的，制定不同的教学方案。如果让一个业余爱好的人，每天n个小</div>
+                        <div>&nbsp;</div>
+                        <div>时在那练基本功，当然越来越没兴趣；或者对一个专业学习的人，采</div>
+                        <div>&nbsp;</div>
+                        <div>用对待业余爱好的教学方法去教，慢慢地人家也就知道了你本身就是</div>
+                        <div>&nbsp;</div>
+                        <div>一个业余的，既没方法也没专业知识。</div>
+                        <div>&nbsp;</div>
+                        <div>6.我（或者我的孩子）学鼓了以后，需要去考级吗？</div>
+                        <div>答：（回答这个问题有风险，被骂的可能性很大。以前在一家培训机</div>
+                        <div>&nbsp;</div>
+                        <div>构教学的时候，有家长问过这个问题，我胆儿小，只能在私底下回答</div>
+                        <div>&nbsp;</div>
+                        <div>她）。先了解考级是什么。考级是通过去&ldquo;应考&rdquo;一个行业内部制定</div>
+                        <div>&nbsp;</div>
+                        <div>的某种&ldquo;标准&rdquo;而取得某种资格的&ldquo;商业行为&rdquo;。艺无止境，&ldquo;标准</div>
+                        <div>&nbsp;</div>
+                        <div>&rdquo;如何制定呢？&ldquo;商业行为&rdquo;是否因&ldquo;商业&rdquo;而变质呢？想明白了上</div>
+                        <div>&nbsp;</div>
+                        <div>述问题，你也就知道自己是否该去考级了。当然，如果你为了某天能</div>
+                        <div>&nbsp;</div>
+                        <div>在隔壁邻居面前说：&ldquo;瞧！我（或者我孩子）的架子鼓演奏水平是10</div>
+                        <div>&nbsp;</div>
+                        <div>级，牛掰吧？&rdquo;那就另当别论了。</div>
+                        <div>&nbsp;</div>
+                        <div>7.我（或者我孩子）的老师是某某某，牛得很，为什么我孩子就是学</div>
+                        <div>&nbsp;</div>
+                        <div>不会呢？</div>
+                        <div>答：分两方面：孩子和老师（这里需要排除一种天生智力有问题的情</div>
+                        <div>&nbsp;</div>
+                        <div>况）。架子鼓学习的成功与否，同样适用爱迪生先生的那句话：百分</div>
+                        <div>&nbsp;</div>
+                        <div>之一的天分加百分之九十九的勤奋。单独拥有天分和单独拥有勤奋，</div>
+                        <div>&nbsp;</div>
+                        <div>或者两者兼备，会出现什么情况呢？1：单独拥有天分的人打架子鼓，</div>
+                        <div>&nbsp;</div>
+                        <div>你会感觉很好听（这里的好听是指与音乐的融合程度），因为他（她</div>
+                        <div>&nbsp;</div>
+                        <div>）知道哪里该打，哪里不该打。但是打出来的声音总感觉少了点东西</div>
+                        <div>&nbsp;</div>
+                        <div>，那就是音色不够细腻，因为他（她）没有勤奋，也就是没有演奏所</div>
+                        <div>&nbsp;</div>
+                        <div>需的基本功；2：:单独拥有勤奋的人打架子鼓，也会很好听（这个好</div>
+                        <div>&nbsp;</div>
+                        <div>听是指声音的细腻程度）。比如律动强、时值准、难度高等等。这个</div>
+                        <div>&nbsp;</div>
+                        <div>&ldquo;好听&rdquo;是脱离了音乐之外的好听，如果与音乐融合，他（她）就不</div>
+                        <div>&nbsp;</div>
+                        <div>知所措了，因为他（她）没有天赋，不知道哪里该打，哪里不该打。3</div>
+                        <div>&nbsp;</div>
+                        <div>：如果音乐天赋和勤奋兼备，那就成为大师了！关于老师的方面，可</div>
+                        <div>&nbsp;</div>
+                        <div>以作个简短的概括：会演奏的不一定会教，会教的不一定能演奏。总</div>
+                        <div>&nbsp;</div>
+                        <div>而言之言而总之：演奏和教学是两个方面的学问！</div>
+                        <div>&nbsp;</div>
+                        <div>8.我（或者我孩子）都学n年了，老师说还要n年，为什么呀？</div>
+                        <div>答：这又是一个找挨骂的回答，其实老师是怕你心理承受不了才说的n</div>
+                        <div>&nbsp;</div>
+                        <div>年。根据本人的经验，你也许还要学n多个n年。大道理就不讲了，什</div>
+                        <div>&nbsp;</div>
+                        <div>么&ldquo;艺无止境&rdquo;&ldquo;台上一分钟，台下十年功&rdquo;等等，这些当然是对的</div>
+                        <div>&nbsp;</div>
+                        <div>。但是现在很多的教学机构或个人，受利益驱使，昧着良心教课。本</div>
+                        <div>&nbsp;</div>
+                        <div>来利用一、二节课教你基本功就能解决的问题，偏偏不这样教，而是</div>
+                        <div>&nbsp;</div>
+                        <div>每节课都教你演奏一首歌。my god！天下之歌何其多也啊，什么时候</div>
+                        <div>&nbsp;</div>
+                        <div>是个头？老子的道德经里不是说了嘛，&ldquo;一生二，二生三，三生万物</div>
+                        <div>&nbsp;</div>
+                        <div>&rdquo;这个&ldquo;一&rdquo;就是根源，在架子鼓里就是基本功。如果不教你&ldquo;一&rdquo;</div>
+                        <div>&nbsp;</div>
+                        <div>，而是教你&ldquo;万物&rdquo;，那会是什么结果？其实很多不同的歌曲所包含</div>
+                        <div>&nbsp;</div>
+                        <div>的基本功是一样的，你只要学习了这个基本功，那些相似的歌曲都是</div>
+                        <div>&nbsp;</div>
+                        <div>自己可以完成的。根本不需要花费这么多的时间和金钱。</div>
+                        <div>&nbsp;</div>
+                        <div>9.我（或者我孩子）学鼓了以后能干嘛？</div>
+                        <div>答：因业余爱好而学鼓的自不必解释；专业学习的人，未来的发展方</div>
+                        <div>&nbsp;</div>
+                        <div>向可以根据鼓手的职业划分来决定。现在的鼓手根据自身特点和演奏</div>
+                        <div>&nbsp;</div>
+                        <div>需要分很多种：现场型、录音型、教学型等等。</div>
+                        <div>&nbsp;</div>
+                        <div>&nbsp;</div>
+                        <div>&nbsp;</div>
+                        <div>&nbsp;</div>
+                        <div>&nbsp;</div>
+                    </div>
+                    <div class="hackbox">
+                    </div>
+                </div>
+                <div class="xg">
+                    <ul><li>下一篇文章： <a title='家长该如何预防孩子的网瘾？   更新：2013-04-02  点击：0' href='../jzkt/5777.html'>家长该如何预防孩子的网瘾？</a></li><li>上一篇文章： <a title='练习题   更新：2014-02-08  点击：0' href='../jzkt/5847.html'>练习题</a></li></ul>
+                </div>
+                <div class="box2 box4">
+                    <div class="title" style="">
+                        <h2>
+                            相关文章</h2>
+                    </div>
+                    <div class="body">
+                        <ul class="list">
+                            <li><a title='做个有思想的老师   更新：2012-09-28  点击：0' href='../jzkt/5738.html'>做个有思想的老师</a></li><li><a title='父母怎样培养孩子学英语的兴趣？   更新：2011-06-30  点击：8' href='../jzkt/2876.html'>父母怎样培养孩子学英语的兴趣？</a></li><li><a title='一节失败的探究性实验课《串并联电路》   更新：2012-01-11  点击：0' href='../jzkt/5622.html'>一节失败的探究性实验课《串并联电路》</a></li><li><a title='家长要与孩子共同学习   更新：2011-01-12  点击：0' href='../jzkt/2426.html'>家长要与孩子共同学习</a></li><li><a title='奥数：适量足矣   更新：2012-03-01  点击：0' href='../jzkt/5647.html'>奥数：适量足矣</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="left" style="width: 300px;">
+        <div class="box1">
+            <div class="title">
+                <h2>
+                    <span class="more"><a href="../xxff/xxff.html">» 更多</a></span>学习方法</h2>
+            </div>
+            <div class="body">
+                <ul class="list">
+                    <li><a href="../xxff/5909.html">如何学习数学</a></li> <li><a href="../xxff/5907.html">管乐器为什么必须练长音？</a></li> <li><a href="../xxff/5906.html">教育理解</a></li> <li><a href="../xxff/5904.html">吉他自学支招</a></li> <li><a href="../xxff/5903.html">北京高考成绩6月23日公布 首次采用大平行志愿</a></li> <li><a href="../xxff/5902.html">高中物理</a></li> <li><a href="../xxff/5901.html">数学学习认识</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="box1">
+            <div class="title">
+                <h2>
+                    <span class="more"><a href="../ksjy/ksjy.html">» 更多</a></span>考试经验</h2>
+            </div>
+            <div class="body">
+                <ul class="list">
+                    <li><a href="../ksjy/3156.html">怎样的阅读才是正确的阅读？</a></li> <li><a href="../ksjy/3155.html">有针对性的学习才能考好语文</a></li> <li><a href="../ksjy/3154.html">词语类题型的总结</a></li> <li><a href="../ksjy/3153.html">语文考试技巧</a></li> <li><a href="../ksjy/3149.html">面对考试要主动</a></li> <li><a href="../ksjy/3109.html">把考试的精力放在基础上</a></li> <li><a href="../ksjy/3107.html"> 养成好的解题习惯才能拿高分</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="box1">
+            <div class="title">
+                <h2>
+                    <span class="more"><a href="../jzkt/jzkt.html">» 更多</a></span>家长课堂</h2>
+            </div>
+            <div class="body">
+                <ul class="list">
+                    <li><a href="../jzkt/5900.html">孩子，快乐的高手</a></li> <li><a href="../jzkt/5891.html">《浅谈中考语文复习的有效性》</a></li> <li><a href="../jzkt/5848.html">五年级数学下册练习</a></li> <li><a href="../jzkt/5847.html">练习题</a></li> <li><a href="../jzkt/5808.html">家长和小朋友对学习架子鼓的一些疑惑</a></li> <li><a href="../jzkt/5777.html">家长该如何预防孩子的网瘾？</a></li> <li><a href="../jzkt/5761.html">独生子女父母的教育方式</a></li>
+                </ul>
+            </div>
+        </div>
+        <script type="text/javascript"><!--
+        google_ad_client = "ca-pub-5232248721907840";
+        /* caijj300 */
+        google_ad_slot = "6444256775";
+        google_ad_width = 300;
+        google_ad_height = 250;
+        //-->
+        </script>
+        <script type="text/javascript"
+                src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+        </script>
+    </div>
+</div>
+<div id="footbar" class="w950">
+    <div class="title">
+        <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tr>
+                <td  height="30" valign="middle">
+                    <a href="index.php?m=home&c=index&a=teacher" target="_blank">做家教</a> | <a href="index.php?m=home&c=index&a=order" target="_blank">请家教</a> | <a href="index.php?m=home&c=index&a=Jiaoyuansousuo">教员搜索</a> | <a href="index.php?m=home&c=index&a=Jiaoyuan">教员分类</a> | <a href="index.php?m=home&c=index&a=XuexiFangfa1">学习方法</a> | <a href="index.php?m=home&c=index&a=KaoshiJingyan1">考试经验</a> | <a href="index.php?m=home&c=index&a=JiaZhangketang1">家长课堂</a> | <a href="index.php?m=home&c=index&a=JiajiaoXiangguan1">家教相关</a> | <a href="index.php?m=home&c=index&a=JiaZhangjingyan1">家教经验</a> | <a href=index.php?m=home&c=index&a=GuanYuwomen1>关于我们</a> | <a href="index.php?m=home&c=index&a=Changjianwenti1">常见问题</a> | <a href="index.php?m=home&c=index&a=HuiKuaifangshi1">汇款方式</a> | <a href="index.php?m=home&c=index&a=Lianxiwomen1" target="_blank">联系我们</a> | <a href="index.php?m=home&c=index&a=Zhaopin1"><img src="./public/home/images/zhaopin.gif" align="absmiddle" border="0"></a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="body">
+        联系电话：010-62642730　62643630　客服邮箱：caijjkf@163.com　<br />
+        版权所有：北京尚才家教 【<a href="http://www.caijj.com/" target="_blank">北京家教</a>】　工信部备案号:<a href="http://www.miibeian.gov.cn/" target="_blank">京ICP备09031430号</a><br />
+        家教服务中心：北京市海淀区清华大学东路金码大厦B座18层1809室<br />
+        Powered by www.caijj.com copyright 2009-2015<script src="http://s13.cnzz.com/stat.php?id=2467102&web_id=2467102&show=pic1" language="JavaScript"></script>
+    </div>
+</div>
+</body>
+</html>

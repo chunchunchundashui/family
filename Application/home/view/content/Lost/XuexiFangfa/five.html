@@ -1,0 +1,313 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>【北京高考成绩6月23日公布 首次采用大平行志愿】 - 北京尚才家教</title>
+    <link href="./public/home/css/css.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<script language="JavaScript" type="text/javascript">
+    <!--
+    function AddFavorite(sURL, sTitle)
+    {
+        try
+        {
+            window.external.addFavorite(sURL, sTitle);
+        }
+        catch (e)
+        {
+            try
+            {
+                window.sidebar.addPanel(sTitle, sURL, "");
+            }
+            catch (e)
+            {
+                alert("加入收藏失败，请使用Ctrl+D进行添加");
+            }
+        }
+    }
+    function SetHome(obj,vrl){
+        try{
+            obj.style.behavior='url(#default#homepage)';obj.setHomePage(vrl);
+        }
+        catch(e){
+            if(window.netscape) {
+                try {
+                    netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+                }
+                catch (e) {
+                    alert("此操作被浏览器拒绝！\n请在浏览器地址栏输入“about:config”并回车\n然后将 [signed.applets.codebase_principal_support]的值设置为'true',双击即可。");
+                }
+                var prefs = Components.classes['@mozilla.org/preferences-service;1'].getService(Components.interfaces.nsIPrefBranch);
+                prefs.setCharPref('browser.startup.homepage',vrl);
+            }
+        }
+    }
+    //-->
+</script>
+<script type="text/javascript">
+    //js获取cookie 
+    var acookie=document.cookie.split("; ");
+    function getck(sname)
+    {
+        //获取单个cookies 
+        for(var i=0;i<acookie.length;i++)
+        {
+            var arr=acookie[i].split("=");
+            if(sname==arr[0])
+            {
+                if(arr.length>1)
+                    return unescape(arr[1]);
+                else
+                    return "";
+            }
+        }
+        return "";
+    }
+</script>
+
+<script language="javascript" type="text/javascript">
+    <!--
+    function checkf()
+    {
+        if (document.getElementById("username").value=="")
+        {
+            alert("请输入用户名");
+            document.getElementById("username").focus();
+            return false;
+        }
+        if (document.getElementById("password").value=="")
+        {
+            alert("请输入密码");
+            document.getElementById("password").focus();
+            return false;
+        }
+
+    }
+
+    //-->
+</script>
+
+<form name="form1" method="post" action="index.php?m=home&c=enter" id="form1">
+    <div>
+    </div>
+
+    <div id="topbar" class="color_999">
+        <div class="w950">
+            <div class="right">
+                <a href="#" onclick="SetHome(this,window.location)" class="color_999">设为首页</a>&nbsp;
+                <a href="#" onclick="AddFavorite(window.location,document.title)" class="color_999">
+                    加入收藏</a>&nbsp; <a href="#" class="color_999">帮助中心</a>
+            </div>
+
+            <div class="left" id="wdl">
+                <?php if(!isset($_COOKIE['user'])){ echo '
+                &nbsp;&nbsp; <a href="index.php?m=home&c=index&a=user" class="color_orage text_decoration">注册用户</a>&nbsp;
+                用户名:<input name="username" style="width: 100px;" id="username" type="text">
+                &nbsp;&nbsp;密码:<input name="password" style="width: 100px;" id="password" type="password">
+                &nbsp;<input name="Button1" value="登录" onclick="return CheckForm();" id="Button1" type="submit">
+                <?php ';  } ?>
+                <?php if(isset($_COOKIE['user'])) { echo 'Hello:'.$_COOKIE['user'] ; } ?>
+            </div>
+            &nbsp;&nbsp; <a href="index.php?m=home&c=index&a=teacher" class="color_orage text_decoration">注册教员</a>&nbsp;
+
+            <a href="index.php?m=home&c=index&a=modifier" class="color_orage text_decoration">取回密码</a>
+            <?php if(isset($_COOKIE['user'])){ echo '
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="index.php?m=home&c=index&a=out" class="color_orage text_decoration">退出账号</a>&nbsp;
+            <?php ';  ?>
+            <?php } ?>
+        </div>
+    </div>
+    </div>
+</form>
+<div id="top">
+    <div class="w950">
+
+        <div style="float: right; width:100px; padding-top:25px;">
+            <a target="blank" href=tencent://message/?uin=5886626&Site=尚才家教&Menu=yes><img border="0" SRC='./public/home/images/qq.jpg' alt="QQ咨询"></a>
+        </div>
+        <div style="float: right; padding: 15px 0 0 0;">
+            <img src="./public/home/images/top_bn.gif" alt="尚才家教" />
+        </div>
+        <div id="logo" style="float:left;">
+            <img src="./public/home/images/logo.jpg" alt="尚才家教" />
+        </div>
+    </div>
+</div>
+<div id="menu" class="w950">
+    <ul>
+        <li><a href="index.php?m=home&c=indexLibrary"><span>首页</span></a></li>
+        <li id="lan_1"><a href="index.php?m=home&c=teacher"><span>教员库</span></a></li>
+        <li id="lan_2"><a href="index.php?m=home&c=UserLibrary"><span>学员库</span></a></li>
+        <li id="lan_3"><a href="index.php?m=home&c=star"><span>星级教员</span></a></li>
+        <li id="lan_4"><a href="index.php?m=home&c=major"><span>专业老师</span></a></li>
+        <li id="lan_5"><a href="index.php?m=home&c=university"><span>大学生家教</span></a></li>
+        <li id="lan_6"><a href="index.php?m=home&c=math"><span>奥数家教</span></a></li>
+        <li id="lan_7"><a href="index.php?m=home&c=english"><span>英语家教</span></a></li>
+        <li id="lan_8"><a href="index.php?m=home&c=music"><span>音乐家教</span></a></li>
+        <li id="lan_9"><a href="index.php?m=home&c=index&a=winCase"><span>成功案例</span></a></li>
+        <li id="lan_10"><a href="index.php?m=home&c=index&a=chargeStandard"><span>收费标准</span></a></li>
+    </ul>
+</div>
+
+<div id="main" class="w950">
+    <div class="right" style="width: 640px;">
+        <div class="guide">
+            <img src="./public/home/images/d05.gif" hspace="2" vspace="2" align="absbottom">当前位置： <span
+                class="red1"><a href="/">首页</a></span> &gt; 学习方法 &gt; <strong>北京高考成绩6月23日公布 首次采用大平行志愿</strong>            </div>
+        <!--列表-->
+        <div class="box2">
+            <div class="title">
+            </div>
+            <div class="body" style="padding-top: 10px;">
+                <div id="cont">
+                    <h1>
+                        北京高考成绩6月23日公布 首次采用大平行志愿</h1>
+                    <u>【教员编号：<a href="../thtml/10051.html" target="_blank">10051</a> 所在学校：北师大附中 更新时间：<span class="yel">2015-6-11 14:44:11</span> 点击数：<span class="green"><script type="text/javascript" src="../other/click.aspx?id=5903"> </script></span>
+                        】</u>
+                    <p>
+                    </p>
+                    <div class="f14 lh20" style="padding-bottom: 10px; padding-top: 10px">
+                        &nbsp;
+                        <div class="attr color2 font1" style="color: rgb(102, 102, 102); height: 75px; padding-top: 15px; text-align: center; border-bottom-width: 1px; border-bottom-style: dashed; border-bottom-color: rgb(204, 204, 204); font-family: 宋体;">
+                            <h1 style="color: rgb(51, 51, 51); font-size: 24px; margin: 10px 0px; padding: 0px;">北京高考成绩6月23日公布 首次采用大平行志愿</h1>
+                            时间：2015-06-08 12:40&nbsp;&nbsp;来源：京华时报&nbsp;&nbsp;阅读：85次</div>
+                        <div id="content" class="content font2 color1" style="font-size: 14px; color: rgb(68, 68, 68); padding: 0px 20px; line-height: 25px; font-family: 宋体;">
+                            <p>&nbsp; &nbsp; &nbsp;按照北京的高招日程，今年的高考成绩将于6月23日中午12时发布，考生可上网或电话查询。</p>
+                            <p style="text-indent: 2em;">又是一年大考时。</p>
+                            <p style="text-indent: 2em;">教育部昨天发布的消息称，今年全国高考报名人数为942万人，全国高校计划招生700万人，高考录取率达74.3%。而在北京，今年高考录取率预计将在80%以上。</p>
+                            <p style="text-indent: 2em;">按照北京的高招日程，今年的高考成绩将于6月23日中午12时发布，考生可上网或电话查询。</p>
+                            <p style="text-indent: 2em;">□权威发布</p>
+                            <p style="text-indent: 2em;">北京报名人数九连降</p>
+                            <p style="text-indent: 2em;">教育部昨天发布消息：2015年全国高校计划招生700万人，今年报名人数为942万人，高考录取率达到74.3%，这一数据与去年基本持平。</p>
+                            <p style="text-indent: 2em;">在今年全国高校计划招收的700万人中，本科为366万人、高职(专科)为334万人。2014年，全国普通高校招生计划安排698万人，其中本科363万人、高职(专科)335万人。相比之下，今年本科招生计划增加3万人、高职招生计划减少1万人。</p>
+                            <p style="text-indent: 2em;">具体到北京而言，北京教育考试院此前发布的数据显示，今年北京共有67816人报名参加高考，这是自2006年报考人数达到12.6万人后，北京高考报名人数连续第9年下降。今年报考人数比2014年减少约2000名，比2013年减少近5000名。预计今年北京高考录取率将在80%以上。</p>
+                            <p style="text-indent: 2em;">北京今年首次采用&ldquo;大平行&rdquo;的志愿填报方式，考生在出分以后填报志愿。本科招生将按&ldquo;提前批&rdquo;以及一批至三批等四个批次依次录取。其中本科一、二、三批均为平行志愿，考生可分别填报6所平行志愿高校，每所高校填报6个专业，考生将有更多的选择。</p>
+                            <p style="text-indent: 2em;">此外，北京今年取消&ldquo;奥赛省级一等奖&rdquo;&ldquo;市青少年科技创新大赛&rdquo;等同等条件下优先录取项目，同时取消&ldquo;北京市三好学生&rdquo;&ldquo;北京市优秀学生干部&rdquo;的加分项目。分数相同报考同一学校相同志愿的考生，将依次比较语文、数学、外语、文科综合／理科综合科目的成绩。</p>
+                            <p style="text-indent: 2em;">同时，大幅增加农村专项招生人数，提高农村考生升入高校的比例。其中面向城市发展新区和生态涵养发展区的&ldquo;农村专项计划&rdquo;从2014年的30人大幅提升至今年的200人左右，招生范围将由3所高校扩展到所有北京市属本科一批招生院校。</p>
+                            <p style="text-indent: 2em;">北京考生23日可查分</p>
+                            <p style="text-indent: 2em;">昨天，记者从北京教育考试院了解到，按照今年的高招日程，今年的高考成绩将于6月23日中午12时发布，学生可上网或电话查询。6月24日起，各区县将陆续向考生下发高考成绩单，考生的高考成绩最终以通知单为准。</p>
+                            <p style="text-indent: 2em;">北京教育考试院表示，从6月23日12时起，北京高考生可登录北京教育考试院网站查询高考成绩。此外，按照今年的高招安排，自主招生将在高考后出分前进行，6月10日至22日，自主招生试点高校将完成考核，确定入选资格考生名单、专业及优惠分值，并报教育部阳光高考平台公示。市高招办公布高考成绩后组织本市考生填报自主招生志愿。</p>
+                            <p style="text-indent: 2em;">本科各批次以及单考单招志愿填报时间从考前调整为高考成绩公布后6月25日8时至29日20时进行。专科批志愿填报仍然安排在本科录取结束后进行，填报时间为8月3日8时至4日20时。</p>
+                            <p style="text-indent: 2em;">□特殊考生</p>
+                            <p style="text-indent: 2em;">昨天，全市6.7万余名考生走进高考考场。在这些学生中，有一些是因为受伤、先天等各种原因导致残障的特殊考生。今年，高考中视力、听力障碍考生获得了多方面的照顾，包括使用大字号试卷、视障考生延长30%考试时间、听障考生免考听力等。</p>
+                            <p style="text-indent: 2em;">脑瘫考生要&ldquo;用成绩说话&rdquo;</p>
+                            <p style="text-indent: 2em;">&ldquo;时间够用吗？&rdquo;&ldquo;够用！&rdquo;&ldquo;感觉怎么样？&rdquo;&ldquo;还成！&rdquo;昨天中午，脑瘫考生马辽哲完成了195分钟的语文考试，在两位老师的陪伴下离开考场，见到自己的班主任就来了个大大的拥抱。</p>
+                            <p style="text-indent: 2em;">马辽哲是北京一零一中学考点的特殊考生，学校为他开设了单独考场，并安排了医护人员守护。</p>
+                            <p style="text-indent: 2em;">昨天上午7点50分，马辽哲和妈妈出现在考点门口，他在妈妈的陪伴下进入校园，准备参加第一科考试。语文不是马辽哲的强项，他略微有些紧张。马辽哲穿着白色校服，脚下一双鲜亮的红色运动鞋格外抢眼。学校老师陪伴他进入休息区，随后进入考场。</p>
+                            <p style="text-indent: 2em;">由于备用考场也是按照普通考场的要求摆放了30张桌椅，记者通过监控可以看到，马辽哲选择了第四列第二排座位。两个监考老师一前一后在考场中监考。</p>
+                            <p style="text-indent: 2em;">中午12点15分，考场二楼的楼道中传出&ldquo;叮当叮当&rdquo;的摇铃声，几分钟后，马辽哲在两位老师的陪同下走出考场。马辽哲的父亲说，孩子的故事被媒体报道后颇受关注，&ldquo;孩子说&lsquo;说一千道一万，最后一切还是要用成绩说话&rsquo;&rdquo;。昨天早上起来后，马辽哲表现得比家长还淡定。从山西赶来照顾他高考饮食的姥姥特意做了他爱吃的馅饼。从清河的家出发到考点一路绿灯，这让家里人都觉得是个好预兆。不过，语文和英语是马辽哲的短板，父亲说，孩子还是抓紧时间在车上看了会儿书。</p>
+                            <p style="text-indent: 2em;">马辽哲的班主任介绍，以前马辽哲都按照正常的考试时间做题，因为书写困难，语文答题的字迹潦草，这让他们非常担心。因为是第一次享受延长时间的待遇，前天，马辽哲的母亲特意让他按照新的考试时间做了一次模拟试卷，发现他的作文字迹写得更加清楚了，&ldquo;没那么潦草，写的字能看清楚了。&rdquo;马辽哲的父亲说。</p>
+                            <p style="text-indent: 2em;">视障考生延时30%依然紧张</p>
+                            <p style="text-indent: 2em;">今年高考，首次对视障考生给出了延时30%的照顾政策，这也让小宇(化名)的父母吃了一颗定心丸，因为儿子在正常的考试时间里，成绩都能达到一本线。</p>
+                            <p style="text-indent: 2em;">昨天上午8时半，视障考生小宇抵达考点，由于他戴着墨镜，很快被媒体记者团团围住，不过随后便被工作人员接入学校。</p>
+                            <p style="text-indent: 2em;">小宇父母告诉记者，他们都已经请好了假，这两天都会全程陪同孩子高考。由于小宇视力的限制，许多专业不能报考，所以志愿还要等分数出来以后再确定。记者从小宇老师口中了解到，小宇平时人缘很好，跟同学关系十分融洽。&ldquo;家人也不希望他受过多的特殊关照，还是希望他能正常成长。&rdquo;这位老师说。据小宇家长透露，小宇平时爱好摄影，也喜欢利用电脑软件处理图片。</p>
+                            <p style="text-indent: 2em;">根据今年的新政策，小宇可以获得延长考试时间30%的照顾。昨天上午的语文科目，他的考试结束时间为12时15分。对于这样的照顾，小宇的父母觉得非常好，认为是个好消息，他们希望有了这样的照顾，儿子能够正常发挥，&ldquo;只要正常发挥就是胜利&rdquo;。</p>
+                            <p style="text-indent: 2em;">虽然延长了30%的时间，语文的交卷时间推迟到了12点15分，两位视障考生走出考场时，依然表示因为题量比较大，所以时间很紧张，几乎是卡着最后几分钟才做完的。不过，他们也对学校的特殊安排和保障表示满意。</p>
+                            <p style="text-indent: 2em;">先心病考生吸氧上考场</p>
+                            <p style="text-indent: 2em;">昨天上午8点30分，在对外经贸大学附中考点，考生小勇(化名)在监考老师的陪同下，走进学校为他特设的单独考场。考场里放着一台便携式制氧机，当考试过程中小勇感觉不适时，就可示意监考老师打开制氧机吸氧。</p>
+                            <p style="text-indent: 2em;">患有先天性心脏病的小勇从小就不能和普通学生一样参加各种体育活动，因为任何剧烈的运动对他生命都是威胁。尽管常年与疾病为伴，但生性乐观的小勇并没有因此放弃，他喜欢物理，酷爱写作，进入高中后成绩优异，还被选入理科实验班。</p>
+                            <p style="text-indent: 2em;">高中前两年，小勇还能正常上课，跟着同学们一起学习。进入高三，他的身体已经不能适应高强度的学习，只能选择回家自学。整整一年，小勇顽强地跟疾病做着斗争，直到高考来临。小勇妈妈告诉记者，在是否决定参加高考这个问题上，家里人征求过小勇的意见，小勇自己决定要来。&ldquo;我们也很支持，高考是一份经历，不想给孩子留下遗憾。&rdquo;考虑到孩子的特殊情况，小勇的家长和学校向朝阳区招生考试中心提交了开设单独考场的报告申请。</p>
+                            <p style="text-indent: 2em;">昨天上午，小勇平静地度过了第一科语文考试。下午数学考试，因感觉不适他向监考老师提出了吸氧的要求，整个考试过程他一边吸氧，一边答题。小勇妈妈说，无论考试结果如何，对孩子而言，能坚持完高考就是胜利。</p>
+                            <p style="text-indent: 2em;">□现场</p>
+                            <p style="text-indent: 2em;">八旬老校长连续12年送考</p>
+                            <p style="text-indent: 2em;">昨天上午7点40分，对外经贸大学附中考点外，朝阳外国语学校校长郝又明坐在轮椅上等候着她的学生们，这已经是她连续12年来送考了。</p>
+                            <p style="text-indent: 2em;">&ldquo;郝校长好！&rdquo;每一位穿着朝外校服的考生都会走到她面前，俯下身来跟校长打招呼。郝校长充满怜爱地拍拍学生的头，或者握握手。&ldquo;哎呀你手怎么这么凉呀&rdquo;&ldquo;别紧张，快进去吧&rdquo;&hellip;&hellip;郝校长一遍又一遍地和每一位学生握手、叮嘱，学生家长们纷纷拿起手机拍照。一名男生笑称：&ldquo;每年郝校长都在考点送考，和她拍照能上头条。&rdquo;</p>
+                            <p style="text-indent: 2em;">郝又明今年已是81岁高龄，因为患有严重的腰椎间盘突出，她只能拄着双拐行走。她告诉记者，今年是她第12年来送考，每一年她都要来到考点给孩子们加油，朝外今年共有近200名学生参加高考，分布在对外经贸大学附中和八十中两个考点，这两天她一天去一个地方给孩子们加油。</p>
+                            <p style="text-indent: 2em;">8点20分，考生们开始陆续进入考点候考，可还有几位家长拉着孩子叮嘱个没完，看到这一幕，郝校长着急了，大声喊：&ldquo;别说了，赶紧让孩子进去！&rdquo;看家长没反应，她着急地从轮椅上站起来，拄着双拐走到家长身边，拉开他们，推着孩子往考点走。</p>
+                            <p style="text-indent: 2em;">郝校长说，考试第一天，孩子们普遍紧张，不能跟他们说太多的话。有时候一个眼神、一个微笑就足够了，家长们切忌在这个时候过度关注孩子，不要给他们太多压力。直到看到所有的学生都进入考点，郝校长才坐着轮椅离开。</p>
+                            <p style="text-indent: 2em;">学生弃考急坏带队老师</p>
+                            <p style="text-indent: 2em;">昨天上午，考生陆续进入宏志中学考点，大门口拉起警戒线，家长们退到警戒线外等待，校门口顿时空空荡荡。学校门口，一名外校带队男老师却还在着急地给一名考生打电话。考生的电话却一直关机。于是这名带队老师只得紧急通知考生的班主任帮助联系。</p>
+                            <p style="text-indent: 2em;">上午8点半，考生陆续从考点进入了考场。8点49分，一名女老师着急从考场跑出来，找到这名带队男老师，询问考生的情况。&ldquo;现在就剩他没来了。&rdquo;女老师说。男老师再次打电话依然没有结果。</p>
+                            <p style="text-indent: 2em;">据了解，这名考生早在高考之前便说过有可能弃考，但还是报了名。&ldquo;有可能要出国。&rdquo;一位老师猜测。直到开考后15分钟，这名考生也没有出现。2015年高考就这样与他擦肩而过。</p>
+                            <p style="text-indent: 2em;">腰伤考生独享备用考场</p>
+                            <p style="text-indent: 2em;">上午7点45分左右，一辆黑色轿车贴着&ldquo;特殊考生&rdquo;的标志被优先放行，提前进入宏志中学考点。这是一位考生的家长开车来送考。据现场相关负责老师介绍，这位考生腰部受了伤，不能久坐。因此学校接到考试中心的消息后专门为该考生开设了备用考场。考生进入考点后，在两名教师的引导、帮助下来到学校准备的休息室休息，等到8点半全部考生允许进入考场后，同其他同学一起进场。</p>
+                            <p style="text-indent: 2em;">据介绍，备用考场与普通考场在布置上没有差异，同样由两名监考老师监考。只是方便考生考试过程中时坐时站的需要。</p>
+                        </div>
+                    </div>
+                    <div class="hackbox">
+                    </div>
+                </div>
+                <div class="xg">
+                    <ul><li>下一篇文章： <a title='高中物理   更新：2015-05-29  点击：0' href='../xxff/5902.html'>高中物理</a></li><li>上一篇文章： <a title='吉他自学支招   更新：2015-07-05  点击：0' href='../xxff/5904.html'>吉他自学支招</a></li></ul>
+                </div>
+                <div class="box2 box4">
+                    <div class="title" style="">
+                        <h2>
+                            <!--<span class="more"><a href="#">» 更多</a></span>-->相关文章</h2>
+                    </div>
+                    <div class="body">
+                        <ul class="list">
+                            <li><a title='英语学习方法   更新：2012-07-05  点击：0' href='../xxff/5718.html'>英语学习方法</a></li><li><a title='“动笔反复”是记忆的法宝   更新：2012-07-09  点击：0' href='../xxff/5722.html'>“动笔反复”是记忆的法宝</a></li><li><a title='开发大脑的七大步骤   更新：2011-08-08  点击：0' href='../xxff/4685.html'>开发大脑的七大步骤</a></li><li><a title='通向英语学习的成功之路   更新：2013-01-05  点击：0' href='../xxff/5759.html'>通向英语学习的成功之路</a></li><li><a title='探究式学习的好处   更新：2011-06-22  点击：8' href='../xxff/2575.html'>探究式学习的好处</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="left" style="width: 300px;">
+        <div class="box1">
+            <div class="title">
+                <h2>
+                    <span class="more"><a href="../xxff/xxff.html">» 更多</a></span>学习方法</h2>
+            </div>
+            <div class="body">
+                <ul class="list">
+                    <li><a href="../">如何学习数学</a></li> <li><a href="../xxff/5907.html">管乐器为什么必须练长音？</a></li> <li><a href="../xxff/5906.html">教育理解</a></li> <li><a href="../xxff/5904.html">吉他自学支招</a></li> <li><a href="../xxff/5903.html">北京高考成绩6月23日公布 首次采用大平行志愿</a></li> <li><a href="../xxff/5902.html">高中物理</a></li> <li><a href="../xxff/5901.html">数学学习认识</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="box1">
+            <div class="title">
+                <h2>
+                    <span class="more"><a href="../ksjy/ksjy.html">» 更多</a></span>考试经验</h2>
+            </div>
+            <div class="body">
+                <ul class="list">
+                    <li><a href="../ksjy/3156.html">怎样的阅读才是正确的阅读？</a></li> <li><a href="../ksjy/3155.html">有针对性的学习才能考好语文</a></li> <li><a href="../ksjy/3154.html">词语类题型的总结</a></li> <li><a href="../ksjy/3153.html">语文考试技巧</a></li> <li><a href="../ksjy/3149.html">面对考试要主动</a></li> <li><a href="../ksjy/3109.html">把考试的精力放在基础上</a></li> <li><a href="../ksjy/3107.html"> 养成好的解题习惯才能拿高分</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="box1">
+            <div class="title">
+                <h2>
+                    <span class="more"><a href="../jzkt/jzkt.html">» 更多</a></span>家长课堂</h2>
+            </div>
+            <div class="body">
+                <ul class="list">
+                    <li><a href="../jzkt/5900.html">孩子，快乐的高手</a></li> <li><a href="../jzkt/5891.html">《浅谈中考语文复习的有效性》</a></li> <li><a href="../jzkt/5848.html">五年级数学下册练习</a></li> <li><a href="../jzkt/5847.html">练习题</a></li> <li><a href="../jzkt/5808.html">家长和小朋友对学习架子鼓的一些疑惑</a></li> <li><a href="../jzkt/5777.html">家长该如何预防孩子的网瘾？</a></li> <li><a href="../jzkt/5761.html">独生子女父母的教育方式</a></li>
+                </ul>
+            </div>
+        </div>
+        <script type="text/javascript"><!--
+        google_ad_client = "ca-pub-5232248721907840";
+        /* caijj300 */
+        google_ad_slot = "6444256775";
+        google_ad_width = 300;
+        google_ad_height = 250;
+        //-->
+        </script>
+        <script type="text/javascript"
+                src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+        </script>
+    </div>
+</div>
+<div id="footbar" class="w950">
+    <div class="title">
+        <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tr>
+                <td  height="30" valign="middle">
+                    <a href="index.php?m=home&c=index&a=teacher" target="_blank">做家教</a> | <a href="index.php?m=home&c=index&a=order" target="_blank">请家教</a> | <a href="index.php?m=home&c=index&a=Jiaoyuansousuo">教员搜索</a> | <a href="index.php?m=home&c=index&a=Jiaoyuan">教员分类</a> | <a href="index.php?m=home&c=index&a=XuexiFangfa1">学习方法</a> | <a href="index.php?m=home&c=index&a=KaoshiJingyan1">考试经验</a> | <a href="index.php?m=home&c=index&a=JiaZhangketang1">家长课堂</a> | <a href="index.php?m=home&c=index&a=JiajiaoXiangguan1">家教相关</a> | <a href="index.php?m=home&c=index&a=JiaZhangjingyan1">家教经验</a> | <a href=index.php?m=home&c=index&a=GuanYuwomen1>关于我们</a> | <a href="index.php?m=home&c=index&a=Changjianwenti1">常见问题</a> | <a href="index.php?m=home&c=index&a=HuiKuaifangshi1">汇款方式</a> | <a href="index.php?m=home&c=index&a=Lianxiwomen1" target="_blank">联系我们</a> | <a href="index.php?m=home&c=index&a=Zhaopin1"><img src="./public/home/images/zhaopin.gif" align="absmiddle" border="0"></a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="body">
+        联系电话：010-62642730　62643630　客服邮箱：caijjkf@163.com　<br />
+        版权所有：北京尚才家教 【<a href="http://www.caijj.com/" target="_blank">北京家教</a>】　工信部备案号:<a href="http://www.miibeian.gov.cn/" target="_blank">京ICP备09031430号</a><br />
+        家教服务中心：北京市海淀区清华大学东路金码大厦B座18层1809室<br />
+        Powered by www.caijj.com copyright 2009-2015<script src="http://s13.cnzz.com/stat.php?id=2467102&web_id=2467102&show=pic1" language="JavaScript"></script>
+    </div>
+</div>
+</body>
+</html>

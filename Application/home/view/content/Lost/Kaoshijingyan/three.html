@@ -1,0 +1,293 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>【词语类题型的总结】 - 北京尚才家教</title>
+    <link href="./public/home/css/css.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<script language="JavaScript" type="text/javascript">
+    <!--
+    function AddFavorite(sURL, sTitle)
+    {
+        try
+        {
+            window.external.addFavorite(sURL, sTitle);
+        }
+        catch (e)
+        {
+            try
+            {
+                window.sidebar.addPanel(sTitle, sURL, "");
+            }
+            catch (e)
+            {
+                alert("加入收藏失败，请使用Ctrl+D进行添加");
+            }
+        }
+    }
+    function SetHome(obj,vrl){
+        try{
+            obj.style.behavior='url(#default#homepage)';obj.setHomePage(vrl);
+        }
+        catch(e){
+            if(window.netscape) {
+                try {
+                    netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+                }
+                catch (e) {
+                    alert("此操作被浏览器拒绝！\n请在浏览器地址栏输入“about:config”并回车\n然后将 [signed.applets.codebase_principal_support]的值设置为'true',双击即可。");
+                }
+                var prefs = Components.classes['@mozilla.org/preferences-service;1'].getService(Components.interfaces.nsIPrefBranch);
+                prefs.setCharPref('browser.startup.homepage',vrl);
+            }
+        }
+    }
+    //-->
+</script>
+<script type="text/javascript">
+    //js获取cookie 
+    var acookie=document.cookie.split("; ");
+    function getck(sname)
+    {
+        //获取单个cookies 
+        for(var i=0;i<acookie.length;i++)
+        {
+            var arr=acookie[i].split("=");
+            if(sname==arr[0])
+            {
+                if(arr.length>1)
+                    return unescape(arr[1]);
+                else
+                    return "";
+            }
+        }
+        return "";
+    }
+</script>
+
+<script language="javascript" type="text/javascript">
+    <!--
+    function checkf()
+    {
+        if (document.getElementById("username").value=="")
+        {
+            alert("请输入用户名");
+            document.getElementById("username").focus();
+            return false;
+        }
+        if (document.getElementById("password").value=="")
+        {
+            alert("请输入密码");
+            document.getElementById("password").focus();
+            return false;
+        }
+
+    }
+
+    //-->
+</script>
+
+<form name="form1" method="post" action="index.php?m=home&c=enter" id="form1">
+    <div>
+    </div>
+
+    <div id="topbar" class="color_999">
+        <div class="w950">
+            <div class="right">
+                <a href="#" onclick="SetHome(this,window.location)" class="color_999">设为首页</a>&nbsp;
+                <a href="#" onclick="AddFavorite(window.location,document.title)" class="color_999">
+                    加入收藏</a>&nbsp; <a href="#" class="color_999">帮助中心</a>
+            </div>
+
+            <div class="left" id="wdl">
+                <?php if(!isset($_COOKIE['user'])){ echo '
+                &nbsp;&nbsp; <a href="index.php?m=home&c=index&a=user" class="color_orage text_decoration">注册用户</a>&nbsp;
+                用户名:<input name="username" style="width: 100px;" id="username" type="text">
+                &nbsp;&nbsp;密码:<input name="password" style="width: 100px;" id="password" type="password">
+                &nbsp;<input name="Button1" value="登录" onclick="return CheckForm();" id="Button1" type="submit">
+                <?php ';  } ?>
+                <?php if(isset($_COOKIE['user'])) { echo 'Hello:'.$_COOKIE['user'] ; } ?>
+            </div>
+            &nbsp;&nbsp; <a href="index.php?m=home&c=index&a=teacher" class="color_orage text_decoration">注册教员</a>&nbsp;
+
+            <a href="index.php?m=home&c=index&a=modifier" class="color_orage text_decoration">取回密码</a>
+            <?php if(isset($_COOKIE['user'])){ echo '
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="index.php?m=home&c=index&a=out" class="color_orage text_decoration">退出账号</a>&nbsp;
+            <?php ';  ?>
+            <?php } ?>
+        </div>
+    </div>
+    </div>
+</form>
+<div id="top">
+    <div class="w950">
+
+        <div style="float: right; width:100px; padding-top:25px;">
+            <a target="blank" href=tencent://message/?uin=5886626&Site=尚才家教&Menu=yes><img border="0" SRC='./public/home/images/qq.jpg' alt="QQ咨询"></a>
+        </div>
+        <div style="float: right; padding: 15px 0 0 0;">
+            <img src="./public/home/images/top_bn.gif" alt="尚才家教" />
+        </div>
+        <div id="logo" style="float:left;">
+            <img src="./public/home/images/logo.jpg" alt="尚才家教" />
+        </div>
+    </div>
+</div>
+<div id="menu" class="w950">
+    <ul>
+        <li><a href="index.php?m=home&c=indexLibrary"><span>首页</span></a></li>
+        <li id="lan_1"><a href="index.php?m=home&c=teacher"><span>教员库</span></a></li>
+        <li id="lan_2"><a href="index.php?m=home&c=UserLibrary"><span>学员库</span></a></li>
+        <li id="lan_3"><a href="index.php?m=home&c=star"><span>星级教员</span></a></li>
+        <li id="lan_4"><a href="index.php?m=home&c=major"><span>专业老师</span></a></li>
+        <li id="lan_5"><a href="index.php?m=home&c=university"><span>大学生家教</span></a></li>
+        <li id="lan_6"><a href="index.php?m=home&c=math"><span>奥数家教</span></a></li>
+        <li id="lan_7"><a href="index.php?m=home&c=english"><span>英语家教</span></a></li>
+        <li id="lan_8"><a href="index.php?m=home&c=music"><span>音乐家教</span></a></li>
+        <li id="lan_9"><a href="index.php?m=home&c=index&a=winCase"><span>成功案例</span></a></li>
+        <li id="lan_10"><a href="index.php?m=home&c=index&a=chargeStandard"><span>收费标准</span></a></li>
+    </ul>
+</div>
+
+<div id="main" class="w950">
+    <div class="right" style="width: 640px;">
+        <div class="guide">
+            <img src="./public/home/images/d05.gif" hspace="2" vspace="2" align="absbottom">当前位置： <span
+                class="red1"><a href="/">首页</a></span> &gt; 考试经验 &gt; <strong>词语类题型的总结</strong>            </div>
+        <!--列表-->
+        <div class="box2">
+            <div class="title">
+            </div>
+            <div class="body" style="padding-top: 10px;">
+                <div id="cont">
+                    <h1>
+                        词语类题型的总结</h1>
+                    <u>【教员编号：<a href="../thtml/www.html" target="_blank">www</a> 所在学校：7 更新时间：<span class="yel">2011-7-12 14:32:09</span> 点击数：<span class="green"><script type="text/javascript" src="../other/click.aspx?id=3154"> </script></span>
+                        】</u>
+                    <p>
+                    </p>
+                    <div class="f14 lh20" style="padding-bottom: 10px; padding-top: 10px">
+                        <p>　　(一)我们要正确地认读和书写学过的词语，懂得意思，注意积累词语并能在口头和书面表达中正确运用。作为五年级的学生，尤其要在理解词语的意思上多下功夫，要能理解每个词语的意思及同一词语的不同含义，才能准确地使用词语，也才能加深对文章的理解。理解词语不能靠死记硬背，要弄懂它的意思，除了查字典、词典得到确切的解释外，还可以采用下面的一些<a href="http://www.caijj.com/xxff/xxff.html">学习方法</a>：</p>
+                        <p>　　1.把词语中每个字的意思先弄清楚，再联系整个词语的意思来理解。如&quot;一丝不苟&quot;。&quot;苟&quot;就是&quot;马虎&quot;，&quot;一丝不苟&quot;就是&quot;一点也不马虎&quot;。</p>
+                        <p>　　2.运用近义词或反义词来解释。如&quot;富裕&quot;就是&quot;富足&quot;。还有的词可以用简洁的语言作解释。如&quot;慷慨&quot;就是&quot;情绪激昂的样子&quot;。</p>
+                        <p>　　3.联系上下文来理解词义。</p>
+                        <p>　　4.注意词的褒贬义。要结合具体的语言环境分析、判断词的感情色彩。如，&quot;果断&quot;和&quot;武断&quot;的感情色彩截然不同;&quot;骄傲&quot;则在不同的句子中可能有不同的感情色彩。</p>
+                        <p>　　常见题型：</p>
+                        <p>　　⑴给带点字写出(或选择)正确的解释。 ⑵一词多义。 ⑶联系上下文解释词语的意思(或是同一个词语的不同意思) ⑷判断词语的感情色彩。(或按词语的感情色彩分类。)</p>
+                        <p>　　(二)我们要能辨析近义词和反义词。汉语词汇丰富多彩，它的特点之一就是近、反义词很多。近义词中，意义完全相同的叫等义词。辨析近义词，要注意：</p>
+                        <p>　　1.分辨意义上的细微差别。有的是词义范围大小不同，如&quot;战斗&quot;和&quot;战争&quot;;有的是词义轻重不同，如&quot;优秀&quot;和&quot;卓越&quot;。</p>
+                        <p>　　2.分辨色彩上的细微差别。有褒贬之分;书面语和口语之分。</p>
+                        <p>　　3.分辨用法上的细微差别。有些通常固定地和某些词语搭配，如&quot;简单&quot;和&quot;简朴&quot;，&quot;简朴&quot;可以和&quot;作风&quot;搭配成&quot;作风简朴&quot;，而不大和&quot;简单&quot;搭配成&quot;作风简单&quot;;有些在适用的对象上有上、下之分，如&quot;爱护&quot;则多是上对下，&quot;关爱&quot;则都可以用。辨析反义词时要注意：</p>
+                        <p>　　1.词义是同一范围。</p>
+                        <p>　　2.词性要相同。</p>
+                        <p>　　3.有的反义词有一个，有的反义词不只一个。</p>
+                        <p>　　常见题型：</p>
+                        <p>　　⑴写出近义词(或反义词)。 ⑵找出句子中的近反义词。 ⑶选词填空。</p>
+                        <p>　　(三)要会正确地搭配词语，给词语归类。词语搭配的基本要求是准确。在搭配时，<a href="http://www.caijj.com/teacher/index.aspx?type=1&amp;km=%e8%af%ad%e6%96%87">语文家教</a>提醒我们，除了要注意词语的搭配是否符合习惯，还要注意近义词意思上的细微差别。做词语归类时关键要读读这些词语，想想这些词所表示的事物可以分为哪几类，再按照一定的类别一个个地写。</p>
+                        <p>　　常见题型：</p>
+                        <p>　　⑴在括号里填上恰当的词语。</p>
+                        <p>　　⑵将前后搭配得当的词语用线连起来。</p>
+                        <p>　　⑶选择正确的词语。</p>
+                        <p>　　⑷将下列词语分类。</p>
+                        <p>　　⑸按要求写词语。</p>
+                        <p>　　⑹画出不是同一类的词语。</p>
+                        <p>　　⑺按顺序排列词语。</p>
+                        <p>　　(四)要能正确使用成语。成语是我们五年级同学要掌握的一个重要内容，我们要认真掌握课文中的一些成语，还要注意课后的积累，做到不仅会写成语，不写错别字;知道成语的来源(古代神话寓言、历史故事、古代诗文、人民群众的口语)、意思，尤其是其中一些关键字的意思;还能举一反三，灵活运用。</p>
+                        <p>　　常见题型：</p>
+                        <p>　　⑴把下列成语补充完整。</p>
+                        <p>　　⑵根据意思写成语。</p>
+                        <p>　　⑶解释成语中加点字的意思。</p>
+                        <p>　　⑷判断成语是否正确，并改正。</p>
+                        <p>　　⑸区分成语的感情色彩。</p>
+                        <p>　　⑹写近义、反义成语。</p>
+                        <p>　　⑺将成语按要求归类。</p>
+                        <p>　　⑻按要求写成语(如按来源写，按季节写，按数字写等)</p>
+                        <p>　　⑼写出成语中的故事、主人翁等。</p>
+                    </div>
+                    <div class="hackbox">
+                    </div>
+                </div>
+                <div class="xg">
+                    <ul><li>下一篇文章： <a title='语文考试技巧   更新：2011-07-12  点击：8' href='../ksjy/3153.html'>语文考试技巧</a></li><li>上一篇文章： <a title='有针对性的学习才能考好语文   更新：2011-07-12  点击：8' href='../ksjy/3155.html'>有针对性的学习才能考好语文</a></li></ul>
+                </div>
+                <div class="box2 box4">
+                    <div class="title" style="">
+                        <h2>
+                            相关文章</h2>
+                    </div>
+                    <div class="body">
+                        <ul class="list">
+                            <li><a title='考生该如何增强心理耐受力？   更新：2011-06-28  点击：8' href='../ksjy/2784.html'>考生该如何增强心理耐受力？</a></li><li><a title='想考好数学要注重时间分配   更新：2011-06-29  点击：8' href='../ksjy/2830.html'>想考好数学要注重时间分配</a></li><li><a title='考前复习的两个方向   更新：2011-07-11  点击：8' href='../ksjy/3095.html'>考前复习的两个方向</a></li><li><a title='四级考试作文怎样拿高分   更新：2011-06-23  点击：8' href='../ksjy/2654.html'>四级考试作文怎样拿高分</a></li><li><a title='其实考试还是有规律可循的   更新：2011-06-28  点击：8' href='../ksjy/2779.html'>其实考试还是有规律可循的</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="left" style="width: 300px;">
+        <div class="box1">
+            <div class="title">
+                <h2>
+                    <span class="more"><a href="../xxff/xxff.html">» 更多</a></span>学习方法</h2>
+            </div>
+            <div class="body">
+                <ul class="list">
+                    <li><a href="../xxff/5909.html">如何学习数学</a></li> <li><a href="../xxff/5907.html">管乐器为什么必须练长音？</a></li> <li><a href="../xxff/5906.html">教育理解</a></li> <li><a href="../xxff/5904.html">吉他自学支招</a></li> <li><a href="../xxff/5903.html">北京高考成绩6月23日公布 首次采用大平行志愿</a></li> <li><a href="../xxff/5902.html">高中物理</a></li> <li><a href="../xxff/5901.html">数学学习认识</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="box1">
+            <div class="title">
+                <h2>
+                    <span class="more"><a href="../ksjy/ksjy.html">» 更多</a></span>考试经验</h2>
+            </div>
+            <div class="body">
+                <ul class="list">
+                    <li><a href="../ksjy/3156.html">怎样的阅读才是正确的阅读？</a></li> <li><a href="../ksjy/3155.html">有针对性的学习才能考好语文</a></li> <li><a href="../ksjy/3154.html">词语类题型的总结</a></li> <li><a href="../ksjy/3153.html">语文考试技巧</a></li> <li><a href="../ksjy/3149.html">面对考试要主动</a></li> <li><a href="../ksjy/3109.html">把考试的精力放在基础上</a></li> <li><a href="../ksjy/3107.html"> 养成好的解题习惯才能拿高分</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="box1">
+            <div class="title">
+                <h2>
+                    <span class="more"><a href="../jzkt/jzkt.html">» 更多</a></span>家长课堂</h2>
+            </div>
+            <div class="body">
+                <ul class="list">
+                    <li><a href="../jzkt/5900.html">孩子，快乐的高手</a></li> <li><a href="../jzkt/5891.html">《浅谈中考语文复习的有效性》</a></li> <li><a href="../jzkt/5848.html">五年级数学下册练习</a></li> <li><a href="../jzkt/5847.html">练习题</a></li> <li><a href="../jzkt/5808.html">家长和小朋友对学习架子鼓的一些疑惑</a></li> <li><a href="../jzkt/5777.html">家长该如何预防孩子的网瘾？</a></li> <li><a href="../jzkt/5761.html">独生子女父母的教育方式</a></li>
+                </ul>
+            </div>
+        </div>
+        <script type="text/javascript"><!--
+        google_ad_client = "ca-pub-5232248721907840";
+        /* caijj300 */
+        google_ad_slot = "6444256775";
+        google_ad_width = 300;
+        google_ad_height = 250;
+        //-->
+        </script>
+        <script type="text/javascript"
+                src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+        </script>
+    </div>
+</div>
+<div id="footbar" class="w950">
+    <div class="title">
+        <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tr>
+                <td  height="30" valign="middle">
+                    <a href="index.php?m=home&c=index&a=teacher" target="_blank">做家教</a> | <a href="index.php?m=home&c=index&a=order" target="_blank">请家教</a> | <a href="index.php?m=home&c=index&a=Jiaoyuansousuo">教员搜索</a> | <a href="index.php?m=home&c=index&a=Jiaoyuan">教员分类</a> | <a href="index.php?m=home&c=index&a=XuexiFangfa1">学习方法</a> | <a href="index.php?m=home&c=index&a=KaoshiJingyan1">考试经验</a> | <a href="index.php?m=home&c=index&a=JiaZhangketang1">家长课堂</a> | <a href="index.php?m=home&c=index&a=JiajiaoXiangguan1">家教相关</a> | <a href="index.php?m=home&c=index&a=JiaZhangjingyan1">家教经验</a> | <a href=index.php?m=home&c=index&a=GuanYuwomen1>关于我们</a> | <a href="index.php?m=home&c=index&a=Changjianwenti1">常见问题</a> | <a href="index.php?m=home&c=index&a=HuiKuaifangshi1">汇款方式</a> | <a href="index.php?m=home&c=index&a=Lianxiwomen1" target="_blank">联系我们</a> | <a href="index.php?m=home&c=index&a=Zhaopin1"><img src="./public/home/images/zhaopin.gif" align="absmiddle" border="0"></a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="body">
+        联系电话：010-62642730　62643630　客服邮箱：caijjkf@163.com　<br />
+        版权所有：北京尚才家教 【<a href="http://www.caijj.com/" target="_blank">北京家教</a>】　工信部备案号:<a href="http://www.miibeian.gov.cn/" target="_blank">京ICP备09031430号</a><br />
+        家教服务中心：北京市海淀区清华大学东路金码大厦B座18层1809室<br />
+        Powered by www.caijj.com copyright 2009-2015<script src="http://s13.cnzz.com/stat.php?id=2467102&web_id=2467102&show=pic1" language="JavaScript"></script>
+    </div>
+</div>
+</body>
+</html>

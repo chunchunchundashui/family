@@ -1,0 +1,300 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><title>
+	【做家教 - 北京做家教】 - 尚才家教
+</title><link href="./public/home/css/css.css" rel="stylesheet" type="text/css">
+
+    <script language="JavaScript" type="text/javascript">
+				<!--
+						
+			function $(id)
+            {
+                return document.getElementById(id)
+            }
+            function trim(str)
+            {
+	            regExp1 = /^ */;
+	            regExp2 = / *$/;
+	            return str.replace(regExp1,'').replace(regExp2,'');
+            }
+				function CheckForm_1()
+				{				   
+				    if ($("yhm").value=="")
+					{ 
+						alert("请输入用户名"); 
+						$("yhm").focus();
+						return false; 
+					} 
+			        var len=trim($("yhm").value).length
+			        if(len==0 || len<2 || len>15)
+			        {
+			             alert("用户名填写不正确,长度为2-15位，建议使用英文(a-z、A-Z)、数字(0-9)组合。汉字按一位计算！"); 
+						$("yhm").focus();
+						return false; 
+			        }
+					
+                    len=trim(document.all("mm").value).length
+				    if(len==0 || len<6 || len>20)
+			        {
+				        alert("\请重新输入密码,密码长度为6-10位英文或数字 !!");
+				        $("mm").focus();
+				        return false;
+				    }
+				    if( $("cfmm").value=="") 
+				    {
+				        alert("\请输入密码确认 !!");
+				        $("cfmm").focus();
+				        return false;
+				    }
+				    if( $("mm").value != $("cfmm").value ) 
+				    {
+				        alert("\两次密码输入不一致 !!");
+				        $("cfmm").focus();
+				        return false;
+				    }
+				}
+				-->
+    </script>
+
+</head>
+<body>
+
+<script language="javascript" type="text/javascript">
+		<!--
+		    function CheckForm()
+		    {
+		        if (document.getElementById("username").value=="")
+		        { 
+			        alert("请输入用户名"); 
+			        document.getElementById("username").focus();
+			        return false; 
+		        } 	
+		        if (document.getElementById("password").value=="")
+		        { 
+			        alert("请输入密码"); 
+			        document.getElementById("password").focus();
+			        return false; 
+		        }
+		    }
+		    
+		//-->
+</script>
+
+<script language="JavaScript" type="text/javascript"> 
+<!-- 
+function AddFavorite(sURL, sTitle) 
+{ 
+    try 
+    { 
+        window.external.addFavorite(sURL, sTitle); 
+    } 
+    catch (e) 
+    { 
+        try 
+        { 
+            window.sidebar.addPanel(sTitle, sURL, ""); 
+        } 
+        catch (e) 
+        { 
+            alert("加入收藏失败，请使用Ctrl+D进行添加"); 
+        } 
+    } 
+} 
+function SetHome(obj,vrl){ 
+        try{ 
+                obj.style.behavior='url(#default#homepage)';obj.setHomePage(vrl); 
+        } 
+        catch(e){ 
+                if(window.netscape) { 
+                        try { 
+                                netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect"); 
+                        } 
+                        catch (e) { 
+                                alert("此操作被浏览器拒绝！\n请在浏览器地址栏输入“about:config”并回车\n然后将 [signed.applets.codebase_principal_support]的值设置为'true',双击即可。"); 
+                        } 
+                        var prefs = Components.classes['@mozilla.org/preferences-service;1'].getService(Components.interfaces.nsIPrefBranch); 
+                        prefs.setCharPref('browser.startup.homepage',vrl); 
+                 } 
+        } 
+} 
+//--> 
+</script>
+
+        <form name="form1" method="post" action="index.php?m=home&c=enter" id="form1">
+            <div>
+            </div>
+
+            <div id="topbar" class="color_999">
+                <div class="w950">
+                    <div class="right">
+                        <a href="#" onclick="SetHome(this,window.location)" class="color_999">设为首页</a>&nbsp;
+                        <a href="#" onclick="AddFavorite(window.location,document.title)" class="color_999">
+                            加入收藏</a>&nbsp; <a href="#" class="color_999">帮助中心</a>
+                    </div>
+
+                    <div class="left" id="wdl">
+                        <?php if(!isset($_COOKIE['user'])){ echo '
+                        用户名:<input name="username" style="width: 100px;" id="username" type="text">
+                        &nbsp;&nbsp;密码:<input name="password" style="width: 100px;" id="password" type="password">
+                        &nbsp;<input name="Button1" value="登录" onclick="return CheckForm();" id="Button1" type="submit">
+                        <?php ';  } ?>
+                        <?php if(isset($_COOKIE['user'])) { echo 'Hello:'.$_COOKIE['user'] ; } ?>
+                    </div>
+                    &nbsp;&nbsp; <a href="index.php?m=home&c=index&a=teacher" class="color_orage text_decoration">注册教员</a>&nbsp;
+
+                    <a href="index.php?m=home&c=index&a=modifier" class="color_orage text_decoration">取回密码</a>
+                    <?php if(isset($_COOKIE['user'])){ echo '
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="index.php?m=home&c=index&a=out" class="color_orage text_decoration">退出账号</a>&nbsp;
+                    <?php ';  ?>
+                    <?php } ?>
+                </div>
+            </div>
+            </div>
+        </form>
+<div id="top">
+    <form name="form1" method="post" action="index.php?m=home&c=user&a=save" id="form1">
+  <div class="w950">
+
+            <div style="float: right; width:100px; padding-top:25px;">
+                <a href="#" ;="" target="_blank;" onclick="var tempSrc='http://sighttp.qq.com/wpa.js?rantime='+Math.random()+'&amp;sigkey=0067baf0789caa207d7cceb9518600646f7ad8feccc1221601cc5e11865c8a1a';var oldscript=document.getElementById('testJs');var newscript=document.createElement('script');newscript.setAttribute('type','text/javascript'); newscript.setAttribute('id', 'testJs');newscript.setAttribute('src',tempSrc);if(oldscript == null){document.body.appendChild(newscript);}else{oldscript.parentNode.replaceChild(newscript, oldscript);}return false;"><img src="./public/home/images/qq.jpg" alt="QQ咨询" border="0"></a>
+            </div>
+  <div id="logo">
+    <img src="./public/home/images/logo.jpg" alt="尚才家教">
+  </div>
+  <div style="float: right; padding: 25px 0 0 0;">
+    <img src="./public/home/images/top_bn.gif" alt="尚才家教">
+  </div>
+  </div>
+</div>
+<div id="menu" class="w950">
+    <ul>
+        <li><a href="index.php?m=home&c=indexLibrary"><span>首页</span></a></li>
+        <li id="lan_1"><a href="index.php?m=home&c=teacher"><span>教员库</span></a></li>
+        <li id="lan_2"><a href="index.php?m=home&c=UserLibrary"><span>学员库</span></a></li>
+        <li id="lan_3"><a href="index.php?m=home&c=star"><span>星级教员</span></a></li>
+        <li id="lan_4"><a href="index.php?m=home&c=major"><span>专业老师</span></a></li>
+        <li id="lan_5"><a href="index.php?m=home&c=university"><span>大学生家教</span></a></li>
+        <li id="lan_6"><a href="index.php?m=home&c=math"><span>奥数家教</span></a></li>
+        <li id="lan_7"><a href="index.php?m=home&c=english"><span>英语家教</span></a></li>
+        <li id="lan_8"><a href="index.php?m=home&c=music"><span>音乐家教</span></a></li>
+        <li id="lan_9"><a href="index.php?m=home&c=index&a=winCase"><span>成功案例</span></a></li>
+        <li id="lan_10"><a href="index.php?m=home&c=index&a=chargeStandard"><span>收费标准</span></a></li>
+    </ul>
+</div>
+
+<script language="javascript" type="text/javascript"> 
+//js获取url参数的function
+function request(paras)
+{ 
+	var url = location.href; 
+	//alert(url);
+	var paraString = url.substring(url.indexOf("?")+1,url.length).split("&"); 
+	var paraObj = {} 
+	for (i=0; j=paraString[i]; i++)
+	{ 
+		paraObj[j.substring(0,j.indexOf("=")).toLowerCase()] = j.substring(j.indexOf("=")+1,j.length); 
+	} 
+	var returnValue = paraObj[paras.toLowerCase()]; 
+	if(typeof(returnValue)=="undefined")
+	{ 
+		return ""; 
+	}
+	else
+	{ 
+		return returnValue; 
+	} 
+} 
+
+</script>
+
+<script language="javascript" type="text/javascript">
+    var tabl_1 =request("type"); 
+	//alert(tabl_1);
+	 if(tabl_1 != "")
+	 {
+	    document.getElementById("lan_"+tabl_1).className = "active";
+	}
+</script>
+
+
+    <div id="main" class="w950">
+        <div class="box2">
+            <div class="title">
+                <h2>
+                    注册用户
+                </h2>
+                
+            </div>
+            <div class="">
+                <div class="loginb3">
+                    <div class="xg p14">
+                        <strong class="red">
+                            <img src="./public/home/images/d04.gif" align="absbottom" hspace="2">
+                            </strong> <span class="green"><strong>注册账号</strong></span>
+                    </div>
+                    <fieldset>
+                        <em>&nbsp;&nbsp;欢迎您注册成为尚才家教<strong class="red">北京地区</strong>用户.<br>
+                            &nbsp;&nbsp; </em>
+                        <div class="btbg1">
+                            <img src="./public/home/images/zcimg1.gif">请选择密码用户名</div>
+                        <div>
+                            <label for="confirm_password">
+                                <strong class="red">*</strong>请输入新用户名</label>
+                            <input name="user" id="yhm" class="zcinput" size="18" maxlength="15" onchange="usercheck('check')" onblur="usercheck('check')" type="text">
+                            <span class="zsbg" id="check">必须由英文字母或字母、数字组合组成</span>
+                        </div>
+                        <div>
+                            <label for="confirm_password" style="width: 80px;">
+                                <strong class="red">*</strong>性 别</label>
+                            <input name="sex" id="xb_1" value="男" checked="checked" type="radio">
+                            男
+                            <input name="sex" id="xb_2" value="女" type="radio">
+                            女
+                        </div>
+                        <div>
+                            <label for="checkbox">
+                                <strong class="red">*</strong>请输入您的密码</label>
+                            <input name="passwd" id="mm" class="zcinput" size="18" maxlength="15" type="password">
+                            <span class="zsbg">请不少于六位、不超过十位</span>
+                        </div>
+                        <div>
+                            <label for="confirm_password">
+                                <strong class="red">*</strong>请重复输入密码</label>
+                            <input name="passwd2" id="cfmm" class="zcinput" size="18" maxlength="15" type="password">
+                        </div>
+                        <div>
+                            <label for="confirm_password">
+                                <strong class="red">*</strong>请输入你的邮箱</label>
+                            <input name="mail" id="cfmm" class="zcinput" size="18" maxlength="20" type="text">
+                        </div>
+                        <div class="ac" style="padding-top: 15px;">
+                            <input name="" value="　注 册　" onclick="return CheckForm_1();" id="Button1" class="button" type="submit">
+                            &nbsp;<input name="reset1" class="button" value="　重 置　" type="reset">
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+<div id="footbar" class="w950">
+        <div class="title">
+          <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+              <tbody><tr>
+                  <td  height="30" valign="middle">
+                      <a href="index.php?m=home&c=index&a=teacher" target="_blank">做家教</a> | <a href="index.php?m=home&c=index&a=order" target="_blank">请家教</a> | <a href="index.php?m=home&c=index&a=Jiaoyuansousuo">教员搜索</a> | <a href="index.php?m=home&c=index&a=Jiaoyuan">教员分类</a> | <a href="index.php?m=home&c=index&a=XuexiFangfa1">学习方法</a> | <a href="index.php?m=home&c=index&a=KaoshiJingyan1">考试经验</a> | <a href="index.php?m=home&c=index&a=JiaZhangketang1">家长课堂</a> | <a href="index.php?m=home&c=index&a=JiajiaoXiangguan1">家教相关</a> | <a href="index.php?m=home&c=index&a=JiaZhangjingyan1">家教经验</a> | <a href=index.php?m=home&c=index&a=GuanYuwomen1>关于我们</a> | <a href="index.php?m=home&c=index&a=Changjianwenti1">常见问题</a> | <a href="index.php?m=home&c=index&a=HuiKuaifangshi1">汇款方式</a> | <a href="index.php?m=home&c=index&a=Lianxiwomen1" target="_blank">联系我们</a> | <a href="index.php?m=home&c=index&a=Zhaopin1"><img src="./public/home/images/zhaopin.gif" align="absmiddle" border="0"></a>
+                  </td>
+              </tr>
+            </tbody></table>
+        </div>
+        <div class="body">
+            联系电话：010-62642730　62643630　客服邮箱：caijjkf@163.com　<br>
+            版权所有：北京尚才家教 【<a href="#" target="_blank">北京家教</a>】　工信部备案号:<a href="#" target="_blank">京ICP备09031430号</a><br>
+            家教服务中心：北京市海淀区清华大学南门华清嘉园8号楼304室<br>
+            Powered by www.caijj.com copyright 2009-2011<a href="#" target="_blank" title="站长统计"><img src="./public/home/images/pic1.gif" border="0" hspace="0" vspace="0"></a><img src="./public/home/images/stat.gif" border="0" height="0" width="0">
+        </div>
+</div>
+    </form>
+
+
+</body></html>

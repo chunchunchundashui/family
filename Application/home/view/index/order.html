@@ -1,0 +1,475 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><title>
+    【请家教 - 北京请家教】 - 尚才家教
+</title><link href="./public/home/css/css.css" rel="stylesheet" type="text/css" />
+    <script language="javascript" type="text/javascript">
+        <!--
+        function getLength(strChecked)
+        {
+            alert('现已输入了 ' +  strChecked.length +  ' 个字。');
+        }
+        function $(id)
+        {
+            return document.getElementById(id)
+        }
+        function trim(str)
+        {
+            regExp1 = /^ */;
+            regExp2 = / *$/;
+            return str.replace(regExp1,'').replace(regExp2,'');
+        }
+        function CheckEmail(email)
+        {
+            var pattern = /^([a-zA-Z0-9_-])+(\.([a-zA-Z0-9_-])+)*@([a-zA-Z0-9_-])+(\.([a-zA-Z0-9_-])+)+$/;
+            if(!pattern.test(email))
+            {
+                return false
+            }
+            else
+            {
+                return true
+            }
+        }
+        function CheckForm_1()
+        {
+            if(trim($("lxr").value)=="")
+            {
+                alert("请输入联系人！");
+                $("lxr").focus();
+                return false;
+            }
+            if(trim($("gddh").value)=="")
+            {
+                alert("请输入固定电话！");
+                $("gddh").focus();
+                return false;
+            }
+            if(trim($("yddh").value)=="")
+            {
+                alert("请输入移动电话！");
+                $("yddh").focus();
+                return false;
+            }
+            if(trim($("szdq").value)=="")
+            {
+                alert("请选择所在地区！");
+                $("szdq").focus();
+                return false;
+            }
+            if(trim($("skdqms").value)=="")
+            {
+                alert("请输入授课地区详细描述！");
+                $("skdqms").focus();
+                return false;
+            }
+            if($("xyxb_1").checked==false && $("xyxb_2").checked==false)
+            {
+                alert("请选择学员性别！");
+                $("xyxb_1").focus();
+                return false;
+            }
+            if(trim($("xynj").value)=="")
+            {
+                alert("请选择学员年级！");
+                $("xynj").focus();
+                return false;
+            }
+            if(trim($("fdkm").value)=="")
+            {
+                alert("请输入辅导科目！");
+                $("fdkm").focus();
+                return false;
+            }
+            if(trim($("ksksj").value)=="")
+            {
+                alert("请输入可上课时间！");
+                $("ksksj").focus();
+                return false;
+            }
+            if(trim($("xyqkms").value)=="")
+            {
+                alert("请输入学员情况描述！");
+                $("xyqkms").focus();
+                return false;
+            }
+            if($("jyxb_1").checked==false && $("jyxb_2").checked==false && $("jyxb_3").checked==false)
+            {
+                alert("请选择教员性别！");
+                $("jyxb_1").focus();
+                return false;
+            }
+            if(trim($("djyqtyq").value)=="")
+            {
+                alert("请输入对教员其他要求！");
+                $("djyqtyq").focus();
+                return false;
+            }
+            if(trim($("sfyq").value)=="")
+            {
+                alert("请输入收费要求！");
+                $("sfyq").focus();
+                return false;
+            }
+            if($("houguo").checked==false)
+            {
+                alert("请勾选因上述信息不真实，而引发的任何后果，一概由填表人负责！");
+                $("jyxb_1").focus();
+                return false;
+            }
+        }
+        -->
+    </script>
+</head>
+<body>
+    <div>
+        <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTA5MjY4NTgzN2RkhdofskHnZPBLHE4XT6b2j0XFDyU=" />
+    </div>
+
+
+
+    <script language="javascript" type="text/javascript">
+        <!--
+        function CheckForm()
+        {
+            if (document.getElementById("username").value=="")
+            {
+                alert("请输入用户名");
+                document.getElementById("username").focus();
+                return false;
+            }
+            if (document.getElementById("password").value=="")
+            {
+                alert("请输入密码");
+                document.getElementById("password").focus();
+                return false;
+            }
+
+        }
+
+        //-->
+    </script>
+
+    <script language="JavaScript" type="text/javascript">
+        <!--
+        function AddFavorite(sURL, sTitle)
+        {
+            try
+            {
+                window.external.addFavorite(sURL, sTitle);
+            }
+            catch (e)
+            {
+                try
+                {
+                    window.sidebar.addPanel(sTitle, sURL, "");
+                }
+                catch (e)
+                {
+                    alert("加入收藏失败，请使用Ctrl+D进行添加");
+                }
+            }
+        }
+        function SetHome(obj,vrl){
+            try{
+                obj.style.behavior='url(#default#homepage)';obj.setHomePage(vrl);
+            }
+            catch(e){
+                if(window.netscape) {
+                    try {
+                        netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+                    }
+                    catch (e) {
+                        alert("此操作被浏览器拒绝！\n请在浏览器地址栏输入“about:config”并回车\n然后将 [signed.applets.codebase_principal_support]的值设置为'true',双击即可。");
+                    }
+                    var prefs = Components.classes['@mozilla.org/preferences-service;1'].getService(Components.interfaces.nsIPrefBranch);
+                    prefs.setCharPref('browser.startup.homepage',vrl);
+                }
+            }
+        }
+        //-->
+    </script>
+
+    <form name="form1" method="post" action="index.php?m=home&c=enter" id="form1">
+        <div>
+        </div>
+
+        <div id="topbar" class="color_999">
+            <div class="w950">
+                <div class="right">
+                    <a href="#" onclick="SetHome(this,window.location)" class="color_999">设为首页</a>&nbsp;
+                    <a href="#" onclick="AddFavorite(window.location,document.title)" class="color_999">
+                        加入收藏</a>&nbsp; <a href="#" class="color_999">帮助中心</a>
+                </div>
+
+                <div class="left" id="wdl">
+                    <?php if(!isset($_COOKIE['user'])){ echo '
+                &nbsp;&nbsp; <a href="index.php?m=home&c=index&a=user" class="color_orage text_decoration">注册用户</a>&nbsp;
+                    用户名:<input name="username" style="width: 100px;" id="username" type="text">
+                    &nbsp;&nbsp;密码:<input name="password" style="width: 100px;" id="password" type="password">
+                    &nbsp;<input name="Button1" value="登录" onclick="return CheckForm();" id="Button1" type="submit">
+                    <?php ';  } ?>
+                    <?php if(isset($_COOKIE['user'])) { echo 'Hello:'.$_COOKIE['user'] ; } ?>
+                </div>
+                &nbsp;&nbsp; <a href="index.php?m=home&c=index&a=teacher" class="color_orage text_decoration">注册教员</a>&nbsp;
+
+                <a href="index.php?m=home&c=index&a=modifier" class="color_orage text_decoration">取回密码</a>
+                <?php if(isset($_COOKIE['user'])){ echo '
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="index.php?m=home&c=index&a=out" class="color_orage text_decoration">退出账号</a>&nbsp;
+                <?php ';  ?>
+                <?php } ?>
+            </div>
+        </div>
+        </div>
+    </form>
+    <form name="form1" method="post" action="index.php?m=home&c=order&a=save" id="form1">
+    <div id="top">
+        <div class="w950">
+            <div style="float: right; width:100px; padding-top:25px;">
+                <a target="blank" href=tencent://message/?uin=5886626&Site=尚才家教&Menu=yes><img border="0" SRC='./public/home/images/qq.jpg' alt="QQ咨询"></a>
+            </div>
+            <div id="top1_divTop" style="float: right; padding: 15px 0 0 0;">
+                <img src="./public/home/images/top_bn.gif" alt="尚才家教" />
+            </div>
+            <div id="logo" style="float:left;">
+                <img src="./public/home/images/logo.jpg" alt="尚才家教" />
+            </div>
+        </div>
+    </div>
+    <div id="menu" class="w950">
+        <ul>
+            <li id="lan_11"><a href="index.php?m=home&c=indexLibrary"><span>首页</span></a></li>
+            <li id="lan_1"><a href="index.php?m=home&c=teacher"><span>教员库</span></a></li>
+            <li id="lan_2"><a href="index.php?m=home&c=UserLibrary"><span>学员库</span></a></li>
+            <li id="lan_3"><a href="index.php?m=home&c=star"><span>星级教员</span></a></li>
+            <li id="lan_4"><a href="index.php?m=home&c=major"><span>专业老师</span></a></li>
+            <li id="lan_5"><a href="index.php?m=home&c=university"><span>大学生家教</span></a></li>
+            <li id="lan_6"><a href="index.php?m=home&c=math"><span>奥数家教</span></a></li>
+            <li id="lan_7"><a href="index.php?m=home&c=english"><span>英语家教</span></a></li>
+            <li id="lan_8"><a href="index.php?m=home&c=music"><span>音乐家教</span></a></li>
+            <li id="lan_9"><a href="index.php?m=home&c=index&a=winCase"><span>成功案例</span></a></li>
+            <li id="lan_10"><a href="index.php?m=home&c=index&a=chargeStandard"><span>收费标准</span></a></li>
+        </ul>
+    </div>
+
+    <script language="javascript" type="text/javascript">
+        //js获取url参数的function
+        function request(paras)
+        {
+            var url = location.href;
+            //alert(url);
+            var paraString = url.substring(url.indexOf("?")+1,url.length).split("&");
+            var paraObj = {}
+            for (i=0; j=paraString[i]; i++)
+            {
+                paraObj[j.substring(0,j.indexOf("=")).toLowerCase()] = j.substring(j.indexOf("=")+1,j.length);
+            }
+            var returnValue = paraObj[paras.toLowerCase()];
+            if(typeof(returnValue)=="undefined")
+            {
+                return "";
+            }
+            else
+            {
+                return returnValue;
+            }
+        }
+
+    </script>
+
+    <script language="javascript" type="text/javascript">
+        var tabl_1 =request("type");
+        //alert(tabl_1);
+        if(tabl_1 != "")
+        {
+            document.getElementById("lan_"+tabl_1).className = "active";
+        }
+    </script>
+
+
+    <div id="main" class="w950">
+        <div class="box2">
+            <div class="title">
+                <h2>
+                    学员注册
+                </h2>
+
+            </div>
+            <div class="">
+                <div class="loginb5">
+                    <fieldset>
+
+                        <input name="" value="1267521484" type="hidden" />
+                        <input name="" value="0" type="hidden" />
+                        <div class="btbg2">
+                            <img src="./public/home/images/d19.gif" /><strong>请填写您的联系方式 </strong>
+                        </div>
+                        <div>
+                            <label for="confirm_password">
+                                联系人</label>
+                            <input name="name" class="zcinput" id="lxr" size="30" maxlength="15"
+                                   type="text" />
+                            <span class="zsbg">例如:王女士</span>
+                        </div>
+                        <div>
+                            <label for="checkbox">
+                                固定电话</label>
+                            <input name="telephone" class="zcinput" id="gddh" size="30"
+                                   maxlength="50" type="text" />
+                            <span class="zsbg">可填多个，请注明(宅、办)</span>
+                        </div>
+                        <div>
+                            <label for="checkbox">
+                                移动电话</label>
+                            <input name="phone" class="zcinput" id="yddh" size="30" maxlength="50"
+                                   type="text" />
+                            <span class="zsbg">便于短信通知。该信息不会在网上公布</span>
+                        </div>
+                        <div>
+                            <label for="confirm_password">
+                                您所在的位置地区</label>
+                            <select name="area" id="szdq">
+                                <option selected="selected" value="">请选择</option>
+                                <option value="海淀">海淀 </option>
+                                <option value="朝阳">朝阳 </option>
+                                <option value="东城">东城 </option>
+                                <option value="西城">西城 </option>
+                                <option value="崇文">崇文 </option>
+                                <option value="宣武">宣武 </option>
+                                <option value="丰台">丰台 </option>
+                                <option value="石景山">石景山 </option>
+                                <option value="房山">房山 </option>
+                                <option value="门头沟">门头沟 </option>
+                                <option value="通州">通州 </option>
+                                <option value="昌平">昌平 </option>
+                                <option value="密云">密云 </option>
+                                <option value="怀柔">怀柔 </option>
+                                <option value="延庆">延庆 </option>
+                                <option value="平谷">平谷 </option>
+                                <option value="大兴">大兴 </option>
+                                <option value="顺义">顺义 </option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="label">
+                                授课地区详细描述</label>
+                            <input name="addarea" id="skdqms" class="skdqms" size="35" />
+                            <span class="zsbg">填写您的具体上课地址</span>
+                        </div>
+                        <div class="btbg2">
+                            <img src="./public/home/images/d19.gif" /><strong>请填写学员的基本信息</strong></div>
+                        <div>
+                            <label for="confirm_password">
+                                学员年级</label>
+                            <select name="grade" id="xynj">
+                                <option selected="selected" value="">请选择</option>
+                                <option value="幼儿">幼儿 </option>
+                                <option value="一年级">一年级 </option>
+                                <option value="二年级">二年级 </option>
+                                <option value="三年级">三年级 </option>
+                                <option value="四年级">四年级 </option>
+                                <option value="五年级">五年级 </option>
+                                <option value="六年级">六年级 </option>
+                                <option value="初一">初一 </option>
+                                <option value="初二">初二 </option>
+                                <option value="初三">初三 </option>
+                                <option value="高一">高一 </option>
+                                <option value="高二">高二 </option>
+                                <option value="高三">高三 </option>
+                                <option value="三校生">三校生 </option>
+                                <option value="自考生">自考生 </option>
+                                <option value="大一">大一 </option>
+                                <option value="大二">大二 </option>
+                                <option value="大三">大三 </option>
+                                <option value="大四">大四 </option>
+                                <option value="成人">成人 </option>
+                                <option value="外国人">外国人 </option>
+                                <option value="其它情况">其它情况 </option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="label">
+                                辅导科目</label>
+                            <input name="subject" id="fdkm" class="zcinput" size="20" type="text" />
+                            <span class="zsbg">例如:高三语文</span>
+                        </div>
+                        <div>
+                            <label for="label">
+                                可上课时间</label>
+                            <input name="time" id="ksksj" class="zcinput" size="20" type="text" />
+                            <span class="zsbg">例如:每周六下午2点到4点，2周一次</span>
+                        </div>
+                        <div>
+                            <div style="float: left;">
+                                <label for="label">
+                                    学员情况描述</label>
+                                <textarea name="resume" id="xyqkms" cols="30" rows="5" class="zcinput"></textarea>
+                            </div>
+                            <div class="qdddiv2" style="margin-top: 45px;">
+                                请详细说明学员基础、学习状况、性格等便于有针对性地安排合适的教员
+                            </div>
+                        </div>
+                        <div class="btbg2">
+                            <img src="./public/home/images/d19.gif" /><strong>请填写您对教员的要求</strong></div>
+                        <div>
+                            <label for="label">
+                                教员性别</label>
+                            <input name="sex" id="jyxb_1" value="男" type="radio" />
+                            男
+                            <input name="sex" id="jyxb_2" value="女" type="radio" />
+                            女
+                            <input name="sex"  id="jyxb_3"value="均可" checked="checked" type="radio" />
+                            均可
+                        </div>
+                        <div>
+                            <label for="label">
+                                对教员其他要求</label>
+                            <textarea name="require" id="djyqtyq" cols="30" rows="5" class="zcinput"></textarea>
+                            <span class="zsbg">如对教员的学历，教学经验，性格等要求</span>
+                        </div>
+                        <div>
+                            <label for="label">
+                                收费要求：</label>
+                            <input name="money" id="pay" class="sfyq" value="面议" type="text" />
+                            <span class="zsbg">例如:X元/两小时，X元/天，X元/月</span>
+                        </div>
+                        <div class="r2">
+                            <input name="" id="houguo" value="" checked="checked" type="checkbox" />
+                            <span class="s2">因上述信息不真实，而引发的任何后果，一概由填表人负责</span>
+                        </div>
+                        <div class="ac" style="padding-top: 15px;">
+                            <input type="submit" name="" value="　提 交　" onclick="return CheckForm_1();" id="Button1" class="button" />
+                            &nbsp;<input name="" class="button" value="　重 置　" type="reset" />
+                        <input name="from" class="button" value="order" type="hidden" />
+                            <input name="user_name" value="<?php echo isset($_COOKIE['user']) ? $_COOKIE['user'] : '' ; ?>" type="hidden"/>
+                        </div>
+
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footbar" class="w950">
+        <div class="title">
+            <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tbody><tr>
+                    <td  height="30" valign="middle">
+                        <a href="index.php?m=home&c=index&a=teacher" target="_blank">做家教</a> | <a href="index.php?m=home&c=index&a=order" target="_blank">请家教</a> | <a href="index.php?m=home&c=index&a=Jiaoyuansousuo">教员搜索</a> | <a href="index.php?m=home&c=index&a=Jiaoyuan">教员分类</a> | <a href="index.php?m=home&c=index&a=XuexiFangfa1">学习方法</a> | <a href="index.php?m=home&c=index&a=KaoshiJingyan1">考试经验</a> | <a href="index.php?m=home&c=index&a=JiaZhangketang1">家长课堂</a> | <a href="index.php?m=home&c=index&a=JiajiaoXiangguan1">家教相关</a> | <a href="index.php?m=home&c=index&a=JiaZhangjingyan1">家教经验</a> | <a href=index.php?m=home&c=index&a=GuanYuwomen1>关于我们</a> | <a href="index.php?m=home&c=index&a=Changjianwenti1">常见问题</a> | <a href="index.php?m=home&c=index&a=HuiKuaifangshi1">汇款方式</a> | <a href="index.php?m=home&c=index&a=Lianxiwomen1" target="_blank">联系我们</a> | <a href="index.php?m=home&c=index&a=Zhaopin1"><img src="./public/home/images/zhaopin.gif" align="absmiddle" border="0"></a>
+                    </td>
+                </tr>
+                </tbody></table>
+        </div>
+        <div class="body">
+            联系电话：010-62642730　62643630　客服邮箱：caijjkf@163.com　<br>
+            版权所有：北京尚才家教 【<a href="#" target="_blank">北京家教</a>】　工信部备案号:<a href="#" target="_blank">京ICP备09031430号</a><br>
+            家教服务中心：北京市海淀区清华大学南门华清嘉园8号楼304室<br>
+            Powered by www.caijj.com copyright 2009-2011<a href="#" target="_blank" title="站长统计"><img src="./public/home/images/pic1.gif" border="0" hspace="0" vspace="0"></a><img src="./public/home/images/stat.gif" border="0" height="0" width="0">
+        </div>
+    </div>
+
+</form>
+</body>
+</html>

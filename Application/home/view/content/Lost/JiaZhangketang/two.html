@@ -1,0 +1,295 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>【《浅谈中考语文复习的有效性》】 - 北京尚才家教</title>
+    <link href="./public/home/css/css.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<script language="JavaScript" type="text/javascript">
+    <!--
+    function AddFavorite(sURL, sTitle)
+    {
+        try
+        {
+            window.external.addFavorite(sURL, sTitle);
+        }
+        catch (e)
+        {
+            try
+            {
+                window.sidebar.addPanel(sTitle, sURL, "");
+            }
+            catch (e)
+            {
+                alert("加入收藏失败，请使用Ctrl+D进行添加");
+            }
+        }
+    }
+    function SetHome(obj,vrl){
+        try{
+            obj.style.behavior='url(#default#homepage)';obj.setHomePage(vrl);
+        }
+        catch(e){
+            if(window.netscape) {
+                try {
+                    netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+                }
+                catch (e) {
+                    alert("此操作被浏览器拒绝！\n请在浏览器地址栏输入“about:config”并回车\n然后将 [signed.applets.codebase_principal_support]的值设置为'true',双击即可。");
+                }
+                var prefs = Components.classes['@mozilla.org/preferences-service;1'].getService(Components.interfaces.nsIPrefBranch);
+                prefs.setCharPref('browser.startup.homepage',vrl);
+            }
+        }
+    }
+    //-->
+</script>
+<script type="text/javascript">
+    //js获取cookie 
+    var acookie=document.cookie.split("; ");
+    function getck(sname)
+    {
+        //获取单个cookies 
+        for(var i=0;i<acookie.length;i++)
+        {
+            var arr=acookie[i].split("=");
+            if(sname==arr[0])
+            {
+                if(arr.length>1)
+                    return unescape(arr[1]);
+                else
+                    return "";
+            }
+        }
+        return "";
+    }
+</script>
+
+<script language="javascript" type="text/javascript">
+    <!--
+    function checkf()
+    {
+        if (document.getElementById("username").value=="")
+        {
+            alert("请输入用户名");
+            document.getElementById("username").focus();
+            return false;
+        }
+        if (document.getElementById("password").value=="")
+        {
+            alert("请输入密码");
+            document.getElementById("password").focus();
+            return false;
+        }
+
+    }
+
+    //-->
+</script>
+
+<form name="form1" method="post" action="index.php?m=home&c=enter" id="form1">
+    <div>
+    </div>
+
+    <div id="topbar" class="color_999">
+        <div class="w950">
+            <div class="right">
+                <a href="#" onclick="SetHome(this,window.location)" class="color_999">设为首页</a>&nbsp;
+                <a href="#" onclick="AddFavorite(window.location,document.title)" class="color_999">
+                    加入收藏</a>&nbsp; <a href="#" class="color_999">帮助中心</a>
+            </div>
+
+            <div class="left" id="wdl">
+                <?php if(!isset($_COOKIE['user'])){ echo '
+                &nbsp;&nbsp; <a href="index.php?m=home&c=index&a=user" class="color_orage text_decoration">注册用户</a>&nbsp;
+                用户名:<input name="username" style="width: 100px;" id="username" type="text">
+                &nbsp;&nbsp;密码:<input name="password" style="width: 100px;" id="password" type="password">
+                &nbsp;<input name="Button1" value="登录" onclick="return CheckForm();" id="Button1" type="submit">
+                <?php ';  } ?>
+                <?php if(isset($_COOKIE['user'])) { echo 'Hello:'.$_COOKIE['user'] ; } ?>
+            </div>
+            &nbsp;&nbsp; <a href="index.php?m=home&c=index&a=teacher" class="color_orage text_decoration">注册教员</a>&nbsp;
+
+            <a href="index.php?m=home&c=index&a=modifier" class="color_orage text_decoration">取回密码</a>
+            <?php if(isset($_COOKIE['user'])){ echo '
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="index.php?m=home&c=index&a=out" class="color_orage text_decoration">退出账号</a>&nbsp;
+            <?php ';  ?>
+            <?php } ?>
+        </div>
+    </div>
+    </div>
+</form>
+<div id="top">
+    <div class="w950">
+
+        <div style="float: right; width:100px; padding-top:25px;">
+            <a target="blank" href=tencent://message/?uin=5886626&Site=尚才家教&Menu=yes><img border="0" SRC='./public/home/images/qq.jpg' alt="QQ咨询"></a>
+        </div>
+        <div style="float: right; padding: 15px 0 0 0;">
+            <img src="./public/home/images/top_bn.gif" alt="尚才家教" />
+        </div>
+        <div id="logo" style="float:left;">
+            <img src="./public/home/images/logo.jpg" alt="尚才家教" />
+        </div>
+    </div>
+</div>
+<div id="menu" class="w950">
+    <ul>
+        <li><a href="index.php?m=home&c=indexLibrary"><span>首页</span></a></li>
+        <li id="lan_1"><a href="index.php?m=home&c=teacher"><span>教员库</span></a></li>
+        <li id="lan_2"><a href="index.php?m=home&c=UserLibrary"><span>学员库</span></a></li>
+        <li id="lan_3"><a href="index.php?m=home&c=star"><span>星级教员</span></a></li>
+        <li id="lan_4"><a href="index.php?m=home&c=major"><span>专业老师</span></a></li>
+        <li id="lan_5"><a href="index.php?m=home&c=university"><span>大学生家教</span></a></li>
+        <li id="lan_6"><a href="index.php?m=home&c=math"><span>奥数家教</span></a></li>
+        <li id="lan_7"><a href="index.php?m=home&c=english"><span>英语家教</span></a></li>
+        <li id="lan_8"><a href="index.php?m=home&c=music"><span>音乐家教</span></a></li>
+        <li id="lan_9"><a href="index.php?m=home&c=index&a=winCase"><span>成功案例</span></a></li>
+        <li id="lan_10"><a href="index.php?m=home&c=index&a=chargeStandard"><span>收费标准</span></a></li>
+    </ul>
+</div>
+
+<div id="main" class="w950">
+    <div class="right" style="width: 640px;">
+        <div class="guide">
+            <img src="./public/home/images/d05.gif" hspace="2" vspace="2" align="absbottom">当前位置： <span
+                class="red1"><a href="/">首页</a></span> &gt; 家长课堂 &gt; <strong>《浅谈中考语文复习的有效性》</strong>            </div>
+        <!--列表-->
+        <div class="box2">
+            <div class="title">
+            </div>
+            <div class="body" style="padding-top: 10px;">
+                <div id="cont">
+                    <h1>
+                        《浅谈中考语文复习的有效性》</h1>
+                    <u>【教员编号：<a href="../thtml/13024.html" target="_blank">13024</a> 所在学校：某中学 更新时间：<span class="yel">2015-1-13 20:54:22</span> 点击数：<span class="green"><script type="text/javascript" src="../other/click.aspx?id=5891"> </script></span>
+                        】</u>
+                    <p>
+                    </p>
+                    <div class="f14 lh20" style="padding-bottom: 10px; padding-top: 10px">
+                        <div align="center">
+                            <table class="MsoNormalTable" border="0" cellspacing="0" cellpadding="0" width="800" style="width: 600pt; mso-cellspacing: 0cm; mso-yfti-tbllook: 1184; mso-padding-alt: 0cm 0cm 0cm 0cm">
+                                <tbody>
+                                <tr style="mso-yfti-irow: 0; mso-yfti-firstrow: yes">
+                                    <td width="800" style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 0cm; width: 600pt; padding-right: 0cm; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm">&nbsp;</td>
+                                </tr>
+                                <tr style="mso-yfti-irow: 1">
+                                    <td width="800" style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 0cm; width: 600pt; padding-right: 0cm; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm">&nbsp;</td>
+                                </tr>
+                                <tr style="mso-yfti-irow: 2">
+                                    <td width="800" style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 0cm; width: 600pt; padding-right: 0cm; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm">
+                                        <div class="MsoNormal" style="text-align: center; line-height: 150%; margin: 0cm 0cm 0pt; layout-grid-mode: both; word-break: break-all; mso-layout-grid-align: auto" align="center"><span lang="EN-US" style="line-height: 150%; font-family: 宋体; font-size: 10.5pt; mso-bidi-font-family: 宋体"><hr align="center" size="1" width="100%" noshade="noshade" style="color: silver" />
+            </span></div>
+                                    </td>
+                                </tr>
+                                <tr style="height: 18pt; mso-yfti-irow: 3">
+                                    <td width="800" style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 0cm; width: 600pt; padding-right: 0cm; height: 18pt; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm">&nbsp;</td>
+                                </tr>
+                                <tr style="mso-yfti-irow: 4; mso-yfti-lastrow: yes">
+                                    <td valign="top" width="800" style="border-bottom: #ece9d8; border-left: #ece9d8; padding-bottom: 0cm; background-color: transparent; padding-left: 0cm; width: 600pt; padding-right: 0cm; border-top: #ece9d8; border-right: #ece9d8; padding-top: 0cm">
+                                        <p class="MsoNormal" style="line-height: 180%; margin: 0cm 0cm 0pt; layout-grid-mode: both; word-break: break-all; mso-layout-grid-align: auto"><span style="line-height: 180%; font-family: 宋体; font-size: 12pt; mso-bidi-font-family: 宋体">摘要：怎样搞好中考语文复习这个问题一直困扰着初中语文教师，中考复习的弊端抑制了中考复习的有效性，如何让学生在很短的时间内，对所学的知识进行有效整合，去适应即将到来的中考。<span lang="EN-US">&nbsp;</span>笔者结合自己的教学实践提出一些合理性的建议。首先要目标明确，其次教会学生必要的应试技巧，再次复习的内容要有所突破，最后复习的形式要有所突破。　　<span lang="EN-US"><br />
+            </span>关键词：<span lang="EN-US">&nbsp;</span>弊端<span lang="EN-US">&nbsp;&nbsp;</span>答题技巧与规范<span lang="EN-US">&nbsp;&nbsp;&nbsp;</span>内容<span lang="EN-US">&nbsp;&nbsp;&nbsp;</span>形式<span lang="EN-US">&nbsp;<br />
+            </span>　　<span lang="EN-US">&nbsp;<br />
+            </span>　　中考语文复习过程中，存在许多弊端，从而抑制了中考复习的有效性。具体表现为：一是侧重知识复习，忽视考纲及中考说明的研究。<span lang="EN-US">&nbsp;</span>在语文复习教学中，只有老师确立了正确的复习教学理念，才能高效地进行复习教学工作。《语文课程标准》、《中考学科说明》是中考复习的纲领性文件，必须认真学习、仔细研究，逐项对照、务求落实，使复习工作真正做到有的放矢。可是，老师们草率行事，盲目复习，甚至超负荷讲练。有个别教师对课标中要求学生背诵的古诗文、名著都记不清，说不全。更不知中考说明中要求识记、理解、分析概括、表达应用和鉴赏评价的五种能力了。其实中考语文复习工作的本质是为了对学生所学知识的梳理、语文素养的培养，为学生以后学习打基础，而不是只为应付考试、只为考高分，这与中考的指导思想是相悖的。二是重是课外习题，忽视课本复习　。　尽管现在中考题大多数出自课外，但这些题大部分是课本基础知识的变形和课内知识延伸，是对学生学习文本能力的考查。因此教师在复习中要立足课本，重视课本，并以课本为<span lang="EN-US">&ldquo;</span>本<span lang="EN-US">&rdquo;</span>，帮助学生系统梳理课本知识，引领他们搭建知识框架，编制知识网络，尽快实现由课内向课外能力的自然迁移。而有些教师却被中考只考课外的表象所迷惑，把复习重点放在课本以外的名目繁多的资料上，比如练习册、考试卷、模拟题等等。大搞特搞<span lang="EN-US">&ldquo;</span>题海战<span lang="EN-US">&rdquo;</span>。当然，这种做法不乏有助于提高语言综合运用能力，但不可否认，有些资料是重复拼凑、语言符号排列组合的产物，有些试题<span lang="EN-US">&ldquo;</span>偏难<span lang="EN-US">&rdquo;</span>背离了新课标的要求，学生整天在题海中<span lang="EN-US">&ldquo;</span>摸爬滚打<span lang="EN-US">&rdquo;</span>。长此以往，学生苦不堪言，严重挫伤学生的学习兴趣。三是重视训练结果，忽视评价过程。　　随着新课改的日益深入，中考语文试题考查的知识面越来越宽，考查学生的能力越来越全面，从中考命题发展情况看，经历了注重知识考查到注重能力考查，再到语文素养考查的过程。因此指导复习时不仅重视信息反馈、方法调整和评价过程，而且使学生达到巩固知识、开拓智力、发展能力、提高语文素养的目的。可是有的教师复习训练中只关注训练结果，往往忽视看解题的评价过程。例如对某一知识板块进行测试后，在批改和进行讲评试卷时，不认真检查学生答题情况，分析各题的错误率，不细致分析学生的解答过程，找出错误症结不去有意识地对得分失分原因归纳整理，而采用从头到尾、不加选择、更无侧重、逐一公布答案的功利做法，忽视了原因的查找，忽视了知识点的举一反三，忽视了解题思路和方法的指导过程，忽视了解题的规范性。这样，不利于复习内容的巩固梳理和强化，更不利于学生语文素养的培养。　四是重视阅读训练，忽视作文训练　。　中考语文命题重点考查学生阅读能力和写作能力，已经形成共识。在语文教学中阅读和写作始终是相互依存、相互渗透、相互补充、相互促进的，因此在复习中两者必须同步进行。特别是作文训练，要贯穿始终。可是，在复习中多数教师强化阅读复习，作文训练遭忽视。究其原因，阅读复习相对取得效果较为明显。而作文训练不是一朝一夕所能见效，况且学生作文水平高低与语文素养密切相关，而这取决于学生长期积累、训练、感悟形成的，因此教者茫然，不知从何入手。多数教师采取与平时教学一样的应付方式，每周布置，学生写写；每篇都评讲，随便说说。甚至有的教师将作文训练放弃，作文复习成了部分教师难以解决的问题。当然，中考复习语文的弊端还很多。针对以上弊端，笔者就如何做好语文复习课谈几点粗浅的看法。<span lang="EN-US">&nbsp;<o:p></o:p></span></span></p>
+                                        <p class="MsoNormal" style="line-height: 180%; margin: 0cm 0cm 0pt; layout-grid-mode: both; word-break: break-all; mso-layout-grid-align: auto"><span style="line-height: 180%; font-family: 宋体; font-size: 12pt; mso-bidi-font-family: 宋体">　首先，要有明确的复习计划与学习目标。复习计划的制定是以<span lang="EN-US">&ldquo;</span>课标<span lang="EN-US">&rdquo;</span>和<span lang="EN-US">&ldquo;</span>考纲<span lang="EN-US">&rdquo;</span>为依据，立足教材，结合学生实际，讨论制定复习计划，整个过程分三轮：第一轮：全面复习。以本为本。着重于从课本入手，依纲扣本，在字、词、句、篇中夯实基础，特别是古诗文的背诵默写与阅读赏析，辅之以作文规范写作；重点是古诗文的复习。<span lang="EN-US">&nbsp;</span>第二轮：专题复习。根据《考试说明》和中考命题规律，打破学科原有顺序，将知识结构分门分类地进行整理并强化训练。重点进行现代文和作文的训练指导，辅之以基础知识的检测。<span lang="EN-US">&nbsp;</span>第三轮：总结检测<span lang="EN-US">&nbsp;</span>、查漏补缺。全面总结复习情况，检查复习效果，模拟测试。重点进行考前作文指导，辅之以基础知识的检测。<span lang="EN-US">&nbsp;</span>另外，中考语文复习课，目标要非常明确，就是让学生在很短的时间内，对所学的知识进行有效地梳理、整合。<span lang="EN-US">&nbsp;</span>所以，我们每一堂课的内容应相对集中，可以围绕中考内容中的一个点或几个点展开。比如，语言运用题，可以分为病句修改，仿写，对联，句式转换，语言的简明、连贯和得体，广告标语，图文转换（图表类），图文转换（徽标、漫画类），新闻消息，学科渗透，材料探究，综合表述（设计类或观点表述类），名著推荐，诗歌鉴赏。我们一堂课可以针对其中一种类型题目或相近的几种类型题目有针对性地讲解。<span lang="EN-US">&nbsp;<br />
+            </span>　　其次，应教会学生必要的答题技巧<span lang="EN-US">&nbsp;</span>。　在认真解读《考试说明》，强化目标意识，潜心钻研中考命题，探讨预测命题方向的基础上，我们着重提高复习的有效性。<span lang="EN-US">&nbsp;1</span>、积累与运用。按照中考说明的出题模式，语言基础包括：语音文字、词语运用、病句的辨析与修改、古诗文默写等。语文实践包括文学名著、语言的表达、联想仿写、筛选概括、图表分析、解说评价、综合性学习等。复习以课本为主，按考标要求进行知识点的梳理，归纳、总结，辅之以精当的练习。如常用词语的书写与读音复习，先整理好六册教材词语，然后抄写听写二遍，及时批改进行订正，注重书写质量。特别要记住一些自己容易读错的音，容易写错的字，如：荫庇（<span lang="EN-US">y&igrave;n</span>）、翘首以望（<span lang="EN-US">qi&aacute;o</span>）、自怨自艾（<span lang="EN-US">y&igrave;</span>）、炽热（<span lang="EN-US">ch&igrave;</span>）、剽悍（<span lang="EN-US">piāo</span>）、作揖（<span lang="EN-US">yī</span>）。再如：谈笑风声（生）、眼花瞭乱（缭）、迫不急待（及）、一愁莫展（筹）、直接了当（截）。古诗文的背诵默写复习，采用学生互背与默写相结合的方法，不但要求能背诵指定篇目，字字落实，还要<span lang="EN-US">&ldquo;</span>会理解、能运用、善归纳、懂迁移<span lang="EN-US">&rdquo;</span>。尤其是在平时默写中经常出错的字，更要时时<span lang="EN-US">&ldquo;</span>温故<span lang="EN-US">&rdquo;</span>，切记：一字出错，全<span lang="EN-US">&ldquo;</span>盘<span lang="EN-US">&rdquo;</span>皆输。名著知识复习，针对考点要求先整理好十几部名著的相关知识要点，然后打印出来阅读。以上三块知识的积累，重在于积累与识记。对于词语使用、语病、标点、图文解读、口语交际和综合性学习的复习，一方面采用专题形式，先精选中考试题练习实践，后发现规律，归结理论与做题方法技巧，最后再针对考点要求编写好巩固练习；另一方面，在平时阅读与写作复习中深化这些考点。对于成语应用中的<span lang="EN-US">&ldquo;</span>基本义、比喻义、褒贬义<span lang="EN-US">&rdquo;</span>，病句中的<span lang="EN-US">&ldquo;</span>歧义现象<span lang="EN-US">&rdquo;</span>是比较难掌握的，要重点突破。尤其是自相矛盾的语病，学生对<span lang="EN-US">&ldquo;</span>避免、防止、禁止<span lang="EN-US">&rdquo;</span>这样的否定词，不能与否定词<span lang="EN-US">&ldquo;</span>不、不能<span lang="EN-US">&rdquo;</span>连用。<span lang="EN-US">2</span>、针对阅读部分的试题还需要我们老师和学生一起一题一题地研读题干，教会学生审题。比如<span lang="EN-US">&ldquo;</span>在作者看来，<span lang="EN-US">&hellip;&hellip;&rdquo;</span>（暗示应该用原文回答）；<span lang="EN-US">&ldquo;</span>请根据原文进行概括<span lang="EN-US">&rdquo;</span>（暗示可先在文中找到依据，然后再概括）；<span lang="EN-US">&ldquo;</span>有哪些<span lang="EN-US">&rdquo;</span>（暗示答案不止一点，至少两点，而且应根据题目的分值判断有几点）等等。<span lang="EN-US">&nbsp;<br />
+            </span>　　<span lang="EN-US">3.</span>要教会学生学会答题规范。比如，阅读中遇到<span lang="EN-US">&ldquo;</span>赏析<span lang="EN-US">&rdquo;</span>类题目，就应从修辞手法和写作方法以及句式等几个方面思考。如果用了比喻的修辞，那么可以套用<span lang="EN-US">&ldquo;</span>此句用了比<span lang="EN-US">&nbsp;</span>喻的修辞手法，把<span lang="EN-US">&hellip;&hellip;</span>比作<span lang="EN-US">&hellip;&hellip;</span>，生动形象的写出了<span lang="EN-US">&hellip;&hellip;</span>，表达了作者<span lang="EN-US">&hellip;&hellip;</span>的情感。<span lang="EN-US">&rdquo;</span>的句式。如果用了对比的写作方法，可以套用<span lang="EN-US">&ldquo;</span>运用了对比的写作手法，把<span lang="EN-US">&hellip;&hellip;</span>和<span lang="EN-US">&hellip;&hellip;</span>进行对比，从而突出了<span lang="EN-US">&hellip;&hellip;</span>，表达了作者<span lang="EN-US">&hellip;&hellip;</span>的情感。<span lang="EN-US">&rdquo;</span>的句式。像这样的一些公式还有很多，养成良好习惯，注重平时训练。还有，写作能力的提高不是一朝一夕就能有明显收效的事，必须在平时的写作训练、课后练笔中养成良好的习惯，如审题构思的习惯、拟写作提纲或打腹稿的习惯、反复修改的习惯、一题多写的习惯等。写作训练必须从审题、选材、立意、构思、拟题、行文、修改等方面多下苦功夫。老师应该在中考前，倾囊相授，必要时还可以让学生进行背诵，提高学生的应试能力。<span lang="EN-US">&nbsp;<o:p></o:p></span></span></p>
+                                        <p class="MsoNormal" style="line-height: 180%; margin: 0cm 0cm 0pt; layout-grid-mode: both; word-break: break-all; mso-layout-grid-align: auto"><span style="line-height: 180%; font-family: 宋体; font-size: 12pt; mso-bidi-font-family: 宋体">　<span lang="EN-US">4.</span>老师还要让学生具有得分意识。一道试题，阅卷老师在最后评分时，总会有一个标准。老师在复习的过程中，应该让学生来具体感受这一评分过程。我们可以采取以下的方式。先让学生根据自己的理解做出答案，然后让学生根据中考的标准答案评分并说明理由，最后由老师来分析此题的得分点并说明该学生的得分和理由。当然，得满分还需要规范答题的语言。通过这样反复的练习，可以有效提高学生答题的有效性和完整性。<span lang="EN-US">&nbsp;<br />
+            </span>　　再次，复习的内容要有所突破<span lang="EN-US">&nbsp;</span>。余映潮老师就提倡<span lang="EN-US">&ldquo;</span>课中设比<span lang="EN-US">&rdquo;</span>，他认为这种阅读方法<span lang="EN-US">&ldquo;</span>能够带动学生反复研读，增加理解的深度和广度<span lang="EN-US">&rdquo;</span>。在《语文课程标准》的指导下，初中语文教材多是以一个个专题变成一个个教学单元。组成每一个单元的几篇文章都是从不同角度，用不同的文学方式对<span lang="EN-US">&ldquo;</span>这个专题<span lang="EN-US">&rdquo;</span>进行表达。所以我们可以利用<span lang="EN-US">&ldquo;</span>中规<span lang="EN-US">&rdquo;</span>理论，打破课与课的界限，单元与单元之间的界限，甚至是册与册之间的界限，把一些相关的内容组织在一起进行复习。<span lang="EN-US">&nbsp;</span>其实老师在上复习课的时候就应该而且要像挖井一样，而不是开河，应该深入挖掘教材中的内容。我们可以从文章的主题思想角度选取对比点、从人物的角度选取对比点、从文章的语言角度选取对比点、从写作手法角度选取对比点。让学生对教材有一个立体的、更为深入的理解。<span lang="EN-US">&nbsp;<br />
+            </span>　　　最后，复习的形式要有所突破。<span lang="EN-US">&nbsp;</span>我们的复习课要改变练习课的本质，因为繁多的模拟题仅仅只能是复习课的辅助材料，它不是考试标准，况且这些模拟题有的甚至还存在这样那样的问题。也要改变过去那种教师<span lang="EN-US">&ldquo;</span>一言堂<span lang="EN-US">&rdquo;</span>的现象，采用<span lang="EN-US">&ldquo;</span>竞赛<span lang="EN-US">&rdquo;&ldquo;</span>对话<span lang="EN-US">&rdquo;</span>形式，把更多的时间和空间还给学生，实施开放式教学，即让学生自主选择复习的内容和形式，自己总结复习的方法。而教师的任务就在于课堂上的<span lang="EN-US">&ldquo;</span>宏观调控<span lang="EN-US">&rdquo;</span>，把握复习的方向和进度，进行适时地引导和点拨等。<span lang="EN-US">&nbsp;</span>　如：复习生字：你认为哪些字比较难记，难写，应重点复习哪些字；可以反复练，可以合作听写，也可以出一份自测题。复习阅读部分：自己从课外读物中找一篇自己喜欢的文章，想想能提出哪些问题，这些问题该怎样回答，然后在小组内交流。<span lang="EN-US">&nbsp;</span>王家伦老师就曾说过：<span lang="EN-US">&ldquo;</span>重过程和方法，学生的活动不可或缺。<span lang="EN-US">&rdquo;&nbsp;</span>这样的开放式复习，学生自身受益，全班其他同学受益，教师也了解到更多的学生信息，使指导更具针对性，更有实效。<span lang="EN-US">&nbsp;<br />
+            </span>　　总之，要想上好语文复习课，提高复习效率，就应该从整体把握教材，采取合适的复习形式，关注学生的自主发展，使学生通过主动参与、合作探究，达到对语文知识的深入把握和语文综合能力的提高。<span lang="EN-US">&nbsp;<br style="mso-special-character: line-break" />
+            <br style="mso-special-character: line-break" />
+            <o:p></o:p></span></span></p>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="hackbox">
+                    </div>
+                </div>
+                <div class="xg">
+                    <ul><li>下一篇文章： <a title='五年级数学下册练习   更新：2014-02-08  点击：0' href='../jzkt/5848.html'>五年级数学下册练习</a></li><li>上一篇文章： <a title='孩子，快乐的高手   更新：2015-05-09  点击：0' href='../jzkt/5900.html'>孩子，快乐的高手</a></li></ul>
+                </div>
+                <div class="box2 box4">
+                    <div class="title" style="">
+                        <h2>
+                            相关文章</h2>
+                    </div>
+                    <div class="body">
+                        <ul class="list">
+                            <li><a title='家长如何对待上课不认真听讲的孩子   更新：2011-07-07  点击：8' href='../jzkt/2999.html'>家长如何对待上课不认真听讲的孩子</a></li><li><a title='中小学生学习独轮车的好处   更新：2011-01-12  点击：0' href='../jzkt/2425.html'>中小学生学习独轮车的好处</a></li><li><a title='让孩子懂得学习的重要性   更新：2011-07-01  点击：8' href='../jzkt/2896.html'>让孩子懂得学习的重要性</a></li><li><a title='用心教育   更新：2012-07-03  点击：0' href='../jzkt/5716.html'>用心教育</a></li><li><a title='独生子女父母的教育方式   更新：2013-01-07  点击：0' href='../jzkt/5761.html'>独生子女父母的教育方式</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="left" style="width: 300px;">
+        <div class="box1">
+            <div class="title">
+                <h2>
+                    <span class="more"><a href="../xxff/xxff.html">» 更多</a></span>学习方法</h2>
+            </div>
+            <div class="body">
+                <ul class="list">
+                    <li><a href="../xxff/5909.html">如何学习数学</a></li> <li><a href="../xxff/5907.html">管乐器为什么必须练长音？</a></li> <li><a href="../xxff/5906.html">教育理解</a></li> <li><a href="../xxff/5904.html">吉他自学支招</a></li> <li><a href="../xxff/5903.html">北京高考成绩6月23日公布 首次采用大平行志愿</a></li> <li><a href="../xxff/5902.html">高中物理</a></li> <li><a href="../xxff/5901.html">数学学习认识</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="box1">
+            <div class="title">
+                <h2>
+                    <span class="more"><a href="../ksjy/ksjy.html">» 更多</a></span>考试经验</h2>
+            </div>
+            <div class="body">
+                <ul class="list">
+                    <li><a href="../ksjy/3156.html">怎样的阅读才是正确的阅读？</a></li> <li><a href="../ksjy/3155.html">有针对性的学习才能考好语文</a></li> <li><a href="../ksjy/3154.html">词语类题型的总结</a></li> <li><a href="../ksjy/3153.html">语文考试技巧</a></li> <li><a href="../ksjy/3149.html">面对考试要主动</a></li> <li><a href="../ksjy/3109.html">把考试的精力放在基础上</a></li> <li><a href="../ksjy/3107.html"> 养成好的解题习惯才能拿高分</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="box1">
+            <div class="title">
+                <h2>
+                    <span class="more"><a href="../jzkt/jzkt.html">» 更多</a></span>家长课堂</h2>
+            </div>
+            <div class="body">
+                <ul class="list">
+                    <li><a href="../jzkt/5900.html">孩子，快乐的高手</a></li> <li><a href="../jzkt/5891.html">《浅谈中考语文复习的有效性》</a></li> <li><a href="../jzkt/5848.html">五年级数学下册练习</a></li> <li><a href="../jzkt/5847.html">练习题</a></li> <li><a href="../jzkt/5808.html">家长和小朋友对学习架子鼓的一些疑惑</a></li> <li><a href="../jzkt/5777.html">家长该如何预防孩子的网瘾？</a></li> <li><a href="../jzkt/5761.html">独生子女父母的教育方式</a></li>
+                </ul>
+            </div>
+        </div>
+        <script type="text/javascript"><!--
+        google_ad_client = "ca-pub-5232248721907840";
+        /* caijj300 */
+        google_ad_slot = "6444256775";
+        google_ad_width = 300;
+        google_ad_height = 250;
+        //-->
+        </script>
+        <script type="text/javascript"
+                src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+        </script>
+    </div>
+</div>
+<div id="footbar" class="w950">
+    <div class="title">
+        <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tr>
+                <td  height="30" valign="middle">
+                    <a href="index.php?m=home&c=index&a=teacher" target="_blank">做家教</a> | <a href="index.php?m=home&c=index&a=order" target="_blank">请家教</a> | <a href="index.php?m=home&c=index&a=Jiaoyuansousuo">教员搜索</a> | <a href="index.php?m=home&c=index&a=Jiaoyuan">教员分类</a> | <a href="index.php?m=home&c=index&a=XuexiFangfa1">学习方法</a> | <a href="index.php?m=home&c=index&a=KaoshiJingyan1">考试经验</a> | <a href="index.php?m=home&c=index&a=JiaZhangketang1">家长课堂</a> | <a href="index.php?m=home&c=index&a=JiajiaoXiangguan1">家教相关</a> | <a href="index.php?m=home&c=index&a=JiaZhangjingyan1">家教经验</a> | <a href=index.php?m=home&c=index&a=GuanYuwomen1>关于我们</a> | <a href="index.php?m=home&c=index&a=Changjianwenti1">常见问题</a> | <a href="index.php?m=home&c=index&a=HuiKuaifangshi1">汇款方式</a> | <a href="index.php?m=home&c=index&a=Lianxiwomen1" target="_blank">联系我们</a> | <a href="index.php?m=home&c=index&a=Zhaopin1"><img src="./public/home/images/zhaopin.gif" align="absmiddle" border="0"></a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="body">
+        联系电话：010-62642730　62643630　客服邮箱：caijjkf@163.com　<br />
+        版权所有：北京尚才家教 【<a href="http://www.caijj.com/" target="_blank">北京家教</a>】　工信部备案号:<a href="http://www.miibeian.gov.cn/" target="_blank">京ICP备09031430号</a><br />
+        家教服务中心：北京市海淀区清华大学东路金码大厦B座18层1809室<br />
+        Powered by www.caijj.com copyright 2009-2015<script src="http://s13.cnzz.com/stat.php?id=2467102&web_id=2467102&show=pic1" language="JavaScript"></script>
+    </div>
+</div>
+</body>
+</html>

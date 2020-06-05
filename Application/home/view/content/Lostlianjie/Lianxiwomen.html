@@ -1,0 +1,247 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>【北京家教地址 - 北京家教联系方式】- 北京尚才家教</title>
+    <link href="./public/home/css/css.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<script language="JavaScript" type="text/javascript">
+    <!--
+    function AddFavorite(sURL, sTitle)
+    {
+        try
+        {
+            window.external.addFavorite(sURL, sTitle);
+        }
+        catch (e)
+        {
+            try
+            {
+                window.sidebar.addPanel(sTitle, sURL, "");
+            }
+            catch (e)
+            {
+                alert("加入收藏失败，请使用Ctrl+D进行添加");
+            }
+        }
+    }
+    function SetHome(obj,vrl){
+        try{
+            obj.style.behavior='url(#default#homepage)';obj.setHomePage(vrl);
+        }
+        catch(e){
+            if(window.netscape) {
+                try {
+                    netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+                }
+                catch (e) {
+                    alert("此操作被浏览器拒绝！\n请在浏览器地址栏输入“about:config”并回车\n然后将 [signed.applets.codebase_principal_support]的值设置为'true',双击即可。");
+                }
+                var prefs = Components.classes['@mozilla.org/preferences-service;1'].getService(Components.interfaces.nsIPrefBranch);
+                prefs.setCharPref('browser.startup.homepage',vrl);
+            }
+        }
+    }
+    //-->
+</script>
+<script type="text/javascript">
+    //js获取cookie 
+    var acookie=document.cookie.split("; ");
+    function getck(sname)
+    {
+        //获取单个cookies 
+        for(var i=0;i<acookie.length;i++)
+        {
+            var arr=acookie[i].split("=");
+            if(sname==arr[0])
+            {
+                if(arr.length>1)
+                    return unescape(arr[1]);
+                else
+                    return "";
+            }
+        }
+        return "";
+    }
+</script>
+
+<script language="javascript" type="text/javascript">
+    <!--
+    function checkf()
+    {
+        if (document.getElementById("username").value=="")
+        {
+            alert("请输入用户名");
+            document.getElementById("username").focus();
+            return false;
+        }
+        if (document.getElementById("password").value=="")
+        {
+            alert("请输入密码");
+            document.getElementById("password").focus();
+            return false;
+        }
+
+    }
+
+    //-->
+</script>
+
+<form name="form1" method="post" action="index.php?m=home&c=enter" id="form1">
+    <div>
+    </div>
+
+    <div id="topbar" class="color_999">
+        <div class="w950">
+            <div class="right">
+                <a href="#" onclick="SetHome(this,window.location)" class="color_999">设为首页</a>&nbsp;
+                <a href="#" onclick="AddFavorite(window.location,document.title)" class="color_999">
+                    加入收藏</a>&nbsp; <a href="#" class="color_999">帮助中心</a>
+            </div>
+
+            <div class="left" id="wdl">
+                <?php if(!isset($_COOKIE['user'])){ echo '
+                &nbsp;&nbsp; <a href="index.php?m=home&c=index&a=user" class="color_orage text_decoration">注册用户</a>&nbsp;
+                用户名:<input name="username" style="width: 100px;" id="username" type="text">
+                &nbsp;&nbsp;密码:<input name="password" style="width: 100px;" id="password" type="password">
+                &nbsp;<input name="Button1" value="登录" onclick="return CheckForm();" id="Button1" type="submit">
+                <?php ';  } ?>
+                <?php if(isset($_COOKIE['user'])) { echo 'Hello:'.$_COOKIE['user'] ; } ?>
+            </div>
+            &nbsp;&nbsp; <a href="index.php?m=home&c=index&a=teacher" class="color_orage text_decoration">注册教员</a>&nbsp;
+
+            <a href="index.php?m=home&c=index&a=modifier" class="color_orage text_decoration">取回密码</a>
+            <?php if(isset($_COOKIE['user'])){ echo '
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="index.php?m=home&c=index&a=out" class="color_orage text_decoration">退出账号</a>&nbsp;
+            <?php ';  ?>
+            <?php } ?>
+        </div>
+    </div>
+    </div>
+</form>
+<div id="top">
+    <div class="w950">
+
+        <div style="float: right; width:100px; padding-top:25px;">
+            <a target="blank" href=tencent://message/?uin=5886626&Site=尚才家教&Menu=yes><img border="0" SRC='./public/home/images/qq.jpg' alt="QQ咨询"></a>
+        </div>
+        <div style="float: right; padding: 15px 0 0 0;">
+            <img src="./public/home/images/top_bn.gif" alt="尚才家教" />
+        </div>
+        <div id="logo" style="float:left;">
+            <img src="./public/home/images/logo.jpg" alt="尚才家教" />
+        </div>
+    </div>
+</div>
+<div id="menu" class="w950">
+    <ul>
+        <li><a href="index.php?m=home&c=indexLibrary"><span>首页</span></a></li>
+        <li id="lan_1"><a href="index.php?m=home&c=teacher"><span>教员库</span></a></li>
+        <li id="lan_2"><a href="index.php?m=home&c=UserLibrary"><span>学员库</span></a></li>
+        <li id="lan_3"><a href="index.php?m=home&c=star"><span>星级教员</span></a></li>
+        <li id="lan_4"><a href="index.php?m=home&c=major"><span>专业老师</span></a></li>
+        <li id="lan_5"><a href="index.php?m=home&c=university"><span>大学生家教</span></a></li>
+        <li id="lan_6"><a href="index.php?m=home&c=math"><span>奥数家教</span></a></li>
+        <li id="lan_7"><a href="index.php?m=home&c=english"><span>英语家教</span></a></li>
+        <li id="lan_8"><a href="index.php?m=home&c=music"><span>音乐家教</span></a></li>
+        <li id="lan_9"><a href="index.php?m=home&c=index&a=winCase"><span>成功案例</span></a></li>
+        <li id="lan_10"><a href="index.php?m=home&c=index&a=chargeStandard"><span>收费标准</span></a></li>
+    </ul>
+</div>
+
+<div id="main" class="w950">
+    <div class="right" style="width: 640px;">
+        <!--列表-->
+        <div class="box2">
+            <div class="title">
+                <h2>
+                    联系我们
+                </h2>
+            </div>
+            <div class="body" style="padding-top: 10px; font-size: 14px; line-height: 22px;">
+                <p>地址：金码大厦B座1809室<br />
+                    请家教、做家教电话：&nbsp; 62642730&nbsp; 62643630<br />
+                    邮编：100084<br />
+                    <br />
+                    <strong>乘车路线</strong>：</p>
+                <p>A. 六道口站：可乘坐运通110线, 355路, 438路, 594路, 913路等多路公交车至&ldquo;六道口&rdquo;下车，往东走100米即到&ldquo;金码大厦&rdquo;</p>
+                <p>B. 地铁：地铁15号线六道口站下车，B口出来即到&quot;金码大厦&quot;。&nbsp;</p>
+                <p>C.静淑苑公交站：乘坐运通103线,355路,392路,398路,478路,490路,609路,632路,693路,753路等多路公交车至&ldquo;静淑苑&rdquo;下车，往南走路200米即到&ldquo;金码大厦&rdquo;</p>
+            </div>
+        </div>
+    </div>
+    <div class="left" style="width: 300px;">
+        <div class="box1">
+            <div class="title">
+                <h2>
+                    服务优势</h2>
+            </div>
+            <div class="body">
+                <ul class="list">
+                    <ul>
+                        <li>教学资源丰富，对教员严格把关</li>
+                        <li>首推星级家教，服务规范</li>
+                        <li>星级教员万里挑一，教学成功率高</li>
+                        <li>1 万名本地专业教师，专业教师多</li>
+                        <li>7 万名教员自主挑选，北京师资强</li>
+                    </ul>
+                </ul>
+            </div>
+        </div>
+        <div class="box1">
+            <div class="title">
+                <h2>
+                    做家教帮助</h2>
+            </div>
+            <div class="body">
+                <ul class="list">
+                    <li><a href="../zjjbz/767.html">教员做家教收费标准</a></li><li><a href="../zjjbz/766.html">怎样快速得到家教订单？</a></li><li><a href="../zjjbz/765.html">教员汇款方式</a></li><li><a href="../zjjbz/764.html">如何升级为星级教员？</a></li><li><a href="../zjjbz/763.html">北京做家教一小时多少钱？</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="box1">
+            <div class="title">
+                <h2>
+                    做家教常见问题</h2>
+            </div>
+            <div class="body">
+                <ul class="list">
+                    <li><a href="../zjjcjwt/2433.html">关于未成功家教信息</a></li><li><a href="../zjjcjwt/762.html">做家教应注意的礼节！</a></li><li><a href="../zjjcjwt/761.html">做家教应注意什么？</a></li><li><a href="../zjjcjwt/760.html">怎样才算是一个合格的家教老师？</a></li><li><a href="../zjjcjwt/759.html">尚才家教网充分保障会员隐私！</a></li><li><a href="../zjjcjwt/758.html">做家教的经验(细节问题)</a></li><li><a href="../zjjcjwt/757.html">做家教心得体会！</a></li><li><a href="../zjjcjwt/756.html">第一次如何与家长联系？</a></li><li><a href="../zjjcjwt/755.html">为什么个别大学生接单成功率低？</a></li><li><a href="../zjjcjwt/754.html">女生做家教注意事项！</a></li><li><a href="../zjjcjwt/753.html">做家教注意事项！</a></li><li><a href="../zjjcjwt/752.html">试讲不成功怎么办？</a></li><li><a href="../zjjcjwt/751.html">第一次做家教该怎么面对？</a></li><li><a href="../zjjcjwt/750.html">大学生做家教谨防骗局！</a></li><li><a href="../zjjcjwt/749.html">做家教过程中如何确保安全？</a></li><li><a href="../zjjcjwt/748.html">大学生做家教应注意什么？</a></li><li><a href="../zjjcjwt/747.html">作为认证教员我该如何与学员联系？</a></li><li><a href="../zjjcjwt/746.html">为什么注册后没人通知我认证？</a></li><li><a href="../zjjcjwt/745.html">认证教员享有的待遇</a></li><li><a href="../zjjcjwt/744.html">认证教员获得家教的方式</a></li><li><a href="../zjjcjwt/743.html">为什么要有认证制度？</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="footbar" class="w950">
+    <div class="title">
+
+        <table align="center" border="0" cellpadding="0" cellspacing="0" height="30" width="100%">
+            <tbody><tr>
+                <td align="center">
+                    <a href="index.php?m=home&c=index&a=teacher" target="_blank">做家教</a> | <a href="index.php?m=home&c=index&a=order" target="_blank">请家教</a> | <a href="index.php?m=home&c=index&a=Jiaoyuansousuo">教员搜索</a> | <a href="index.php?m=home&c=index&a=Jiaoyuan">教员分类</a> | <a href="index.php?m=home&c=index&a=XuexiFangfa1">学习方法</a> | <a href="index.php?m=home&c=index&a=KaoshiJingyan1">考试经验</a> | <a href="index.php?m=home&c=index&a=JiaZhangketang1">家长课堂</a> | <a href="index.php?m=home&c=index&a=JiajiaoXiangguan1">家教相关</a> | <a href="index.php?m=home&c=index&a=JiaZhangjingyan1">家教经验</a> | <a href=index.php?m=home&c=index&a=GuanYuwomen1>关于我们</a> | <a href="index.php?m=home&c=index&a=Changjianwenti1">常见问题</a> | <a href="index.php?m=home&c=index&a=HuiKuaifangshi1">汇款方式</a> | <a href="index.php?m=home&c=index&a=Lianxiwomen1" target="_blank">联系我们</a> | <a href="index.php?m=home&c=index&a=Zhaopin1"><img src="./public/home/images/zhaopin.gif" align="absmiddle" border="0"></a>
+                </td>
+            </tr>
+            </tbody></table>
+
+    </div>
+    <div class="body">
+        <table align="center">
+            <tbody><tr>
+                <td rowspan="3"><div align="right"><img src="./public/home/images/gs.gif" height="57" width="44"></div></td>
+                <td width="">联系电话：010-62642730 62643630 客服邮箱：caijjkf@163.com </td>
+            </tr>
+            <tr>
+                <td>公安备案：京公网安备110108008199号  工信部备案:<a href="#" target="_blank">京ICP备09031430号</a></td>
+            </tr>
+            <tr>
+                <td>家教服务中心：北京市海淀区清华大学南门华清嘉园8号楼304室</td>
+            </tr>
+            </tbody></table>
+        版权：北京尚才家教 【<a href="#" target="_blank">北京家教</a>】2009-2012
+
+        <a href="#" target="_blank" title="站长统计"><img src="./public/home/images/pic1.gif" border="0" hspace="0" vspace="0"></a><img src="./public/home/images/stat.gif" border="0" height="0" width="0">
+    </div>
+</div>
+</body>
+</html>

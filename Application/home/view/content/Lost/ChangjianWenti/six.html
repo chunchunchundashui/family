@@ -1,0 +1,400 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>【北京做家教一小时多少钱？】 - 北京尚才家教</title>
+    <link href="./public/home/css/css.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<script language="JavaScript" type="text/javascript">
+    <!--
+    function AddFavorite(sURL, sTitle)
+    {
+        try
+        {
+            window.external.addFavorite(sURL, sTitle);
+        }
+        catch (e)
+        {
+            try
+            {
+                window.sidebar.addPanel(sTitle, sURL, "");
+            }
+            catch (e)
+            {
+                alert("加入收藏失败，请使用Ctrl+D进行添加");
+            }
+        }
+    }
+    function SetHome(obj,vrl){
+        try{
+            obj.style.behavior='url(#default#homepage)';obj.setHomePage(vrl);
+        }
+        catch(e){
+            if(window.netscape) {
+                try {
+                    netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+                }
+                catch (e) {
+                    alert("此操作被浏览器拒绝！\n请在浏览器地址栏输入“about:config”并回车\n然后将 [signed.applets.codebase_principal_support]的值设置为'true',双击即可。");
+                }
+                var prefs = Components.classes['@mozilla.org/preferences-service;1'].getService(Components.interfaces.nsIPrefBranch);
+                prefs.setCharPref('browser.startup.homepage',vrl);
+            }
+        }
+    }
+    //-->
+</script>
+<script type="text/javascript">
+    //js获取cookie 
+    var acookie=document.cookie.split("; ");
+    function getck(sname)
+    {
+        //获取单个cookies 
+        for(var i=0;i<acookie.length;i++)
+        {
+            var arr=acookie[i].split("=");
+            if(sname==arr[0])
+            {
+                if(arr.length>1)
+                    return unescape(arr[1]);
+                else
+                    return "";
+            }
+        }
+        return "";
+    }
+</script>
+
+<script language="javascript" type="text/javascript">
+    <!--
+    function checkf()
+    {
+        if (document.getElementById("username").value=="")
+        {
+            alert("请输入用户名");
+            document.getElementById("username").focus();
+            return false;
+        }
+        if (document.getElementById("password").value=="")
+        {
+            alert("请输入密码");
+            document.getElementById("password").focus();
+            return false;
+        }
+
+    }
+
+    //-->
+</script>
+
+<form name="form1" method="post" action="index.php?m=home&c=enter" id="form1">
+    <div>
+    </div>
+
+    <div id="topbar" class="color_999">
+        <div class="w950">
+            <div class="right">
+                <a href="#" onclick="SetHome(this,window.location)" class="color_999">设为首页</a>&nbsp;
+                <a href="#" onclick="AddFavorite(window.location,document.title)" class="color_999">
+                    加入收藏</a>&nbsp; <a href="#" class="color_999">帮助中心</a>
+            </div>
+
+            <div class="left" id="wdl">
+                <?php if(!isset($_COOKIE['user'])){ echo '
+                &nbsp;&nbsp; <a href="index.php?m=home&c=index&a=user" class="color_orage text_decoration">注册用户</a>&nbsp;
+                用户名:<input name="username" style="width: 100px;" id="username" type="text">
+                &nbsp;&nbsp;密码:<input name="password" style="width: 100px;" id="password" type="password">
+                &nbsp;<input name="Button1" value="登录" onclick="return CheckForm();" id="Button1" type="submit">
+                <?php ';  } ?>
+                <?php if(isset($_COOKIE['user'])) { echo 'Hello:'.$_COOKIE['user'] ; } ?>
+            </div>
+            &nbsp;&nbsp; <a href="index.php?m=home&c=index&a=teacher" class="color_orage text_decoration">注册教员</a>&nbsp;
+
+            <a href="index.php?m=home&c=index&a=modifier" class="color_orage text_decoration">取回密码</a>
+            <?php if(isset($_COOKIE['user'])){ echo '
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="index.php?m=home&c=index&a=out" class="color_orage text_decoration">退出账号</a>&nbsp;
+            <?php ';  ?>
+            <?php } ?>
+        </div>
+    </div>
+    </div>
+</form>
+<div id="top">
+    <div class="w950">
+
+        <div style="float: right; width:100px; padding-top:25px;">
+            <a target="blank" href=tencent://message/?uin=5886626&Site=尚才家教&Menu=yes><img border="0" SRC='./public/home/images/qq.jpg' alt="QQ咨询"></a>
+        </div>
+        <div style="float: right; padding: 15px 0 0 0;">
+            <img src="./public/home/images/top_bn.gif" alt="尚才家教" />
+        </div>
+        <div id="logo" style="float:left;">
+            <img src="./public/home/images/logo.jpg" alt="尚才家教" />
+        </div>
+    </div>
+</div>
+<div id="menu" class="w950">
+    <ul>
+        <li><a href="index.php?m=home&c=indexLibrary"><span>首页</span></a></li>
+        <li id="lan_1"><a href="index.php?m=home&c=teacher"><span>教员库</span></a></li>
+        <li id="lan_2"><a href="index.php?m=home&c=UserLibrary"><span>学员库</span></a></li>
+        <li id="lan_3"><a href="index.php?m=home&c=star"><span>星级教员</span></a></li>
+        <li id="lan_4"><a href="index.php?m=home&c=major"><span>专业老师</span></a></li>
+        <li id="lan_5"><a href="index.php?m=home&c=university"><span>大学生家教</span></a></li>
+        <li id="lan_6"><a href="index.php?m=home&c=math"><span>奥数家教</span></a></li>
+        <li id="lan_7"><a href="index.php?m=home&c=english"><span>英语家教</span></a></li>
+        <li id="lan_8"><a href="index.php?m=home&c=music"><span>音乐家教</span></a></li>
+        <li id="lan_9"><a href="index.php?m=home&c=index&a=winCase"><span>成功案例</span></a></li>
+        <li id="lan_10"><a href="index.php?m=home&c=index&a=chargeStandard"><span>收费标准</span></a></li>
+    </ul>
+</div>
+
+<div id="main" class="w950">
+    <div class="right" style="width: 640px;">
+        <div class="guide">
+            <img src="./public/home/images/d05.gif" hspace="2" vspace="2" align="absbottom">当前位置： <span
+                class="red1"><a href="/">首页</a></span> &gt; 做家教帮助 &gt; <strong>北京做家教一小时多少钱？</strong>            </div>
+        <!--列表-->
+        <div class="box2">
+            <div class="title">
+            </div>
+            <div class="body" style="padding-top: 10px;">
+                <div id="cont">
+                    <h1>
+                        北京做家教一小时多少钱？</h1>
+                    <u>【 更新时间：<span class="yel">2010-4-14 11:31:29</span> 尚才家教网】</u>
+                    <p>
+                    </p>
+                    <div class="f14 lh20" style="padding-bottom: 10px; padding-top: 10px">
+                        <p><span style="color: #ff6600"><span style="font-size: 14px"><span class="color_orage"><strong>北京地区做家教课时标准：</strong></span></span></span><span class="color_orage"><strong>&nbsp;</strong></span><br />
+                            &nbsp;</p>
+                        <div>
+                            <table bordercolor="#bfd3f2" cellspacing="2" cellpadding="0" align="center" bgcolor="#bfd3f2" border="0">
+                                <tbody>
+                                <tr>
+                                    <td valign="middle" align="center" bgcolor="#ffffff" colspan="4" height="30">
+                                        <p align="center"><span style="font-size: 14px"><strong>家教课时费参考标准</strong></span><strong> </strong></p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td valign="middle" align="center" width="233" bgcolor="#e5f3fa" height="30">
+                                        <h2><span style="font-size: 13px">语/数/英/理/化/生 （每小时）</span></h2>
+                                    </td>
+                                    <td valign="middle" align="center" width="114" bgcolor="#e5f3fa" height="30">
+                                        <h2><span style="font-size: 13px">小学</span></h2>
+                                    </td>
+                                    <td valign="middle" align="center" width="124" bgcolor="#e5f3fa" height="30">
+                                        <h2><span style="font-size: 13px">初中</span></h2>
+                                    </td>
+                                    <td valign="middle" align="center" width="113" bgcolor="#e5f3fa" height="30">
+                                        <h2><span style="font-size: 13px">高中</span></h2>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td valign="middle" align="center" bgcolor="#ffffff" height="30">普通高校大学生/研究生</td>
+                                    <td valign="middle" align="center" bgcolor="#ffffff" height="30">35元－40元</td>
+                                    <td valign="middle" align="center" bgcolor="#ffffff" height="30">40元－45元</td>
+                                    <td valign="middle" align="center" bgcolor="#ffffff" height="30">45元－50元</td>
+                                </tr>
+                                <tr>
+                                    <td valign="middle" align="center" bgcolor="#ffffff" height="30">重点高校大学生/研究生</td>
+                                    <td valign="middle" align="center" bgcolor="#ffffff" height="30">40元－45元</td>
+                                    <td valign="middle" align="center" bgcolor="#ffffff" height="30">45元－50元</td>
+                                    <td valign="middle" align="center" bgcolor="#ffffff" height="30">45元－60元</td>
+                                </tr>
+                                <tr>
+                                    <td valign="middle" align="center" bgcolor="#ffffff" height="30">星级教员（大学生或研究生）</td>
+                                    <td valign="middle" align="center" bgcolor="#ffffff" height="30">45元－50元</td>
+                                    <td valign="middle" align="center" bgcolor="#ffffff" height="30">50元－55元</td>
+                                    <td valign="middle" align="center" bgcolor="#ffffff" height="30">60元－65元</td>
+                                </tr>
+                                <tr>
+                                    <td valign="middle" align="center" bgcolor="#ffffff" height="30">离/退/进修/专职家教</td>
+                                    <td valign="middle" align="center" bgcolor="#ffffff" height="30">60元－100元</td>
+                                    <td valign="middle" align="center" bgcolor="#ffffff" height="30">70元－100元</td>
+                                    <td valign="middle" align="center" bgcolor="#ffffff" height="30">80元－120元</td>
+                                </tr>
+                                <tr>
+                                    <td valign="middle" align="center" bgcolor="#ffffff" height="30">在职教师</td>
+                                    <td valign="middle" align="center" bgcolor="#ffffff" height="30">80元－100元</td>
+                                    <td valign="middle" align="center" bgcolor="#ffffff" height="30">100－120元</td>
+                                    <td valign="middle" align="center" bgcolor="#ffffff" height="30">120元－160元</td>
+                                </tr>
+                                <tr>
+                                    <td valign="middle" align="center" bgcolor="#ffffff" height="30">重点中学教师</td>
+                                    <td valign="middle" align="center" bgcolor="#ffffff" height="30">100元－120元</td>
+                                    <td valign="middle" align="center" bgcolor="#ffffff" height="30">120－150元</td>
+                                    <td valign="middle" align="center" bgcolor="#ffffff" height="30">120元－200元</td>
+                                </tr>
+                                <tr>
+                                    <td valign="middle" align="center" bgcolor="#ffffff" height="30">星级教员（在职老师）</td>
+                                    <td valign="middle" align="center" bgcolor="#ffffff" height="30">100元－130元</td>
+                                    <td valign="middle" align="center" bgcolor="#ffffff" height="30">120元－160元</td>
+                                    <td valign="middle" align="center" bgcolor="#ffffff" height="30">130元－200元</td>
+                                </tr>
+                                <tr>
+                                    <td valign="middle" align="center" bgcolor="#ffffff" height="30">周末及寒暑假陪读</td>
+                                    <td valign="middle" align="center" bgcolor="#ffffff" colspan="3" height="30">按月、天结算或按照次数结算</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div>
+                            <table bordercolor="#bfd3f2" cellspacing="2" cellpadding="0" align="center" bgcolor="#bfd3f2" border="0">
+                                <tbody>
+                                <tr>
+                                    <td valign="middle" align="center" width="233" bgcolor="#e5f3fa" height="30">
+                                        <h2><span style="font-size: 13px">艺术体育类（每小时）</span></h2>
+                                    </td>
+                                    <td valign="middle" align="center" width="114" bgcolor="#e5f3fa" height="30">
+                                        <h2><span style="font-size: 13px">乐器类</span></h2>
+                                    </td>
+                                    <td valign="middle" align="center" width="124" bgcolor="#e5f3fa" height="30">
+                                        <h2><span style="font-size: 13px">美术</span></h2>
+                                    </td>
+                                    <td valign="middle" align="center" width="113" bgcolor="#e5f3fa" height="30">
+                                        <h2><span style="font-size: 13px">体育</span></h2>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td valign="middle" align="center" bgcolor="#ffffff" height="30">专业大学生</td>
+                                    <td valign="middle" align="center" bgcolor="#ffffff" height="30">80元－100元</td>
+                                    <td valign="middle" align="center" bgcolor="#ffffff" height="30">80元</td>
+                                    <td valign="middle" align="center" bgcolor="#ffffff" height="30">60元－80元</td>
+                                </tr>
+                                <tr>
+                                    <td valign="middle" align="center" bgcolor="#ffffff" height="30">星级教员（大学生）</td>
+                                    <td valign="middle" align="center" bgcolor="#ffffff" height="30">100元－120元</td>
+                                    <td valign="middle" align="center" bgcolor="#ffffff" height="30">100元</td>
+                                    <td valign="middle" align="center" bgcolor="#ffffff" height="30">70元－100元</td>
+                                </tr>
+                                <tr>
+                                    <td valign="middle" align="center" bgcolor="#ffffff" height="30">专业教师/教练</td>
+                                    <td valign="middle" align="center" bgcolor="#ffffff" height="30">120－150元</td>
+                                    <td valign="middle" align="center" bgcolor="#ffffff" height="30">100元－120元</td>
+                                    <td valign="middle" align="center" bgcolor="#ffffff" height="30">80元－120元</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div>
+                            <table bordercolor="#bfd3f2" cellspacing="2" cellpadding="0" width="604" align="center" bgcolor="#bfd3f2" border="0" style="width: 604px; height: 108px">
+                                <tbody>
+                                <tr>
+                                    <td valign="middle" align="center" bgcolor="#e5f3fa" colspan="2" height="30">
+                                        <h2><span style="font-size: 13px">高等数学/计算机操作/网页设计/图像处理/程序设计 （每小时）</span></h2>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td valign="middle" align="center" bgcolor="#ffffff" height="30">专业大学生</td>
+                                    <td valign="middle" align="center" bgcolor="#ffffff" height="30">60元－80元</td>
+                                </tr>
+                                <tr>
+                                    <td valign="middle" align="center" bgcolor="#ffffff" height="30">专业教师/专业人士</td>
+                                    <td valign="middle" align="center" bgcolor="#ffffff" height="30">80元－100元</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div>
+                            <table bordercolor="#bfd3f2" cellspacing="2" cellpadding="0" align="center" bgcolor="#bfd3f2" border="0">
+                                <tbody>
+                                <tr>
+                                    <td valign="middle" align="center" width="231" bgcolor="#e5f3fa" height="30">
+                                        <h2><span style="font-size: 13px">语言类 （每小时）</span></h2>
+                                    </td>
+                                    <td valign="middle" align="center" width="156" bgcolor="#e5f3fa" height="30">
+                                        <h2><span style="font-size: 13px">成人英语</span></h2>
+                                    </td>
+                                    <td valign="middle" align="center" width="201" bgcolor="#e5f3fa" height="30">
+                                        <h2><span style="font-size: 13px">日/法/德/意//韩&gt;</span></h2>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td valign="middle" align="center" bgcolor="#ffffff" height="30">一般大学生/研究生</td>
+                                    <td valign="middle" align="center" bgcolor="#ffffff" height="30">50元</td>
+                                    <td valign="middle" align="center" bgcolor="#ffffff" height="30">50元－60元</td>
+                                </tr>
+                                <tr>
+                                    <td valign="middle" align="center" bgcolor="#ffffff" height="30">星级教员（大学生）</td>
+                                    <td valign="middle" align="center" bgcolor="#ffffff" height="30">60元－70元</td>
+                                    <td valign="middle" align="center" bgcolor="#ffffff" height="30">60元－80元</td>
+                                </tr>
+                                <tr>
+                                    <td valign="middle" align="center" bgcolor="#ffffff" height="30">专业教师/专业人士</td>
+                                    <td valign="middle" align="center" bgcolor="#ffffff" height="30">100元－120元</td>
+                                    <td valign="middle" align="center" bgcolor="#ffffff" height="30">100元－150元</td>
+                                </tr>
+                                <tr>
+                                    <td valign="middle" align="center" bgcolor="#ffffff" height="30">海外归国人员</td>
+                                    <td valign="middle" align="center" bgcolor="#ffffff" height="30">
+                                        <p align="center">100元－150元</p>
+                                    </td>
+                                    <td valign="middle" align="center" bgcolor="#ffffff" height="30">120元－200元</td>
+                                </tr>
+                                <tr>
+                                    <td valign="middle" align="center" bgcolor="#ffffff" height="30">外籍人士</td>
+                                    <td valign="middle" align="center" bgcolor="#ffffff" height="30">200元</td>
+                                    <td valign="middle" align="center" bgcolor="#ffffff" height="30">200元－300元</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <p><strong>备注：</strong><br />
+                            1.尚才家教提供价格为客观家教市场的行情价位。具体价格会根据路程远近、课程的难易程度、家教时间等客观因素会有所浮动。但不会有太大变化。<br />
+                            2.一般家教课时费里面包含交通费。但如果学员地理位置过于偏僻或离教员过于遥远。学员要为教员支付交通费。</p>
+                    </div>
+                    <div class="hackbox">
+                    </div>
+                </div>
+                <div class="xg">
+                    <ul><li>上一篇文章： <a title='如何升级为星级教员？   更新：2010-04-14  点击：8' href='../zjjbz/764.html'>如何升级为星级教员？</a></li></ul>
+                </div>
+                <div class="box2 box4">
+                    <div class="title" style="">
+                        <h2>
+                            相关文章</h2>
+                    </div>
+                    <div class="body">
+                        <ul class="list">
+                            <li><a title='北京做家教一小时多少钱？   更新：2010-04-14  点击：8' href='../zjjbz/763.html'>北京做家教一小时多少钱？</a></li><li><a title='怎样快速得到家教订单？   更新：2010-04-14  点击：8' href='../zjjbz/766.html'>怎样快速得到家教订单？</a></li><li><a title='如何升级为星级教员？   更新：2010-04-14  点击：8' href='../zjjbz/764.html'>如何升级为星级教员？</a></li><li><a title='教员做家教收费标准   更新：2010-04-14  点击：8' href='../zjjbz/767.html'>教员做家教收费标准</a></li><li><a title='教员汇款方式   更新：2010-04-14  点击：8' href='../zjjbz/765.html'>教员汇款方式</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="left" style="width: 300px;">
+        <div class="box1">
+            <div class="title">
+                <h2>
+                    <span class="more"><a href="../zjjcjwt/zjjcjwt.html">» 更多</a></span>做家教常见问题</h2>
+            </div>
+            <div class="body">
+                <ul class="list">
+                    <li><a href="../zjjcjwt/2433.html">关于未成功家教信息</a></li><li><a href="../zjjcjwt/762.html">做家教应注意的礼节！</a></li><li><a href="../zjjcjwt/761.html">做家教应注意什么？</a></li><li><a href="../zjjcjwt/760.html">怎样才算是一个合格的家教老师？</a></li><li><a href="../zjjcjwt/759.html">尚才家教网充分保障会员隐私！</a></li><li><a href="../zjjcjwt/758.html">做家教的经验(细节问题)</a></li><li><a href="../zjjcjwt/757.html">做家教心得体会！</a></li><li><a href="../zjjcjwt/756.html">第一次如何与家长联系？</a></li><li><a href="../zjjcjwt/755.html">为什么个别大学生接单成功率低？</a></li><li><a href="../zjjcjwt/754.html">女生做家教注意事项！</a></li><li><a href="../zjjcjwt/753.html">做家教注意事项！</a></li><li><a href="../zjjcjwt/752.html">试讲不成功怎么办？</a></li><li><a href="../zjjcjwt/751.html">第一次做家教该怎么面对？</a></li><li><a href="../zjjcjwt/750.html">大学生做家教谨防骗局！</a></li><li><a href="../zjjcjwt/749.html">做家教过程中如何确保安全？</a></li><li><a href="../zjjcjwt/748.html">大学生做家教应注意什么？</a></li><li><a href="../zjjcjwt/747.html">作为认证教员我该如何与学员联系？</a></li><li><a href="../zjjcjwt/746.html">为什么注册后没人通知我认证？</a></li><li><a href="../zjjcjwt/745.html">认证教员享有的待遇</a></li><li><a href="../zjjcjwt/744.html">认证教员获得家教的方式</a></li><li><a href="../zjjcjwt/743.html">为什么要有认证制度？</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="footbar" class="w950">
+    <div class="title">
+        <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tr>
+                <td  height="30" valign="middle">
+                    <a href="index.php?m=home&c=index&a=teacher" target="_blank">做家教</a> | <a href="index.php?m=home&c=index&a=order" target="_blank">请家教</a> | <a href="index.php?m=home&c=index&a=Jiaoyuansousuo">教员搜索</a> | <a href="index.php?m=home&c=index&a=Jiaoyuan">教员分类</a> | <a href="index.php?m=home&c=index&a=XuexiFangfa1">学习方法</a> | <a href="index.php?m=home&c=index&a=KaoshiJingyan1">考试经验</a> | <a href="index.php?m=home&c=index&a=JiaZhangketang1">家长课堂</a> | <a href="index.php?m=home&c=index&a=JiajiaoXiangguan1">家教相关</a> | <a href="index.php?m=home&c=index&a=JiaZhangjingyan1">家教经验</a> | <a href=index.php?m=home&c=index&a=GuanYuwomen1>关于我们</a> | <a href="index.php?m=home&c=index&a=Changjianwenti1">常见问题</a> | <a href="index.php?m=home&c=index&a=HuiKuaifangshi1">汇款方式</a> | <a href="index.php?m=home&c=index&a=Lianxiwomen1" target="_blank">联系我们</a> | <a href="index.php?m=home&c=index&a=Zhaopin1"><img src="./public/home/images/zhaopin.gif" align="absmiddle" border="0"></a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="body">
+        联系电话：010-62642730　62643630　客服邮箱：caijjkf@163.com　<br />
+        版权所有：北京尚才家教 【<a href="http://www.caijj.com/" target="_blank">北京家教</a>】　工信部备案号:<a href="http://www.miibeian.gov.cn/" target="_blank">京ICP备09031430号</a><br />
+        家教服务中心：北京市海淀区清华大学东路金码大厦B座18层1809室<br />
+        Powered by www.caijj.com copyright 2009-2015<script src="http://s13.cnzz.com/stat.php?id=2467102&web_id=2467102&show=pic1" language="JavaScript"></script>
+    </div>
+</div>
+</body>
+</html>

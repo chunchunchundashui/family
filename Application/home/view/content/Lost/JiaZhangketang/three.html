@@ -1,0 +1,335 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>【五年级数学下册练习】 - 北京尚才家教</title>
+    <link href="./public/home/css/css.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<script language="JavaScript" type="text/javascript">
+    <!--
+    function AddFavorite(sURL, sTitle)
+    {
+        try
+        {
+            window.external.addFavorite(sURL, sTitle);
+        }
+        catch (e)
+        {
+            try
+            {
+                window.sidebar.addPanel(sTitle, sURL, "");
+            }
+            catch (e)
+            {
+                alert("加入收藏失败，请使用Ctrl+D进行添加");
+            }
+        }
+    }
+    function SetHome(obj,vrl){
+        try{
+            obj.style.behavior='url(#default#homepage)';obj.setHomePage(vrl);
+        }
+        catch(e){
+            if(window.netscape) {
+                try {
+                    netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+                }
+                catch (e) {
+                    alert("此操作被浏览器拒绝！\n请在浏览器地址栏输入“about:config”并回车\n然后将 [signed.applets.codebase_principal_support]的值设置为'true',双击即可。");
+                }
+                var prefs = Components.classes['@mozilla.org/preferences-service;1'].getService(Components.interfaces.nsIPrefBranch);
+                prefs.setCharPref('browser.startup.homepage',vrl);
+            }
+        }
+    }
+    //-->
+</script>
+<script type="text/javascript">
+    //js获取cookie 
+    var acookie=document.cookie.split("; ");
+    function getck(sname)
+    {
+        //获取单个cookies 
+        for(var i=0;i<acookie.length;i++)
+        {
+            var arr=acookie[i].split("=");
+            if(sname==arr[0])
+            {
+                if(arr.length>1)
+                    return unescape(arr[1]);
+                else
+                    return "";
+            }
+        }
+        return "";
+    }
+</script>
+
+<script language="javascript" type="text/javascript">
+    <!--
+    function checkf()
+    {
+        if (document.getElementById("username").value=="")
+        {
+            alert("请输入用户名");
+            document.getElementById("username").focus();
+            return false;
+        }
+        if (document.getElementById("password").value=="")
+        {
+            alert("请输入密码");
+            document.getElementById("password").focus();
+            return false;
+        }
+
+    }
+
+    //-->
+</script>
+
+<form name="form1" method="post" action="index.php?m=home&c=enter" id="form1">
+    <div>
+    </div>
+
+    <div id="topbar" class="color_999">
+        <div class="w950">
+            <div class="right">
+                <a href="#" onclick="SetHome(this,window.location)" class="color_999">设为首页</a>&nbsp;
+                <a href="#" onclick="AddFavorite(window.location,document.title)" class="color_999">
+                    加入收藏</a>&nbsp; <a href="#" class="color_999">帮助中心</a>
+            </div>
+
+            <div class="left" id="wdl">
+                <?php if(!isset($_COOKIE['user'])){ echo '
+                &nbsp;&nbsp; <a href="index.php?m=home&c=index&a=user" class="color_orage text_decoration">注册用户</a>&nbsp;
+                用户名:<input name="username" style="width: 100px;" id="username" type="text">
+                &nbsp;&nbsp;密码:<input name="password" style="width: 100px;" id="password" type="password">
+                &nbsp;<input name="Button1" value="登录" onclick="return CheckForm();" id="Button1" type="submit">
+                <?php ';  } ?>
+                <?php if(isset($_COOKIE['user'])) { echo 'Hello:'.$_COOKIE['user'] ; } ?>
+            </div>
+            &nbsp;&nbsp; <a href="index.php?m=home&c=index&a=teacher" class="color_orage text_decoration">注册教员</a>&nbsp;
+
+            <a href="index.php?m=home&c=index&a=modifier" class="color_orage text_decoration">取回密码</a>
+            <?php if(isset($_COOKIE['user'])){ echo '
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="index.php?m=home&c=index&a=out" class="color_orage text_decoration">退出账号</a>&nbsp;
+            <?php ';  ?>
+            <?php } ?>
+        </div>
+    </div>
+    </div>
+</form>
+<div id="top">
+    <div class="w950">
+
+        <div style="float: right; width:100px; padding-top:25px;">
+            <a target="blank" href=tencent://message/?uin=5886626&Site=尚才家教&Menu=yes><img border="0" SRC='./public/home/images/qq.jpg' alt="QQ咨询"></a>
+        </div>
+        <div style="float: right; padding: 15px 0 0 0;">
+            <img src="./public/home/images/top_bn.gif" alt="尚才家教" />
+        </div>
+        <div id="logo" style="float:left;">
+            <img src="./public/home/images/logo.jpg" alt="尚才家教" />
+        </div>
+    </div>
+</div>
+<div id="menu" class="w950">
+    <ul>
+        <li><a href="index.php?m=home&c=indexLibrary"><span>首页</span></a></li>
+        <li id="lan_1"><a href="index.php?m=home&c=teacher"><span>教员库</span></a></li>
+        <li id="lan_2"><a href="index.php?m=home&c=UserLibrary"><span>学员库</span></a></li>
+        <li id="lan_3"><a href="index.php?m=home&c=star"><span>星级教员</span></a></li>
+        <li id="lan_4"><a href="index.php?m=home&c=major"><span>专业老师</span></a></li>
+        <li id="lan_5"><a href="index.php?m=home&c=university"><span>大学生家教</span></a></li>
+        <li id="lan_6"><a href="index.php?m=home&c=math"><span>奥数家教</span></a></li>
+        <li id="lan_7"><a href="index.php?m=home&c=english"><span>英语家教</span></a></li>
+        <li id="lan_8"><a href="index.php?m=home&c=music"><span>音乐家教</span></a></li>
+        <li id="lan_9"><a href="index.php?m=home&c=index&a=winCase"><span>成功案例</span></a></li>
+        <li id="lan_10"><a href="index.php?m=home&c=index&a=chargeStandard"><span>收费标准</span></a></li>
+    </ul>
+</div>
+
+<div id="main" class="w950">
+    <div class="right" style="width: 640px;">
+        <div class="guide">
+            <img src="./public/home/images/d05.gif" hspace="2" vspace="2" align="absbottom">当前位置： <span
+                class="red1"><a href="/">首页</a></span> &gt; 家长课堂 &gt; <strong>五年级数学下册练习</strong>            </div>
+        <!--列表-->
+        <div class="box2">
+            <div class="title">
+            </div>
+            <div class="body" style="padding-top: 10px;">
+                <div id="cont">
+                    <h1>
+                        五年级数学下册练习</h1>
+                    <u>【教员编号：<a href="../thtml/38213.html" target="_blank">38213</a> 所在学校：海淀重点小学 更新时间：<span class="yel">2014-2-8 8:37:47</span> 点击数：<span class="green"><script type="text/javascript" src="./public/home/other/click.aspx?id=5848"> </script></span>
+                        】</u>
+                    <p>
+                    </p>
+                    <div class="f14 lh20" style="padding-bottom: 10px; padding-top: 10px">
+                        <div style="text-align: left; line-height: 130%; text-indent: 131.25pt" align="left"><span style="line-height: 130%">五年级数学练习</span></div>
+                        <div style="text-align: left; line-height: 130%" align="left"><span style="line-height: 130%">姓名：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;班级：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;得分：<br />
+一、填空：<br />
+1、3．85立方米=（&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;）立方分米&nbsp;&nbsp;4升40毫升=（&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;）升<br />
+2、用一根长48厘米的铁丝焊成一个正方体框架（接头处不计）表面积是（&nbsp;&nbsp;&nbsp;&nbsp;）平方厘米，体积是（&nbsp;&nbsp;&nbsp;&nbsp;）立方厘米。<br />
+3、在括号里填上适当的单位名称：<br />
+一块橡皮的体积大约是8（&nbsp;&nbsp;&nbsp;&nbsp;）&nbsp;&nbsp;一个教室大约占地48（&nbsp;&nbsp;&nbsp;&nbsp;）<br />
+一辆小汽车油箱容积是30（&nbsp;&nbsp;&nbsp;&nbsp;）&nbsp;&nbsp;小明每步的长度约是60（&nbsp;&nbsp;&nbsp;&nbsp;）<br />
+4、20以内的自然数中（包括20），奇数有（&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;）偶数有（&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;）&nbsp;</span></div>
+                        <div><SCRIPT>
+                            google_protectAndRun("render_ads.js::google_render_ad", google_handleError, google_render_ad);
+                        </SCRIPT>5.&nbsp;时钟的指从<span>&ldquo;3&rdquo;顺时针旋转到&ldquo;6&rdquo;，旋转了（&nbsp;&nbsp;&nbsp;）度。<br />
+6、一个长方体木块长6厘米，宽4厘米。高3厘米。若把它切成1立方厘米的小方块，可以切出（&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;）块。<br />
+7.一个正方体的棱长总和为96分米，这个正方体的表面积是（&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;）平方分米，体积是（&nbsp;&nbsp;&nbsp;&nbsp;）平方分米。<br />
+8、把5吨平均分成7份，每份是（&nbsp;&nbsp;&nbsp;），每份是（&nbsp;&nbsp;&nbsp;）吨。<br />
+9、能同时被２、３、５整除的最大两位数是（　　　）。<br />
+10、５□中最大填（　　）时这个数能被３整除，这个数的因数有（　　　　　）<br />
+11、如果a能被b整除，则a和b的最大公因数是（　　　）。<br />
+12、.一个长方体，长6米，宽5米，高4米，它的棱长之和是（　　）米，表面积是（　　）平方米，放在地面上的占地面积是（　　）平方米，体积是（　　）立方米。<br />
+二、判断：<br />
+１、一个非０自然数不是质数，就是合数。&nbsp;&nbsp;&nbsp;&nbsp;(&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+２、一个数的倍数一定大于它的因数。&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+３、两个质数的积一定是合数。&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+４、一个长方体（不含正方体）最多有８条棱相等。&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+５、大于2的偶数都是合数。&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)<br />
+三、选择：<br />
+１、自然数a除以自然数b，商是５，这两个自然数的最大公因数（　　）<br />
+Ａ、a&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B、b&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C、5<br />
+2、正方体的棱长扩大３倍，体积扩大（　　）<br />
+Ａ、３倍　&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ｂ、９倍　　　&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ｃ、２７倍<br />
+３、一只茶杯可以装水（&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;）。<br />
+&nbsp;A.&nbsp;250升&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;B.&nbsp;250立方米&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C.&nbsp;250毫升&nbsp;&nbsp;&nbsp;&nbsp;D.&nbsp;2500克<br />
+４、将两个完全一样的长方体木块拼成一个大长方体木块，下列说法正确的是（&nbsp;&nbsp;&nbsp;&nbsp;）。<br />
+&nbsp;&nbsp;&nbsp;A.&nbsp;表面积增加，体积不变&nbsp;&nbsp;&nbsp;B.&nbsp;表面积减少，体积不变<br />
+&nbsp;&nbsp;&nbsp;C.&nbsp;表面积和体积都增加&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;D.&nbsp;表面积和体积都不变<br />
+&nbsp;四、计算： <br />
+（1）求下面各组数的最大公因数。<br />
+45和60&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;26和39&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;15和45&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12和42<br />
+<br />
+<br />
+<br />
+<br />
+（2）脱式计算，能简算的要简算（每题3分）<br />
+2.9&times;1.4+2&times;0.16&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;200-(12.5+0.25)&times;8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
+<br />
+<br />
+<br />
+<br />
+36.8&times;99+&nbsp;63.2&times;99&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(2.44-1.8)&divide;0.4&times;20<br />
+<br />
+<br />
+<br />
+<br />
+五、应用题：<br />
+1、一段长方体钢材，长1.6米，横截面是边长4厘米的正方形。每立方厘米刚重7.8克，这块方钢重多少?</span></div>
+                        <div>&nbsp;</div>
+                        <div>&nbsp;</div>
+                        <div>&nbsp;</div>
+                        <div>2．地球绕太阳一周的时间比水星绕太阳一周的时间的4倍还多13天，水星绕地球一周要用多少天？</div>
+                        <div>&nbsp;</div>
+                        <div>&nbsp;</div>
+                        <div>&nbsp;</div>
+                        <div>3．甲乙两车从相距450千米的两地相对开出，甲车每小时45千米，5小时候，两车相距25千米，乙车每小时行多少千米？</div>
+                        <div>&nbsp;</div>
+                        <div>&nbsp;</div>
+                        <div style="text-indent: -18pt; margin: 0cm 0cm 0pt 18pt"><span>4．&nbsp;</span>一个正方体包装箱，一个面的周长是36厘米，这个正方体的表面积和体积分别是多少？</div>
+                        <div>&nbsp;</div>
+                        <div>&nbsp;</div>
+                        <div>&nbsp;</div>
+                        <div>&nbsp;</div>
+                        <div>5一个表面积是240平方米的正方体，平均分成两个长方体，每个长方体的表面积是多少？</div>
+                        <div>&nbsp;</div>
+                        <div>&nbsp;</div>
+                        <div>&nbsp;</div>
+                        <div>6一个棱长是10分米的正方体铁块要熔成一个长25分米，宽2分米的长方体，这个长方体高是多少？</div>
+                        <div>&nbsp;</div>
+                        <div>&nbsp;</div>
+                        <div>7一根方钢横截面是正方形，方钢长12分米，现在把它分成5分米和7分米两段，表面积增加了50平方分米，求原来方钢的体积是多少</div>
+                    </div>
+                    <div class="hackbox">
+                    </div>
+                </div>
+                <div class="xg">
+                    <ul><li>下一篇文章： <a title='练习题   更新：2014-02-08  点击：0' href='../jzkt/5847.html'>练习题</a></li><li>上一篇文章： <a title='《浅谈中考语文复习的有效性》   更新：2015-01-13  点击：0' href='../jzkt/5891.html'>《浅谈中考语文复习的有效性》</a></li></ul>
+                </div>
+                <div class="box2 box4">
+                    <div class="title" style="">
+                        <h2>
+                            相关文章</h2>
+                    </div>
+                    <div class="body">
+                        <ul class="list">
+                            <li><a title='该如何引导孩子学好英语？   更新：2011-06-27  点击：8' href='../jzkt/2736.html'>该如何引导孩子学好英语？</a></li><li><a title='孩子不听话和家长有很大关系   更新：2011-07-08  点击：8' href='../jzkt/3044.html'>孩子不听话和家长有很大关系</a></li><li><a title='家长与孩子的班主任沟通要及时   更新：2011-07-09  点击：8' href='../jzkt/3073.html'>家长与孩子的班主任沟通要及时</a></li><li><a title='家长如何跟孩子有效的沟通？   更新：2011-07-05  点击：8' href='../jzkt/2960.html'>家长如何跟孩子有效的沟通？</a></li><li><a title='合理为孩子安排时间才能有效率   更新：2011-07-11  点击：8' href='../jzkt/3123.html'>合理为孩子安排时间才能有效率</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="left" style="width: 300px;">
+        <div class="box1">
+            <div class="title">
+                <h2>
+                    <span class="more"><a href="../xxff/xxff.html">» 更多</a></span>学习方法</h2>
+            </div>
+            <div class="body">
+                <ul class="list">
+                    <li><a href="../xxff/5909.html">如何学习数学</a></li> <li><a href="../xxff/5907.html">管乐器为什么必须练长音？</a></li> <li><a href="../xxff/5906.html">教育理解</a></li> <li><a href="../xxff/5904.html">吉他自学支招</a></li> <li><a href="../xxff/5903.html">北京高考成绩6月23日公布 首次采用大平行志愿</a></li> <li><a href="../xxff/5902.html">高中物理</a></li> <li><a href="../xxff/5901.html">数学学习认识</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="box1">
+            <div class="title">
+                <h2>
+                    <span class="more"><a href="../ksjy/ksjy.html">» 更多</a></span>考试经验</h2>
+            </div>
+            <div class="body">
+                <ul class="list">
+                    <li><a href="../ksjy/3156.html">怎样的阅读才是正确的阅读？</a></li> <li><a href="../ksjy/3155.html">有针对性的学习才能考好语文</a></li> <li><a href="../ksjy/3154.html">词语类题型的总结</a></li> <li><a href="../ksjy/3153.html">语文考试技巧</a></li> <li><a href="../ksjy/3149.html">面对考试要主动</a></li> <li><a href="../ksjy/3109.html">把考试的精力放在基础上</a></li> <li><a href="../ksjy/3107.html"> 养成好的解题习惯才能拿高分</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="box1">
+            <div class="title">
+                <h2>
+                    <span class="more"><a href="../jzkt/jzkt.html">» 更多</a></span>家长课堂</h2>
+            </div>
+            <div class="body">
+                <ul class="list">
+                    <li><a href="../jzkt/5900.html">孩子，快乐的高手</a></li> <li><a href="../jzkt/5891.html">《浅谈中考语文复习的有效性》</a></li> <li><a href="../jzkt/5848.html">五年级数学下册练习</a></li> <li><a href="../jzkt/5847.html">练习题</a></li> <li><a href="../jzkt/5808.html">家长和小朋友对学习架子鼓的一些疑惑</a></li> <li><a href="../jzkt/5777.html">家长该如何预防孩子的网瘾？</a></li> <li><a href="../jzkt/5761.html">独生子女父母的教育方式</a></li>
+                </ul>
+            </div>
+        </div>
+        <script type="text/javascript"><!--
+        google_ad_client = "ca-pub-5232248721907840";
+        /* caijj300 */
+        google_ad_slot = "6444256775";
+        google_ad_width = 300;
+        google_ad_height = 250;
+        //-->
+        </script>
+        <script type="text/javascript"
+                src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+        </script>
+    </div>
+</div>
+<div id="footbar" class="w950">
+    <div class="title">
+        <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+            <tr>
+                <td  height="30" valign="middle">
+                    <a href="index.php?m=home&c=index&a=teacher" target="_blank">做家教</a> | <a href="index.php?m=home&c=index&a=order" target="_blank">请家教</a> | <a href="index.php?m=home&c=index&a=Jiaoyuansousuo">教员搜索</a> | <a href="index.php?m=home&c=index&a=Jiaoyuan">教员分类</a> | <a href="index.php?m=home&c=index&a=XuexiFangfa1">学习方法</a> | <a href="index.php?m=home&c=index&a=KaoshiJingyan1">考试经验</a> | <a href="index.php?m=home&c=index&a=JiaZhangketang1">家长课堂</a> | <a href="index.php?m=home&c=index&a=JiajiaoXiangguan1">家教相关</a> | <a href="index.php?m=home&c=index&a=JiaZhangjingyan1">家教经验</a> | <a href=index.php?m=home&c=index&a=GuanYuwomen1>关于我们</a> | <a href="index.php?m=home&c=index&a=Changjianwenti1">常见问题</a> | <a href="index.php?m=home&c=index&a=HuiKuaifangshi1">汇款方式</a> | <a href="index.php?m=home&c=index&a=Lianxiwomen1" target="_blank">联系我们</a> | <a href="index.php?m=home&c=index&a=Zhaopin1"><img src="./public/home/images/zhaopin.gif" align="absmiddle" border="0"></a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="body">
+        联系电话：010-62642730　62643630　客服邮箱：caijjkf@163.com　<br />
+        版权所有：北京尚才家教 【<a href="http://www.caijj.com/" target="_blank">北京家教</a>】　工信部备案号:<a href="http://www.miibeian.gov.cn/" target="_blank">京ICP备09031430号</a><br />
+        家教服务中心：北京市海淀区清华大学东路金码大厦B座18层1809室<br />
+        Powered by www.caijj.com copyright 2009-2015<script src="http://s13.cnzz.com/stat.php?id=2467102&web_id=2467102&show=pic1" language="JavaScript"></script>
+    </div>
+</div>
+</body>
+</html>

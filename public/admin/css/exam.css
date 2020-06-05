@@ -1,0 +1,104 @@
+/* 时间：2019/4/10
+ * 项目:四川新华电脑学院考试系统
+ * 作者： 高磊
+ * */
+
+
+/*公共部分*/
+*{
+	margin: 0px;
+	padding: 0px;
+}
+
+.cle{
+	clear: both;
+}
+/*页眉部分*/
+#header{
+	width: 100%;
+	min-width: 1180px;
+	height: 248px;
+	border-bottom: 8px solid #014A88;
+	background: #E4F5FF;
+}
+.header_box{
+	width: 100%;
+	height: 120px;
+	border-bottom: 30px solid #014A88;	
+}
+.scxh_logo{
+	margin-left: 30px;
+	width: 343px;
+	height: 120px;
+	background: url(../img/logob.png);
+	display: inline-block;
+	float: left;
+}
+.msg{
+	line-height: 30px;
+	margin-top: 60px;
+	width: 300px;
+	height: 30px;
+	display: inline-block;
+	float: left;
+	font-family: 宋体;
+	font-weight: bold;
+}
+#time_dsq{
+	color: #FF4500;
+	display: inline-block;
+}
+.header_title{
+	width: 100%;
+}
+.big_title{
+	width: 344px;
+	height: 40px;
+	margin: 10px auto 0px auto;
+	font-family:宋体;
+	font-size: 28px;
+	font-weight: bold;
+}
+.subject_title{
+	width: 288px;
+	height: 20px;
+	margin: 0px auto;
+	font-family:宋体;
+	font-size: 16px;
+	font-weight: bold;
+}
+.subject{
+	display: inline-block;
+}
+.feihua{
+	width: 200px;
+	margin: 0px auto;
+}
+/*内容部分*/
+#centent{
+	margin: 0px auto;
+	width: 1180px;
+	min-width: 1180px;
+	overflow: auto;
+	border: 1px solid #666;
+}
+#centent input{
+	checkbox
+}
+.danxuanti{
+}
+.problem-answer{
+	margin-left: 40px;
+}
+.problem{
+	padding-top:20px ;
+}
+.caozuoti textarea{
+	width: 980px;
+	height: 500px;
+	overflow: auto;
+}
+.butt{
+	width: 100px;
+	margin: 30px auto;
+}
